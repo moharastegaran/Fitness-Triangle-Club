@@ -1,0 +1,67 @@
+.custom-input {
+    width: 100%;
+    padding: .5rem;
+    color: #555658;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #dee2e6;
+    direction: rtl;
+}
+
+.form-group:first-of-type{
+    margin-top: 0 !important;
+}
+
+.form-group {
+    width: 100%;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+    margin-top: 2.5rem;
+}
+
+/*.form-group:not(:first-of-type) {*/
+    /*margin-top: 2.5rem;*/
+/*}*/
+
+.form-group:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 100%;
+    right: 0;
+    bottom: 0;
+    background: #cb1313;
+    height: 2px;
+    -webkit-transition-property: left;
+    transition-property: left;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.form-group.active:not(.deactive):before {
+    left: 0;
+}
+
+.custom-input::placeholder , select{
+    font-family: iransans_web_light;
+    color: #555658 !important;
+    font-size: 13px !important;
+}
+
+.form-group.active > .custom-input::placeholder {
+    color: #cb1313;
+}
+
+.custom-error{
+    text-align: right;
+    direction: rtl;
+    font-weight: bold;
+    font-size: 12px;
+    color : #b81212;
+}

@@ -1,0 +1,75 @@
+@charset "UTF-8";
+/*
+ * jQuery File Upload Plugin CSS
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2013, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * https://opensource.org/licenses/MIT
+ */
+
+#blueimp-gallery{
+  position:fixed;
+  top : 0;
+  left : 0;
+  right : 0;
+  bottom : 0;
+  z-index: 999999999;
+  background-color: rgba(62, 62, 62, 0.85);
+}
+
+#blueimp-gallery img{
+  position: absolute;
+  top : 50%;
+  left : 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#blueimp-gallery span.close{
+  cursor: pointer;
+  position: absolute;
+  top: 5%;
+  left:5%;
+  z-index: 2;
+  color: #efefef;
+  font-size: 40px;
+}
+
+
+#blueimp-gallery span.close:hover{
+  color: #fe4545;
+}
+
+.fileinput-button {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+.fileinput-button input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px !important;
+  direction: ltr;
+  cursor: pointer;
+}
+
+/* Fixes for IE < 8 */
+@media screen\9 {
+  .fileinput-button input {
+    filter: alpha(opacity=0);
+    font-size: 100%;
+    height: 100%;
+  }
+}
