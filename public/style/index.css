@@ -1,0 +1,186 @@
+.elementor-element {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.elementor-gap{
+    padding: 150px 0;
+}
+
+.elementor-gap-sm{
+    padding: 75px 0;
+}
+
+.elementor-body{
+    position: relative;
+}
+
+body{
+    background-color: #f7f7f7;
+}
+
+.elementor-main-background{
+    background-image: url(../images/body-builder-1.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-origin: padding-box;
+    background-attachment: fixed;
+}
+
+.elementor-backgroun-middle{
+    background-image: url(../images/gym.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+.elementor-element-overlay {
+    position: absolute;
+    opacity: .5;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+}
+
+.elementor-shape[data-negative=false].elementor-shape-bottom {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    bottom: -1px;
+}
+
+.elementor-shape[data-negative=false].elementor-shape-top {
+    /*-webkit-transform: rotate(180deg);*/
+    /*-ms-transform: rotate(180deg);*/
+    /*transform: rotate(180deg);*/
+    top: -1px;
+    /*transform : translateY(-%)*/
+}
+
+/*.elementor-shape-top svg{*/
+/*transform: translateY(-50%) rotateY(180deg);*/
+/*}*/
+/**/
+.elementor-shape {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    direction: ltr;
+}
+
+.elementor-shape svg {
+    height: 70px;
+    display: block;
+    width: calc(100% + 1.3px);
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%) rotateY(180deg);
+    -ms-transform: translateX(-50%) rotateY(180deg);
+    transform: translateX(-50%) rotateY(180deg);
+}
+
+.elementor-shape .elementor-shape-fill {
+    fill: #fff;
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+
+.elementor-shape .elementor-shape-fill-beige{
+    fill : #f7f7f7 ;
+}
+
+.elementor-shape .elementor-shape-fill-dark{
+    fill : #444444;
+}
+
+.elementor-background-beige{
+    background-color: #f7f7f7;
+}
+
+.elementor-background-dark{
+    background-color: #444444;
+}
+
+.elementor-content {
+    color: #fff;
+    direction: rtl;
+    width: 100%;
+    text-align: right;
+}
+
+.head-title {
+    font-size: 44px;
+    line-height: 50px;
+    margin-bottom: 2rem;
+    font-family: iransans_web_black;
+}
+
+.head-description {
+    font-family: iransans_web_light;
+    text-align: justify;
+    margin-bottom: 3rem;
+}
+
+h3.title-3{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-family: iransans_web_medium;
+}
+
+h4.title-4{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family: iransans_web_medium;
+}
+
+.elementor-box-item-content p{
+    font-size: 13px;
+    font-family: iransans_web;
+    text-align: justify;
+    direction: rtl;
+}
+
+@media(max-width: 992px){
+    .head-title{
+        font-size: 37px;
+        line-height: 43px;
+    }
+}
+
+@media(max-width: 768px){
+
+    .elementor-element{
+        height: auto !important;
+    }
+
+    #collapsibleNavbar ul.navbar-nav:not(.d-none){
+        width: 100%;
+    }
+
+    .head-title{
+        font-size: 34px;
+        line-height: 38px;
+    }
+
+    .head-description{
+        font-size: small;
+    }
+}
+
+@media(max-width: 576px){
+    .head-title{
+        font-size: 21px;
+        line-height: 28px;
+    }
+
+    .head-description{
+        text-align: right;
+    }
+}

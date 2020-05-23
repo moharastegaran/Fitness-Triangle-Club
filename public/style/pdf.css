@@ -1,0 +1,181 @@
+@page {
+    margin: 0.5cm;
+}
+
+body {
+    font-family: iransans_web;
+    font-size: 1em;
+}
+
+table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    border: 1px solid #336;
+    border-collapse: collapse;
+}
+
+table.border-less td {
+    margin-top: 0;
+    border: none;
+    text-align: left;
+    vertical-align: top;
+    font-size: 0.9em;
+}
+
+td {
+    margin-top: 0;
+    border: 1px solid #336;
+    text-align: left;
+    vertical-align: top;
+    font-size: 0.9em;
+}
+
+.normal-label {
+    color: #336;
+    font-size: 0.9em;
+    margin-left: 5px !important;
+    font-weight: bold;
+}
+
+.table-label {
+    padding: 4px;
+    vertical-align: top;
+    text-align: center;
+    color: #336;
+    font-weight: bold;
+    background-color: rgba(200, 200, 200, 0.5);
+}
+
+.data {
+    padding-left: 10px;
+    color: black;
+    font-size: 0.9em;
+}
+
+.text {
+    margin: 5px 10px 5px 10px;
+    color: #336;
+    font-size: 0.9em;
+    text-align: justify;
+}
+
+table {
+    display: table;
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid #336;
+    font-size: 0.9em;
+}
+
+.code-label {
+    font-size: 1.5em;
+    color: #336;
+    vertical-align: bottom;
+}
+
+.code {
+    border: solid #336 1px;
+    padding: 5px;
+    margin-left: 60px;
+    width: 180px;
+    font-size: 1.2em;
+    float: left;
+    vertical-align: middle;
+}
+
+.address {
+    color: #336;
+    font-size: 0.9em;
+    margin: 0 25px 0 25px;
+    text-align: justify;
+    display: inline-block;
+    letter-spacing: 0.03em;
+}
+
+.padding {
+    padding: 5px 10px 5px 10px;
+}
+
+[type="checkbox"] {
+    vertical-align: middle;
+}
+
+.vertical-td {
+    vertical-align: middle;
+}
+
+.title {
+    /* this shit should be fixed */
+    font-size: 3em;
+    font-weight: bolder;
+    color: #336;
+    /*display:block !important;*/
+    vertical-align: middle;
+    /*text-align: center;*/
+}
+
+.title-right {
+    /* this shit should be fixed */
+    font-size: 2.5em;
+    font-weight: bolder;
+    color: #336;
+    /*display:block !important;*/
+    vertical-align: middle;
+    text-align: left;
+}
+
+.header td {
+    border: none;
+    width: 20%;
+    /*height: 0px !important;*/
+    line-height: 4px !important;
+}
+
+.header td:nth-child(1) {
+    width: 80%;
+    float: left;
+    text-align: left;
+    font-size: 0.8em !important;
+    /*padding: 8px;*/
+}
+
+.header td:nth-child(2) {
+    float: right;
+    font-size: 0.8em !important;
+    /*padding: 8px;*/
+}
+
+.first_page {
+    padding: 20px !important;
+}
+
+.margin-page {
+    padding: 0.5cm;
+}
+
+.clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.middle {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.no-border {
+    border: none;
+}
+
+table.no-border td {
+    border: none;
+}

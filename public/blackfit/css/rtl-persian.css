@@ -1,0 +1,14 @@
+.persian {
+    direction: rtl !important;
+    font-family: iransans_web, Arial !important;
+}
+
+input {
+    direction: rtl !important;
+    font-family: iransans_web, Arial !important;
+}
+
+.ui-selectmenu-text {
+    direction: rtl !important;
+    font-family: iransans_web, Arial !important;
+}

@@ -1,0 +1,756 @@
+Uri: http://blackfit.getmytemplate.com/index.html
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\index.html
+Content Type: text/html
+
+Uri: http://blackfit.getmytemplate.com/images/main-slider/image-1.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\main-slider\image-1.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/main-slider/image-3.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\main-slider\image-3.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/main-slider/image-4.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\main-slider\image-4.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/main-slider/image-5.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\main-slider\image-5.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/background/1.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\background\1.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/background/2.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\background\2.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/css/bootstrap.css
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\css\bootstrap.css
+Content Type: text/css
+
+Uri: http://blackfit.getmytemplate.com/css/style.css
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\css\style.css
+Content Type: text/css
+
+Uri: http://blackfit.getmytemplate.com/css/responsive.css
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\css\responsive.css
+Content Type: text/css
+
+Uri: http://blackfit.getmytemplate.com/images/favicon.png
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\favicon.png
+Content Type: image/png
+
+Uri: http://blackfit.getmytemplate.com/about.html
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\about.html
+Content Type: text/html
+
+Uri: http://blackfit.getmytemplate.com/timetable.html
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\timetable.html
+Content Type: text/html
+
+Uri: http://blackfit.getmytemplate.com/commingsoon.html
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\commingsoon.html
+Content Type: text/html
+
+Uri: http://blackfit.getmytemplate.com/body-builder.html
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\body-builder.html
+Content Type: text/html
+
+Uri: http://blackfit.getmytemplate.com/body-builder-2.html
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\body-builder-2.html
+Content Type: text/html
+
+Uri: http://blackfit.getmytemplate.com/trainer.html
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\trainer.html
+Content Type: text/html
+
+Uri: http://blackfit.getmytemplate.com/trainer-2.html
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\trainer-2.html
+Content Type: text/html
+
+Uri: http://blackfit.getmytemplate.com/shop-left.html
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\shop-left.html
+Content Type: text/html
+
+Uri: http://blackfit.getmytemplate.com/shop-right.html
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\shop-right.html
+Content Type: text/html
+
+Uri: http://blackfit.getmytemplate.com/shop-single.html
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\shop-single.html
+Content Type: text/html
+
+Uri: http://blackfit.getmytemplate.com/shopping-cart.html
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\shopping-cart.html
+Content Type: text/html
+
+Uri: http://blackfit.getmytemplate.com/checkout.html
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\checkout.html
+Content Type: text/html
+
+Uri: http://blackfit.getmytemplate.com/blog.html
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\blog.html
+Content Type: text/html
+
+Uri: http://blackfit.getmytemplate.com/blog-classic.html
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\blog-classic.html
+Content Type: text/html
+
+Uri: http://blackfit.getmytemplate.com/blog-detail.html
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\blog-detail.html
+Content Type: text/html
+
+Uri: http://blackfit.getmytemplate.com/blog-detail-two.html
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\blog-detail-two.html
+Content Type: text/html
+
+Uri: http://blackfit.getmytemplate.com/not-found.html
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\not-found.html
+Content Type: text/html
+
+Uri: http://blackfit.getmytemplate.com/contact.html
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\contact.html
+Content Type: text/html
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/gallery1.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\gallery1.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/gallery2.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\gallery2.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/gallery3.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\gallery3.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/gallery4.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\gallery4.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/gallery5.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\gallery5.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/gallery6.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\gallery6.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/gallery7.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\gallery7.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/gallery8.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\gallery8.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/gallery9.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\gallery9.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/gallery10.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\gallery10.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/gallery11.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\gallery11.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/gallery12.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\gallery12.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/1.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\1.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/2.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\2.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/3.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\3.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/4.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\4.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/5.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\5.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/6.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\6.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/7.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\7.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/8.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\8.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/9.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\9.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/logo.svg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\logo.svg
+Content Type: image/svg+xml
+
+Uri: http://blackfit.getmytemplate.com/images/logo-small.svg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\logo-small.svg
+Content Type: image/svg+xml
+
+Uri: http://blackfit.getmytemplate.com/images/icons/burger.svg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\icons\burger.svg
+Content Type: image/svg+xml
+
+Uri: http://blackfit.getmytemplate.com/images/sidebar-logo.svg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\sidebar-logo.svg
+Content Type: image/svg+xml
+
+Uri: http://blackfit.getmytemplate.com/images/icons/scroll.png
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\icons\scroll.png
+Content Type: image/png
+
+Uri: http://blackfit.getmytemplate.com/images/resource/service-1.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\service-1.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/service-2.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\service-2.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/service-3.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\service-3.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/service-4.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\service-4.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/video-img.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\video-img.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/icons/play-icon.png
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\icons\play-icon.png
+Content Type: image/png
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/10.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\10.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/11.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\11.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/12.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\12.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/icons/price-1-icon.svg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\icons\price-1-icon.svg
+Content Type: image/svg+xml
+
+Uri: http://blackfit.getmytemplate.com/images/icons/price-2-icon.svg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\icons\price-2-icon.svg
+Content Type: image/svg+xml
+
+Uri: http://blackfit.getmytemplate.com/images/icons/price-3-icon.svg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\icons\price-3-icon.svg
+Content Type: image/svg+xml
+
+Uri: http://blackfit.getmytemplate.com/images/resource/coach-1.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\coach-1.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/coach-2.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\coach-2.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/coach-3.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\coach-3.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/coach-4.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\coach-4.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/author-1.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\author-1.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/author-2.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\author-2.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/author-3.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\author-3.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/author-4.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\author-4.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/author-5.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\author-5.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/author-6.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\author-6.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/news-1.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\news-1.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/news-2.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\news-2.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/news-3.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\news-3.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/footer-logo.svg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\footer-logo.svg
+Content Type: image/svg+xml
+
+Uri: http://blackfit.getmytemplate.com/images/resource/post-thumb-1.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\post-thumb-1.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/post-thumb-2.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\post-thumb-2.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/post-thumb-3.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\post-thumb-3.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/footer-gallery-thumb-1.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\footer-gallery-thumb-1.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/footer-gallery-thumb-2.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\footer-gallery-thumb-2.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/footer-gallery-thumb-3.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\footer-gallery-thumb-3.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/footer-gallery-thumb-4.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\footer-gallery-thumb-4.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/footer-gallery-thumb-5.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\footer-gallery-thumb-5.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/footer-gallery-thumb-6.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\footer-gallery-thumb-6.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/footer-gallery-thumb-7.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\footer-gallery-thumb-7.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/footer-gallery-thumb-8.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\footer-gallery-thumb-8.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/gallery/footer-gallery-thumb-9.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\gallery\footer-gallery-thumb-9.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/icons/message-icon.png
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\icons\message-icon.png
+Content Type: image/png
+
+Uri: http://blackfit.getmytemplate.com/js/jquery.js
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\js\jquery.js
+Content Type: application/javascript
+
+Uri: http://blackfit.getmytemplate.com/js/popper.min.js
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\js\popper.min.js
+Content Type: application/javascript
+
+Uri: http://blackfit.getmytemplate.com/js/bootstrap.min.js
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\js\bootstrap.min.js
+Content Type: application/javascript
+
+Uri: http://blackfit.getmytemplate.com/js/jquery.mCustomScrollbar.concat.min.js
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\js\jquery.mCustomScrollbar.concat.min.js
+Content Type: application/javascript
+
+Uri: http://blackfit.getmytemplate.com/js/jquery.fancybox.js
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\js\jquery.fancybox.js
+Content Type: application/javascript
+
+Uri: http://blackfit.getmytemplate.com/js/appear.js
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\js\appear.js
+Content Type: application/javascript
+
+Uri: http://blackfit.getmytemplate.com/js/owl.js
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\js\owl.js
+Content Type: application/javascript
+
+Uri: http://blackfit.getmytemplate.com/js/wow.js
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\js\wow.js
+Content Type: application/javascript
+
+Uri: http://blackfit.getmytemplate.com/js/jquery-ui.js
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\js\jquery-ui.js
+Content Type: application/javascript
+
+Uri: http://blackfit.getmytemplate.com/js/script.js
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\js\script.js
+Content Type: application/javascript
+
+Uri: http://blackfit.getmytemplate.com/css/font-awesome.css
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\css\font-awesome.css
+Content Type: text/css
+
+Uri: http://blackfit.getmytemplate.com/css/flaticon.css
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\css\flaticon.css
+Content Type: text/css
+
+Uri: http://blackfit.getmytemplate.com/css/animate.css
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\css\animate.css
+Content Type: text/css
+
+Uri: http://blackfit.getmytemplate.com/css/owl.css
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\css\owl.css
+Content Type: text/css
+
+Uri: http://blackfit.getmytemplate.com/css/animation.css
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\css\animation.css
+Content Type: text/css
+
+Uri: http://blackfit.getmytemplate.com/css/jquery-ui.css
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\css\jquery-ui.css
+Content Type: text/css
+
+Uri: http://blackfit.getmytemplate.com/css/custom-animate.css
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\css\custom-animate.css
+Content Type: text/css
+
+Uri: http://blackfit.getmytemplate.com/css/jquery.fancybox.min.css
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\css\jquery.fancybox.min.css
+Content Type: text/css
+
+Uri: http://blackfit.getmytemplate.com/css/jquery.bootstrap-touchspin.css
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\css\jquery.bootstrap-touchspin.css
+Content Type: text/css
+
+Uri: http://blackfit.getmytemplate.com/css/jquery.mCustomScrollbar.min.css
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\css\jquery.mCustomScrollbar.min.css
+Content Type: text/css
+
+Uri: http://blackfit.getmytemplate.com/fonts/monumentExtended-Regular.eot
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\fonts\monumentExtended-Regular.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: http://blackfit.getmytemplate.com/fonts/monumentExtended-Regular.ttf
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\fonts\monumentExtended-Regular.ttf
+Content Type: font/ttf
+
+Uri: http://blackfit.getmytemplate.com/fonts/monumentExtended-Regular.woff
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\fonts\monumentExtended-Regular.woff
+Content Type: font/woff
+
+Uri: http://blackfit.getmytemplate.com/fonts/monumentExtended-Regular.svg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\fonts\monumentExtended-Regular.svg
+Content Type: image/svg+xml
+
+Uri: http://blackfit.getmytemplate.com/fonts/monumentExtended-Ultrabold.eot
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\fonts\monumentExtended-Ultrabold.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: http://blackfit.getmytemplate.com/fonts/monumentExtended-Ultrabold.ttf
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\fonts\monumentExtended-Ultrabold.ttf
+Content Type: font/ttf
+
+Uri: http://blackfit.getmytemplate.com/fonts/monumentExtended-Ultrabold.woff
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\fonts\monumentExtended-Ultrabold.woff
+Content Type: font/woff
+
+Uri: http://blackfit.getmytemplate.com/images/icons/slider-left-arrow.png
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\icons\slider-left-arrow.png
+Content Type: image/png
+
+Uri: http://blackfit.getmytemplate.com/images/icons/slider-right-arrow.png
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\icons\slider-right-arrow.png
+Content Type: image/png
+
+Uri: http://blackfit.getmytemplate.com/images/icons/scroll-down-arrow.png
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\icons\scroll-down-arrow.png
+Content Type: image/png
+
+Uri: http://blackfit.getmytemplate.com/images/main-slider/gradient-layer.png
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\main-slider\gradient-layer.png
+Content Type: image/png
+
+Uri: http://blackfit.getmytemplate.com/images/icons/icon-select.png
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\icons\icon-select.png
+Content Type: image/png
+
+Uri: http://blackfit.getmytemplate.com/images/background/4.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\background\4.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/background/5.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\background\5.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/table.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\table.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/background/6.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\background\6.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/js/jquery.countdown.js
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\js\jquery.countdown.js
+Content Type: application/javascript
+
+Uri: http://blackfit.getmytemplate.com/images/background/8.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\background\8.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/bodybuilder-1.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\bodybuilder-1.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/video-img-2.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\video-img-2.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/trainer-5.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\trainer-5.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/trainer-6.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\trainer-6.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/trainer-7.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\trainer-7.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/background/7.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\background\7.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/trainer-1.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\trainer-1.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/trainer-2.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\trainer-2.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/trainer-3.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\trainer-3.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/trainer-4.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\trainer-4.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/video-img-1.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\video-img-1.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/background/11.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\background\11.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/icons/bag.svg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\icons\bag.svg
+Content Type: image/svg+xml
+
+Uri: http://blackfit.getmytemplate.com/images/resource/products/prod-thumb-2.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\products\prod-thumb-2.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/products/prod-thumb-3.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\products\prod-thumb-3.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/products/prod-thumb-1.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\products\prod-thumb-1.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/products/1.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\products\1.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/icons/right-arrow.svg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\icons\right-arrow.svg
+Content Type: image/svg+xml
+
+Uri: http://blackfit.getmytemplate.com/images/resource/products/2.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\products\2.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/products/3.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\products\3.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/products/4.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\products\4.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/products/5.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\products\5.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/products/6.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\products\6.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/js/validate.js
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\js\validate.js
+Content Type: application/javascript
+
+Uri: http://blackfit.getmytemplate.com/images/resource/products/7.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\products\7.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/products/8.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\products\8.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/products/9.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\products\9.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/products/10.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\products\10.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/js/jquery.bootstrap-touchspin.js
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\js\jquery.bootstrap-touchspin.js
+Content Type: application/javascript
+
+Uri: http://blackfit.getmytemplate.com/images/resource/products/thumb-1.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\products\thumb-1.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/products/thumb-2.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\products\thumb-2.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/background/9.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\background\9.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/news-4.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\news-4.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/news-5.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\news-5.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/news-6.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\news-6.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/news-7.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\news-7.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/news-8.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\news-8.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/news-9.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\news-9.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/news-10.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\news-10.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/news-11.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\news-11.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/news-12.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\news-12.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/news-13.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\news-13.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/news-14.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\news-14.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/background/10.jpg
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\background\10.jpg
+Content Type: image/jpeg
+
+Uri: http://blackfit.getmytemplate.com/images/resource/error.png
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\resource\error.png
+Content Type: image/png
+
+Uri: http://blackfit.getmytemplate.com/fonts/fontawesome-webfont.eot?v=4.3.0
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\fonts\fontawesome-webfont.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: http://blackfit.getmytemplate.com/fonts/fontawesome-webfont.eot?
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\fonts\fontawesome-webfont-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: http://blackfit.getmytemplate.com/fonts/fontawesome-webfont.woff2?v=4.3.0
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\fonts\fontawesome-webfont.woff2
+Content Type: font/woff2
+
+Uri: http://blackfit.getmytemplate.com/fonts/fontawesome-webfont.woff?v=4.3.0
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\fonts\fontawesome-webfont.woff
+Content Type: font/woff
+
+Uri: http://blackfit.getmytemplate.com/fonts/fontawesome-webfont.ttf?v=4.3.0
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\fonts\fontawesome-webfont.ttf
+Content Type: font/ttf
+
+Uri: http://blackfit.getmytemplate.com/fonts/fontawesome-webfont.svg?v=4.3.0
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\fonts\fontawesome-webfont.svg
+Content Type: image/svg+xml
+
+Uri: http://blackfit.getmytemplate.com/fonts/flaticon.eot
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\fonts\flaticon.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: http://blackfit.getmytemplate.com/fonts/flaticon.eot?
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\fonts\flaticon-1.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: http://blackfit.getmytemplate.com/fonts/flaticon.woff
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\fonts\flaticon.woff
+Content Type: font/woff
+
+Uri: http://blackfit.getmytemplate.com/fonts/flaticon.ttf
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\fonts\flaticon.ttf
+Content Type: font/ttf
+
+Uri: http://blackfit.getmytemplate.com/images/cross-out.png
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\images\cross-out.png
+Content Type: image/png
+
+Uri: http://blackfit.getmytemplate.com/css/images/ui-icons_444444_256x240.png
+File Name: C:\Users\Mohammad\Projects\grabbed\blackfit.getmytemplate.com\css\images\ui-icons_444444_256x240.png
+Content Type: image/png
+

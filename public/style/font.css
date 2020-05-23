@@ -1,0 +1,232 @@
+@font-face {
+
+    font-family: iransans_web;
+    src: url('../fonts/IRANSansWeb.ttf');
+
+}
+
+@font-face {
+
+    font-family: iransans_web_black;
+    src: url('../fonts/IRANSansWeb_Black.ttf');
+
+}
+
+@font-face {
+
+    font-family: iransans_web_bold;
+    src: url('../fonts/IRANSansWeb_Bold.ttf');
+
+}
+
+@font-face {
+
+    font-family: iransans_web_light;
+    src: url('../fonts/IRANSansWeb_Light.ttf');
+
+}
+
+@font-face {
+
+    font-family: iransans_web_medium;
+    src: url('../fonts/IRANSansWeb_Medium.ttf');
+
+}
+
+@font-face {
+
+    font-family: iransans_web_ultralight;
+    src: url('../fonts/IRANSansWeb_UltraLight.ttf');
+
+}
+
+@font-face {
+    font-family: vazir;
+    src : url('../adminlte/dist/fonts/Vazir.ttf')
+}
+
+
+@font-face {
+    font-family: vazir-light;
+    src : url('../adminlte/dist/fonts/Vazir-Light.ttf')
+}
+
+
+@font-face {
+    font-family: vazir-medium;
+    src : url('../adminlte/dist/fonts/Vazir-Medium.ttf')
+}
+
+.iransans-web{
+    font-family: iransans_web;
+}
+
+.iransans-web-black{
+    font-family: iransans_web_black;
+}
+
+.iransans-web-bold{
+    font-family: iransans_web_bold;
+}
+
+.iransans-web-medium{
+    font-family: iransans_web_medium;
+}
+
+.iransans-web-ultralight{
+    font-family: iransans_web_ultralight;
+}
+
+.iransans-web-light{
+    font-family: iransans_web_light;
+}
+
+.vazir{
+    font-family: vazir;
+}
+
+.vazir-light{
+    font-family: vazir-light;
+}
+
+.vazir-medium{
+    font-family: vazir-medium;
+}
+
+.font-xxs{
+    font-size: xx-small;
+}
+
+.font-xs{
+    font-size: x-small;
+}
+
+.font-s{
+    font-size: small;
+}
+
+.font-m{
+    font-size: medium;
+}
+
+.font-l{
+    font-size: large;
+}
+
+.font-le{
+    font-size: larger;
+}
+
+.font-xl{
+    font-size: x-large;
+}
+
+.font-xxl{
+    font-size: xx-large;
+}
+
+/* large size */
+@media (min-width: 992px ){
+
+    .font-lg-xxs{
+        font-size: xx-small;
+    }
+
+    .font-lg-xs{
+        font-size: x-small;
+    }
+
+    .font-lg-s{
+        font-size: small;
+    }
+
+    .font-lg-m{
+        font-size: medium;
+    }
+
+    .font-lg-l{
+        font-size: large;
+    }
+
+    .font-lg-le{
+        font-size: larger;
+    }
+
+    .font-lg-xl{
+        font-size: x-large;
+    }
+
+    .font-lg-xxl{
+        font-size: xx-large;
+    }
+}
+
+/* medium size */
+@media (min-width: 768px ){
+    .font-md-xxs{
+        font-size: xx-small;
+    }
+
+    .font-md-xs{
+        font-size: x-small;
+    }
+
+    .font-md-s{
+        font-size: small;
+    }
+
+    .font-md-m{
+        font-size: medium;
+    }
+
+    .font-md-l{
+        font-size: large;
+    }
+
+    .font-md-le{
+        font-size: larger;
+    }
+
+    .font-md-xl{
+        font-size: x-large;
+    }
+
+    .font-md-xxl{
+        font-size: xx-large;
+    }
+}
+
+/* small size */
+@media (min-width: 576px ){
+    .font-sm-xxs{
+        font-size: xx-small;
+    }
+
+    .font-sm-xs{
+        font-size: x-small;
+    }
+
+    .font-sm-s{
+        font-size: small;
+    }
+
+    .font-sm-m{
+        font-size: medium;
+    }
+
+    .font-sm-l{
+        font-size: large;
+    }
+
+    .font-sm-le{
+        font-size: larger;
+    }
+
+    .font-sm-xl{
+        font-size: x-large;
+    }
+
+    .font-sm-xxl{
+        font-size: xx-large;
+    }
+}
