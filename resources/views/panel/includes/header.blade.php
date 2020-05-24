@@ -3,7 +3,7 @@
 
         <ul class="navbar-item theme-brand flex-row  text-center">
             <li class="nav-item theme-logo">
-                <a href="#">
+                <a href="#" class="d-md-none d-block">
                     <img src="{{ asset('cork/assets/img/logo1.png') }}" class="navbar-logo" alt="logo">
                 </a>
             </li>
