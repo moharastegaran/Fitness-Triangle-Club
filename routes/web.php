@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes(['verify' => false]);
 
+Route::post('/login','Auth\LoginController@login')->name('login');
+
 //panel routes
 Route::group(['middleware' => ['auth'], 'prefix' => 'panel', 'as' => 'panel.'], function () {
 
@@ -18,7 +20,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'panel', 'as' => 'panel.'], 
             'create', 'edit', 'update'
         ]);
 
-        Route::get('group/{id}','WorkoutController@group')->name('workouts.group');
+        Route::get('workouts/group/{id}','WorkoutController@group')->name('workouts.group');
         Route::resource('workouts', 'WorkoutController');
 
         Route::put('workout-programs/update/item/{id}', 'WorkoutProgramController@updateItem')->name('workout-programs.update.item');
@@ -39,7 +41,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'panel', 'as' => 'panel.'], 
     });
 });
 
-Route::prefix('attachment')->name("attachment.")->group(function () {
+Route::prefix('attachment')->name("attachment.")->group(function () {   
     Route::post('store', 'AttachmentController@store')->name('store');
     Route::delete('destroy/{id}', 'AttachmentController@destroy')->name('destroy');
     Route::put('update/{id}', 'AttachmentController@update')->name('update');
@@ -47,8 +49,12 @@ Route::prefix('attachment')->name("attachment.")->group(function () {
 
 Route::get('pdf/{id}',function ($id){
     $program = \App\WorkoutProgram::find($id);
-    $pdf = \niklasravnsborg\LaravelPdf\Facades\Pdf::loadView('panel.workout_programs.pdf_en',compact('program'));
-    return $pdf->stream('doc.pdf');
+    return PDF::loadView('panel.workout_programs.pdf_en', compact('program'), [], [
+      'format' => 'A5-L','mode' => 'utf-8'
+  ])->stream('t.pdf');
+
+//    $pdf = \niklasravnsborg\LaravelPdf\Facades\Pdf::loadView('panel.workout_programs.pdf_en',compact('program'));
+//    return $pdf->stream('doc.pdf');
 });
 
 //website routes

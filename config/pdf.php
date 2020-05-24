@@ -9,7 +9,7 @@ return [
     'creator' => 'Laravel Pdf',
     'display_mode' => 'fullpage',
     'tempDir' => base_path('../temp/'),
-    'font_path' => base_path('/public/fonts/'),
+    'font_path' => public_path('fonts'),
     'font_data' => [
         'iransans' => [
             'R'  => 'IRANSansWeb.ttf',

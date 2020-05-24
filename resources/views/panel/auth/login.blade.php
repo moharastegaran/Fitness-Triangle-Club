@@ -34,9 +34,10 @@
                                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                                     <circle cx="12" cy="7" r="4"></circle>
                                 </svg>
-                                <input id="username" name="email" type="email" class="form-control" placeholder="ایمیل" value="{{ old('email') }}">
-                                @if($errors->has('email'))
-                                    <span class="field-error">{{ $errors->first('email') }}</span>
+                                <input id="username" name="email_or_phone" type="text" class="form-control" placeholder="ایمیل یا تلفن" value="{{ old('email_or_phone') }}">
+{{--                                {{ dd($errors) }}--}}
+                                @if($errors->has('email_or_phone'))
+                                    <span class="field-error">{{ $errors->first('email_or_phone') }}</span>
                                 @endif
                             </div>
 
