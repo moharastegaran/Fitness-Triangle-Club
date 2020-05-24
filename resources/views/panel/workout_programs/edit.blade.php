@@ -265,7 +265,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @include('panel.workout_programs.rows',['index'=>6,'day' => ($day_type ? 'پنج‌شنبه' : 'روز پنجم')])
+                            @include('panel.workout_programs.rows',['index'=>6,'day' => ($day_type ? 'پنج‌شنبه' : 'روز ششم')])
                             </tbody>
                         </table>
                     </div>
@@ -295,7 +295,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @include('panel.workout_programs.rows',['index'=>7,'day' =>($day_type ? 'جمعه' : 'روز هفتم')])
+                            @include('panel.workout_programs.rows',['index'=>7,'day' => ($day_type ? 'جمعه' : 'روز هفتم')])
                             </tbody>
                         </table>
                     </div>

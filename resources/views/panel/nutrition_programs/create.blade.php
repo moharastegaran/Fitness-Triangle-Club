@@ -10,37 +10,56 @@
 @section('style')
     <link type="text/css" rel="stylesheet" href="{{ asset('style/persianDatepicker.css') }}">
     <link href="{{ asset('cork/assets/css/components/tabs-accordian/custom-tabs.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('cork/assets/css/forms/switches.css') }}">
 @endsection
 
 @section('content')
-        <form role="form" class="col-12" action="{{ route('panel.admin.nutrition-programs.store') }}" method="post">
+    <form role="form" class="col-12" action="{{ route('panel.admin.nutrition-programs.store') }}" method="post">
 
-            @include('panel.includes.errors')
+        @include('panel.includes.errors')
 
-            @csrf
-            <div class="row mb-4">
-                <div class="col-md-4 col-sm-6 col-12">
-                    <label for="requester_name">نام ورزشکار</label>
-                    <input type="text" name="requester_name" class="form-control form-control-sm" id="requester_name"
-                           placeholder="علی علوی" value="{{ old('requester_name') }}">
-                </div>
-                <div class="col-md-4 col-sm-6 col-12">
-                    <label for="from">تاریخ آغاز برنامه</label>
-                    <input type="text" name="from" class="form-control form-control-sm" id="from" autocomplete="off"
-                           placeholder="تاریخ آغاز برنامه" value="{{ old('from') }}">
-                </div>
-                <div class="col-md-4 col-sm-6 col-12">
-                    <label for="duration">مدت زمان اجرای برنامه (روز)</label>
-                    <input type="number" min="1" name="duration" class="form-control form-control-sm" id="from"
-                           placeholder="30" value="{{ old('duration') }}">
-                </div>
-                <div class="col-md-4 col-sm-6 col-12">
-                    <label for="comment">توضیحات</label>
-                    <textarea name="comment" id="comment" class="form-control form-control-sm" rows="3"
-                              placeholder="توضیحات">{{ old('comment') }}</textarea>
+        @csrf
+        <div class="row mb-4">
+            <div class="col-md-4 col-sm-6 col-12">
+                <label for="requester_name">نام ورزشکار</label>
+                <select name="requester_name" class="form-control form-control-sm" id="requester_name">
+                    <option value="" disabled selected>-- انتخاب کنید --</option>
+                    @foreach($members as $member)
+                        <option value="{{ $member->name.' '.$member->family }}"
+                                @if(old('requester_name')==$member->name.' '.$member->family) selected @endif>
+                            {{ $member->name.' '.$member->family.' __ '.$member->mobile }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12">
+                <label for="from">تاریخ آغاز برنامه</label>
+                <input type="text" name="from" class="form-control form-control-sm" id="from" autocomplete="off"
+                       placeholder="تاریخ آغاز برنامه" value="{{ old('from') }}">
+            </div>
+            <div class="col-md-4 col-sm-6 col-12">
+                <label for="duration">مدت زمان اجرای برنامه (روز)</label>
+                <input type="number" min="1" name="duration" class="form-control form-control-sm" id="from"
+                       placeholder="30" value="{{ old('duration') }}">
+            </div>
+            <div class="col-md-4 col-sm-6 col-12">
+                <label for="comment">توضیحات</label>
+                <textarea name="comment" id="comment" class="form-control form-control-sm" rows="3"
+                          placeholder="توضیحات">{{ old('comment') }}</textarea>
+            </div>
+        </div>
+        <div>
+            <div class="d-flex justify-content-between align-items-center">
+                <h4>آیتم‌های غذایی</h4>
+                <div class="d-flex">
+                    <label class="switch s-icons s-outline s-outline-warning mr-1">
+                        <input name="day_type" type="hidden" value="true">
+                        <input id="day_type_switch" type="checkbox" value="1" checked>
+                        <span class="slider round"></span>
+                    </label>
+                    روزهای هفته
                 </div>
             </div>
-            <h4>آیتم‌های غذایی</h4>
             <ul class="nav nav-tabs mb-0 mt-4 nav-fill" id="iconTab" role="tablist">
                 <li class="nav-item"><a class="nav-link active" id="justify-home-tab" data-toggle="tab" href="#tab_1"
                                         role="tab" aria-controls="justify-home" aria-selected="true">شنبه</a></li>
@@ -56,9 +75,11 @@
                 <li class="nav-item"><a class="nav-link" id="justify-contact-tab" data-toggle="tab" href="#tab_5"
                                         role="tab" aria-controls="justify-contact" aria-selected="false">چهارشنبه</a>
                 </li>
-                <li class="nav-item"><a class="nav-link" id="justify-contact-tab" data-toggle="tab" href="#tab_6" role="tab"
+                <li class="nav-item"><a class="nav-link" id="justify-contact-tab" data-toggle="tab" href="#tab_6"
+                                        role="tab"
                                         aria-controls="justify-contact" aria-selected="false">پنج‌شنبه</a></li>
-                <li class="nav-item"><a class="nav-link" id="justify-contact-tab" data-toggle="tab" href="#tab_7" role="tab"
+                <li class="nav-item"><a class="nav-link" id="justify-contact-tab" data-toggle="tab" href="#tab_7"
+                                        role="tab"
                                         aria-controls="justify-contact" aria-selected="false">جمعه</a></li>
             </ul>
             <div class="tab-content">
@@ -69,7 +90,8 @@
                             <tr>
                                 <th style="width: 90px">
                                     <button onclick="addRow(1,event)" class="btn btn-sm btn-outline-success">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                             viewBox="0 0 24 24"
                                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                              stroke-linejoin="round" class="feather feather-plus">
                                             <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -95,7 +117,8 @@
                             <tr>
                                 <th style="width: 90px">
                                     <button onclick="addRow(2,event)" class="btn btn-sm btn-outline-success">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                             viewBox="0 0 24 24"
                                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                              stroke-linejoin="round" class="feather feather-plus">
                                             <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -121,7 +144,8 @@
                             <tr>
                                 <th style="width: 90px">
                                     <button onclick="addRow(3,event)" class="btn btn-sm btn-outline-success">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                             viewBox="0 0 24 24"
                                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                              stroke-linejoin="round" class="feather feather-plus">
                                             <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -147,7 +171,8 @@
                             <tr>
                                 <th style="width: 90px">
                                     <button onclick="addRow(4,event)" class="btn btn-sm btn-outline-success">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                             viewBox="0 0 24 24"
                                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                              stroke-linejoin="round" class="feather feather-plus">
                                             <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -173,7 +198,8 @@
                             <tr>
                                 <th style="width: 90px">
                                     <button onclick="addRow(5,event)" class="btn btn-sm btn-outline-success">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                             viewBox="0 0 24 24"
                                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                              stroke-linejoin="round" class="feather feather-plus">
                                             <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -199,7 +225,8 @@
                             <tr>
                                 <th style="width: 90px">
                                     <button onclick="addRow(6,event)" class="btn btn-sm btn-outline-success">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                             viewBox="0 0 24 24"
                                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                              stroke-linejoin="round" class="feather feather-plus">
                                             <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -225,7 +252,8 @@
                             <tr>
                                 <th style="width: 90px">
                                     <button onclick="addRow(7,event)" class="btn btn-sm btn-outline-success">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                             viewBox="0 0 24 24"
                                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                              stroke-linejoin="round" class="feather feather-plus">
                                             <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -245,12 +273,13 @@
                     </div>
                 </div>
             </div>
-            <br>
-            <div class="statbox box-shadow d-flex justify-content-between">
-                <a href="{{ URL::previous() }}" class="btn btn-warning">بازگشت</a>
-                <button type="submit" class="btn btn-primary">ثبت اطلاعات</button>
-            </div>
-        </form>
+        </div>
+        <br>
+        <div class="statbox box-shadow d-flex justify-content-between">
+            <a href="{{ URL::previous() }}" class="btn btn-warning">بازگشت</a>
+            <button type="submit" class="btn btn-primary">ثبت اطلاعات</button>
+        </div>
+    </form>
 @endsection
 
 @section('script')
@@ -290,7 +319,10 @@
         </td>
     </tr>
 `);
-            tbody.find('tr').last().find('.select2').css({'min-height': '42.6px', 'background-color': '#1b2e4b'}).select2({dir: 'rtl'})
+            tbody.find('tr').last().find('.select2').css({
+                'min-height': '42.6px',
+                'background-color': '#1b2e4b'
+            }).select2({dir: 'rtl'})
         }
 
         function removeRow(button) {
@@ -307,6 +339,31 @@
                     x: 20,
                     y: 0,
                 }
+            });
+
+            var switched = true;
+            $("#day_type_switch").on("change", function () {
+                var links = $(".nav-tabs .nav-link");
+                if (switched) {
+                    links.eq(0).text("روز اول");
+                    links.eq(1).text("روز دوم");
+                    links.eq(2).text("روز سوم");
+                    links.eq(3).text("روز چهارم");
+                    links.eq(4).text("روز پنجم");
+                    links.eq(5).text("روز ششم");
+                    links.eq(6).text("روز هفتم");
+                } else {
+                    links.eq(0).text("شنبه");
+                    links.eq(1).text("یک‌شنبه");
+                    links.eq(2).text("دوشنبه");
+                    links.eq(3).text("سه‌شنبه");
+                    links.eq(4).text("چهارشنبه");
+                    links.eq(5).text("پنج‌شنبه");
+                    links.eq(6).text("جمعه");
+                }
+
+                switched = !switched;
+                $(this).siblings("input[name='day_type']").val(switched);
             });
 
             $(document).on("keyup click change", "input.gram , select.nutrition", function () {

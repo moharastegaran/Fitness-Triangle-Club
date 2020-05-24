@@ -20,6 +20,7 @@ class CreateNutritionProgramsTable extends Migration
             $table->string('requester_name')->nullable();
             $table->date('from');
             $table->integer('duration');
+            $table->boolean('day_type')->default(1);
             $table->text('comment')->nullable();
             $table->timestamps();
             $table->softDeletes();

@@ -16,7 +16,8 @@ class NutritionProgram extends Model
         'requester_name',
         'duration',
         'from',
-        'comment'
+        'comment',
+        'day_type'
     ];
 
     public function items()

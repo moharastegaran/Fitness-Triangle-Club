@@ -7,6 +7,7 @@ use App\Meal;
 use App\Nutrition;
 use App\NutritionProgram;
 use App\NutritionProgramItem;
+use App\User;
 use Illuminate\Http\Request;
 use Morilog\Jalali\CalendarUtils;
 
@@ -33,7 +34,8 @@ class NutritionProgramController extends Controller
     {
         $nutritions = Nutrition::all();
         $meals = Meal::all();
-        return view('panel.nutrition_programs.create',compact('nutritions','meals'));
+        $members = User::members();
+        return view('panel.nutrition_programs.create',compact('nutritions','meals','members'));
     }
 
     /**
@@ -46,13 +48,14 @@ class NutritionProgramController extends Controller
     {
         $data = $request->all();
         $data['coach_id']=auth()->user()->id;
+        $data['day_type']= ($data['day_type']=='false' ? 0 : 1);
         $data['from'] = CalendarUtils::createCarbonFromFormat('Y-m-d', $data['from'])->toDateString();
         $program = NutritionProgram::create($data);
         if ($request->has('items')) {
             foreach ($data['items'] as $key => $day) {
                 foreach ($day as $item) {
                     $item['program_id'] = $program->id;
-                    $item['day'] = $this->getDay($key);
+                    $item['day'] = $this->getDay($key,$program->day_type);
                     NutritionProgramItem::create($item);
                 }
             }
@@ -60,15 +63,15 @@ class NutritionProgramController extends Controller
         return redirect()->route('panel.admin.nutrition-programs.index');
     }
 
-    private function getDay($index){
+    private function getDay($index,$switch){
         switch ($index){
-            case 1 : return "شنبه";
-            case 2 : return "یکشنبه";
-            case 3 : return "دوشنبه";
-            case 4 : return "سه‌شنبه";
-            case 5 : return "چهارشنبه";
-            case 6 : return "پنج‌شنبه";
-            case 7 : return "جمعه";
+            case 1 : return $switch ? "شنبه" : "روز اول";
+            case 2 : return $switch ? "یکشنبه" : "روز دوم";
+            case 3 : return $switch ? "دوشنبه" : "روز سوم";
+            case 4 : return $switch ? "سه‌شنبه" : "روز چهارم";
+            case 5 : return $switch ? "چهارشنبه" : "روز پنجم";
+            case 6 : return $switch ? "پنج‌شنبه" : "روز ششم";
+            case 7 : return $switch ? "جمعه" : "روز هفتم";
             default : return "";
         }
     }
@@ -98,7 +101,8 @@ class NutritionProgramController extends Controller
         $program = NutritionProgram::find($id);
         $nutritions = Nutrition::all();
         $meals = Meal::all();
-        return view('panel..nutrition_programs.edit',compact('program','nutritions','meals'));
+        $members = User::members();
+        return view('panel..nutrition_programs.edit',compact('program','nutritions','meals','members'));
     }
 
     /**
@@ -112,8 +116,8 @@ class NutritionProgramController extends Controller
     {
         $program = NutritionProgram::find($id);
         $data = $request->all();
-//        dd($data);
         $data['coach_id']=auth()->user()->id;
+        $data['day_type']= ($data['day_type']=='false' ? 0 : 1);
         $data['from'] = CalendarUtils::createCarbonFromFormat('Y-m-d', $data['from'])->toDateString();
         $program->update($data);
         $program->items()->delete();
@@ -121,7 +125,7 @@ class NutritionProgramController extends Controller
             foreach ($data['items'] as $key => $day) {
                 foreach ($day as $item) {
                     $item['program_id'] = $program->id;
-                    $item['day'] = $this->getDay($key);
+                    $item['day'] = $this->getDay($key,$program->day_type);
                     NutritionProgramItem::create($item);
                 }
             }
