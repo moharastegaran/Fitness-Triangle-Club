@@ -3,6 +3,16 @@
 <head>
     <title></title>
     {{--<link href="/style/pdf.css" rel="stylesheet" type="text/css">--}}
+    <style>
+        @page {
+            margin: 0.5cm;
+        }
+
+        body {
+            font-family: "bnazanin", "times_new_roman";
+            font-size: 1em;
+        }
+    </style>
 </head>
 <body>
 <div>
@@ -18,17 +28,17 @@
     </td>
     <td style="border: none; width: 20%;">
     <div class="code-label" style="text-align: left;">
-    برنامه برای : {{ $program->requester_name }}
+    برنامه برای : {{ $user->name }}
     </div>
     <div class="code-label" style="text-align: left;">
     شروع برنامه از
-    : {{ toFaDigits(\Morilog\Jalali\Jalalian::forge($program->from)->format('%d %B %y')) }}
+{{--    : {{ toFaDigits(\Morilog\Jalali\Jalalian::forge($program->from)->format('%d %B %y')) }}--}}
     </div>
     <div class="code-label" style="text-align: left;">
-    به مدت : {{ toFaDigits($program->duration).' روز' }}
+{{--    به مدت : {{ toFaDigits($program->duration).' روز' }}--}}
     </div>
     <div class="code-label" style="text-align: left;">
-    توضیحات : {{ toFaDigits($program->comment) ?: '-' }}
+{{--    توضیحات : {{ toFaDigits($program->comment) ?: '-' }}--}}
     </div>
     </td>
     </tr>

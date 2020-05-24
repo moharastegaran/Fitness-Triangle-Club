@@ -41,7 +41,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'panel', 'as' => 'panel.'], 
     });
 });
 
-Route::prefix('attachment')->name("attachment.")->group(function () {   
+Route::prefix('attachment')->name("attachment.")->group(function () {
     Route::post('store', 'AttachmentController@store')->name('store');
     Route::delete('destroy/{id}', 'AttachmentController@destroy')->name('destroy');
     Route::put('update/{id}', 'AttachmentController@update')->name('update');
@@ -49,7 +49,8 @@ Route::prefix('attachment')->name("attachment.")->group(function () {
 
 Route::get('pdf/{id}',function ($id){
     $program = \App\WorkoutProgram::find($id);
-    return PDF::loadView('panel.workout_programs.pdf_en', compact('program'), [], [
+    $user = auth()->user();
+    return PDF::loadView('panel.workout_programs.pdf_en', compact('user'), [], [
       'format' => 'A5-L','mode' => 'utf-8'
   ])->stream('t.pdf');
 
