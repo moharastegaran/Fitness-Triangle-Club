@@ -12,7 +12,7 @@ use App\WorkoutProgramItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Morilog\Jalali\CalendarUtils;
-use niklasravnsborg\LaravelPdf\Pdf;
+use niklasravnsborg\LaravelPdf\Facades\Pdf as PDF;
 
 class WorkoutProgramController extends Controller
 {
@@ -125,5 +125,12 @@ class WorkoutProgramController extends Controller
 
     public function updateItem(Request $request,$id){
         return $request->all();
+    }
+
+    public function exportPDF($id){
+        $program = WorkoutProgram::find($id);
+        return PDF::loadView('panel.workout_programs.pdf_en', compact('program'), [], [
+            'format' => 'A5-L','mode' => 'utf-8'
+        ])->stream('برنامه تمرینی_'.$program->requester_name.'.pdf');
     }
 }

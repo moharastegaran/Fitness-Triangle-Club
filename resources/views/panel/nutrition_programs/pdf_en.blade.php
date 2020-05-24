@@ -214,7 +214,7 @@
                     </div>
                     <div class="code-label">
                         شروع برنامه از
-                        : {{ (\Morilog\Jalali\Jalalian::forge($program->from)->format('%d %B %y')) }}
+                        : {{ \Morilog\Jalali\Jalalian::forge($program->from)->format('%d %B %y') }}
                     </div>
                     <div class="code-label">
                         به مدت : {{ ($program->duration).' روز' }}
@@ -234,26 +234,22 @@
             <div style="width: 100%;text-align: right;padding-right: 20px;font-size: 20px">
                 <h4>{{ $days[$j-1] }}</h4>
             </div>
-            <table class="table table-bordered mb-4 w-100">
+            <table class="table table-bordered mb-4">
                 <thead>
                 <tr>
-                    <th style="width: 30%" class="table-label">تمرین</th>
-                    <th style="width: 10%" class="table-label">ست</th>
-                    <th style="width: 15%" class="table-label">تکرار</th>
-                    <th style="width: 10%" class="table-label">ریتم</th>
-                    <th style="width: 10%" class="table-label">استراحت<span style="font-size: 10px">(ثانیه)</span></th>
-                    <th style="width: 20%" class="table-label">توضیحات</th>
+                    <th style="width: 25%">وعده</th>
+                    <th style="width: 25%">مغذی</th>
+                    <th style="width: 25%">گرم</th>
+                    <th style="width: 25%">کالری</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($program->items()->where('day',$days[$j-1])->get() as $item)
                     <tr>
-                        <td class="text-success data">{{ $item->workouts() }}</td>
-                        <td class="text-warning data">{{ $item->set }}</td>
-                        <td>{{ $item->repeats() }}</td>
-                        <td>{{ $item->rhythm }}</td>
-                        <td>{{ $item->gap }}</td>
-                        <td>{{ $item->comment }}</td>
+                        <td>{{ $item->meal->name }}</td>
+                        <td>{{ $item->nutrition->name }}</td>
+                        <td>{{ $item->gram }}</td>
+                        <td>{{ $item->calorie }}</td>
                     </tr>
                 @endforeach
                 </tbody>

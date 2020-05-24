@@ -10,6 +10,7 @@ use App\NutritionProgramItem;
 use App\User;
 use Illuminate\Http\Request;
 use Morilog\Jalali\CalendarUtils;
+use niklasravnsborg\LaravelPdf\Facades\Pdf as PDF;
 
 class NutritionProgramController extends Controller
 {
@@ -176,5 +177,12 @@ class NutritionProgramController extends Controller
         return response()->json([
            'status' => 200
         ]);
+    }
+
+    public function exportPDF($id){
+        $program = NutritionProgram::find($id);
+        return PDF::loadView('panel.nutrition_programs.pdf_en', compact('program'), [], [
+            'format' => 'A5-L','mode' => 'utf-8'
+        ])->stream('برنامه غذایی_'.$program->requester_name.'.pdf');
     }
 }

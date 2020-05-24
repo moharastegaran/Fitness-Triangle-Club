@@ -1,5 +1,6 @@
 <?php
 
+use App\WorkoutProgram;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'panel', 'as' => 'panel.'], 
 
         Route::put('workout-programs/update/item/{id}', 'WorkoutProgramController@updateItem')->name('workout-programs.update.item');
         Route::delete('workout-programs/destroy/item/{id}', 'WorkoutProgramController@destroyItem')->name('workout-programs.destroy.item');
+        Route::get('workout-programs/export-pdf/{id}','WorkoutProgramController@exportPDF')->name('workout-programs.export-pdf');
         Route::resource('workout-programs', 'WorkoutProgramController');
 
         Route::get('articles/attachment/download/{blog}', 'ArticleController@downloadAttachment')->name('articles.attachment.download');
@@ -32,6 +34,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'panel', 'as' => 'panel.'], 
 
         Route::resource('nutritions', 'NutritionController');
 
+        Route::get('nutrition-programs/export-pdf/{id}','NutritionProgramController@exportPDF')->name('nutrition-programs.export-pdf');
         Route::get('nutrition-programs/ratio', 'NutritionProgramController@getRatio')->name('nutrition-programs.ratio');
         Route::put('nutrition-programs/update/item/{id}', 'NutritionProgramController@updateItem')->name('nutrition-programs.update.item');
         Route::delete('nutrition-programs/destroy/item/{id}', 'NutritionProgramController@destroyItem')->name('nutrition-programs.destroy.item');
@@ -45,17 +48,6 @@ Route::prefix('attachment')->name("attachment.")->group(function () {
     Route::post('store', 'AttachmentController@store')->name('store');
     Route::delete('destroy/{id}', 'AttachmentController@destroy')->name('destroy');
     Route::put('update/{id}', 'AttachmentController@update')->name('update');
-});
-
-Route::get('pdf/{id}',function ($id){
-    $program = \App\WorkoutProgram::find($id);
-    $user = auth()->user();
-    return PDF::loadView('panel.workout_programs.pdf_en', compact('user'), [], [
-      'format' => 'A5-L','mode' => 'utf-8'
-  ])->stream('t.pdf');
-
-//    $pdf = \niklasravnsborg\LaravelPdf\Facades\Pdf::loadView('panel.workout_programs.pdf_en',compact('program'));
-//    return $pdf->stream('doc.pdf');
 });
 
 //website routes

@@ -33,24 +33,31 @@
 @endsection
 
 @section('content')
-{{--@section('spy-contents')--}}
+    {{--@section('spy-contents')--}}
     <div id="spy_tab_info" class="col-lg-10 col-12 mx-auto layout-spacing">
         <div class="statbox widget box box-shadow">
             <div class="widget-header">
                 <div class="d-flex justify-content-between align-items-center">
                     <h4>مشخصات</h4>
-                    <ul class="d-flex">
-                        <li class="d-block mx-2 mt-2">
-                            <a href="{{ route('panel.admin.nutrition-programs.edit',$program) }}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                     stroke-linecap="round" stroke-linejoin="round"
-                                     class="feather feather-edit-2 p-1 br-6 mb-1">
-                                    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="d-flex">
+                        <a href="{{ route('panel.admin.nutrition-programs.export-pdf',$program) }}" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather feather-download text-secondary mb-1">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </a>
+                        <a href="{{ route('panel.admin.nutrition-programs.edit',$program) }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round"
+                                 class="feather feather-edit-2 br-6 mb-1 ml-2 text-warning">
+                                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="widget-content widget-content-area">
@@ -170,7 +177,7 @@
 @section('script')
     <script>
         $(document).ready(function () {
-            $(document).on("click",'.btn-edit',function (e) {
+            $(document).on("click", '.btn-edit', function (e) {
                 e.preventDefault();
                 if ($(this).hasClass("editing")) {
                     var parent = $(this).closest("tr");
@@ -212,10 +219,10 @@
                                 '</td>' +
                                 '<td class="editable">' + response.gram + '</td>' +
                                 '<td class="editable d-none">' +
-                                '<input type="number" class="form-control form-control-sm gram" value="'+response.gram+'" name="gram"></td>' +
+                                '<input type="number" class="form-control form-control-sm gram" value="' + response.gram + '" name="gram"></td>' +
                                 '<td class="editable">' + response.calorie + '</td>' +
                                 '<td class="editable d-none">' +
-                                '<input type="text" class="form-control form-control-sm calorie" name="calorie" value="'+response.calorie+'" readonly></td>' +
+                                '<input type="text" class="form-control form-control-sm calorie" name="calorie" value="' + response.calorie + '" readonly></td>' +
                                 '<td class="text-center">' +
                                 '<ul class="table-controls d-flex p-0">' +
                                 '<li class="d-block mx-1"><a href="javascript:void(0);" class="btn-edit">' +
@@ -240,8 +247,8 @@
                                 '</li>' +
                                 '</ul>' +
                                 '</td>');
-                            parent.find("select[name='meal_id']").find("option[value="+response.meal_id+"]").attr("selected","selected");
-                            parent.find("select[name='nutrition_id']").find("option[value="+response.nutrition_id+"]").attr("selected","selected");
+                            parent.find("select[name='meal_id']").find("option[value=" + response.meal_id + "]").attr("selected", "selected");
+                            parent.find("select[name='nutrition_id']").find("option[value=" + response.nutrition_id + "]").attr("selected", "selected");
                         },
                         error: function (xhr) {
                             console.log(xhr)
@@ -251,7 +258,7 @@
                 $(this).toggleClass("editing").closest("tr").find(".editable").toggleClass("d-none");
             });
 
-            $(document).on("click",".btn-delete",function (e) {
+            $(document).on("click", ".btn-delete", function (e) {
                 e.preventDefault();
 //                if ($(this).hasClass("btn-success")) {
                 var parent = $(this).closest("tr");

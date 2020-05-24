@@ -8,7 +8,6 @@
 @endsection
 
 @section('style')
-    {{--    <link href="{{ asset('cork/assets/css/tables/table-basic.css') }}" rel="stylesheet" type="text/css">--}}
     <style>
         .table-controls li svg {
             transition: .5s ease color
@@ -36,8 +35,42 @@
         <div class="statbox widget box box-shadow">
             <div class="widget-header">
                 <div class="row">
-                    <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                    <div class="d-flex justify-content-between align-items-center col-12">
                         <h4>مشخصات</h4>
+                        <div class="d-flex flex-wrap">
+                            <a href="{{ route('panel.admin.workout-programs.export-pdf',$program) }}" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="feather feather-download text-secondary mb-1">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </a>
+                            <a href="{{ route('panel.admin.workout-programs.edit', $program) }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                     stroke-linecap="round" stroke-linejoin="round"
+                                     class="feather feather-edit-2 text-warning ml-2">
+                                    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                </svg>
+                            </a>
+                            {{--<li>--}}
+                            {{--<form class="d-none" method="post"--}}
+                            {{--action="{{ route('panel.admin.workout-programs.destroy', $workoutProgram) }}">--}}
+                            {{--@csrf--}}
+                            {{--@method('DELETE')--}}
+                            {{--</form>--}}
+                            {{--<a href="#delete-modal" data-toggle="modal" onclick="$(this).addClass('deletable');">--}}
+                            {{--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"--}}
+                            {{--stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"--}}
+                            {{--class="feather feather-trash text-dark p-1 br-6 mb-1">--}}
+                            {{--<polyline points="3 6 5 6 21 6"></polyline>--}}
+                            {{--<path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>--}}
+                            {{--</svg>--}}
+                            {{--</a>--}}
+                            {{--</li>--}}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -111,9 +144,9 @@
                                     <td class="editable">{{ $item->repeats() }}</td>
                                     <td class="editable d-none">
                                         {{--<select class="form-control form-control-sm" name="repeat">--}}
-                                            {{--@foreach(json_decode($item->repeat) as $repeat)--}}
-                                                {{--<option value="{{ $repeat }}" selected>{{ $repeat }}</option>--}}
-                                            {{--@endforeach--}}
+                                        {{--@foreach(json_decode($item->repeat) as $repeat)--}}
+                                        {{--<option value="{{ $repeat }}" selected>{{ $repeat }}</option>--}}
+                                        {{--@endforeach--}}
                                         {{--</select>--}}
                                     </td>
                                     <td class="editable">{{ $item->rhythm }}</td>
@@ -132,27 +165,27 @@
                                                   name="comment">{{ $item->comment }}</textarea>
                                     </td>
                                     {{--<td class="text-center">--}}
-                                        {{--<ul class="table-controls d-flex p-0">--}}
-                                            {{--<li class="d-block mx-1"><a class="btn-edit" href="javascript:void(0);">--}}
-                                                    {{--<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"--}}
-                                                         {{--viewBox="0 0 24 24" fill="none" stroke="currentColor"--}}
-                                                         {{--stroke-width="2" stroke-linecap="round" stroke-linejoin="round"--}}
-                                                         {{--class="feather feather-edit-2">--}}
-                                                        {{--<path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>--}}
-                                                    {{--</svg>--}}
-                                                {{--</a></li>--}}
-                                            {{--<li class="d-block mx-1"><a class="btn-delete" href="javascript:void(0);">--}}
-                                                    {{--<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"--}}
-                                                         {{--viewBox="0 0 24 24" fill="none" stroke="currentColor"--}}
-                                                         {{--stroke-width="2" stroke-linecap="round" stroke-linejoin="round"--}}
-                                                         {{--class="feather feather-trash-2">--}}
-                                                        {{--<polyline points="3 6 5 6 21 6"></polyline>--}}
-                                                        {{--<path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>--}}
-                                                        {{--<line x1="10" y1="11" x2="10" y2="17"></line>--}}
-                                                        {{--<line x1="14" y1="11" x2="14" y2="17"></line>--}}
-                                                    {{--</svg>--}}
-                                                {{--</a></li>--}}
-                                        {{--</ul>--}}
+                                    {{--<ul class="table-controls d-flex p-0">--}}
+                                    {{--<li class="d-block mx-1"><a class="btn-edit" href="javascript:void(0);">--}}
+                                    {{--<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"--}}
+                                    {{--viewBox="0 0 24 24" fill="none" stroke="currentColor"--}}
+                                    {{--stroke-width="2" stroke-linecap="round" stroke-linejoin="round"--}}
+                                    {{--class="feather feather-edit-2">--}}
+                                    {{--<path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>--}}
+                                    {{--</svg>--}}
+                                    {{--</a></li>--}}
+                                    {{--<li class="d-block mx-1"><a class="btn-delete" href="javascript:void(0);">--}}
+                                    {{--<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"--}}
+                                    {{--viewBox="0 0 24 24" fill="none" stroke="currentColor"--}}
+                                    {{--stroke-width="2" stroke-linecap="round" stroke-linejoin="round"--}}
+                                    {{--class="feather feather-trash-2">--}}
+                                    {{--<polyline points="3 6 5 6 21 6"></polyline>--}}
+                                    {{--<path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>--}}
+                                    {{--<line x1="10" y1="11" x2="10" y2="17"></line>--}}
+                                    {{--<line x1="14" y1="11" x2="14" y2="17"></line>--}}
+                                    {{--</svg>--}}
+                                    {{--</a></li>--}}
+                                    {{--</ul>--}}
                                     {{--</td>--}}
                                 </tr>
                             @endforeach
@@ -168,7 +201,7 @@
 @section('script')
     <script>
         $(document).ready(function () {
-            $(document).on("click",'.btn-edit',function (e) {
+            $(document).on("click", '.btn-edit', function (e) {
                 e.preventDefault();
                 if ($(this).hasClass("editing")) {
                     var parent = $(this).closest("tr");
@@ -181,17 +214,17 @@
                             'X-CSRF-TOKEN': $("meta[name='csrf-token']").attr("content")
                         },
                         data: {
-                            workout_ids : parent.find("select[name='workout_ids']").find("option:selected").val(),
-                            set : parent.find("input[name='set']").val(),
-                            repeat : parent.find("select[name='repeat']").find("option:selected").val(),
-                            rhythm : parent.find("input[name='rhythm']").val(),
-                            gap : parent.find("input[name='gap']").val(),
-                            comment : parent.find("textarea[name='comment']").val()
+                            workout_ids: parent.find("select[name='workout_ids']").find("option:selected").val(),
+                            set: parent.find("input[name='set']").val(),
+                            repeat: parent.find("select[name='repeat']").find("option:selected").val(),
+                            rhythm: parent.find("input[name='rhythm']").val(),
+                            gap: parent.find("input[name='gap']").val(),
+                            comment: parent.find("textarea[name='comment']").val()
                         },
                         success: function (response) {
                             console.log(response);
 //                            console.log(response.id);
-                            parent.html('<input type="hidden" value="' + response.id + '">'+
+                            parent.html('<input type="hidden" value="' + response.id + '">' +
                                 '<td class="editable text-warning">' + response.workouts + '</td>' +
                                 '<td class="editable d-none">' +
                                 '<select class="form-control form-control-sm basic" name="workout_id">' +
@@ -201,31 +234,31 @@
                                     @endforeach
                                         '</select>' +
                                 '</td>' +
-                                '<td class="editable text-warning">'+response.set+'</td>'+
-                            '<td class="editable d-none">'+
-                            '<input type="text" class="form-control form-control-sm" name="set"'+
-                            'value="'+response.set+'">'+
-                            '</td>'+
-                            '<td class="editable">'+response.repeat+'</td>'+
-                            '<td class="editable d-none">'+
-                            '<input type="text" class="form-control form-control-sm" name="repeat"'+
-                            'value="'+response.repeat+'">'+
-                            '</td>'+
-                            '<td>'+response.rhythm+'</td>'+
-                            '<td class="editable d-none">'+
-                            '<input type="text" class="form-control form-control-sm" name="rhythm"'+
-                            'value="'+response.rhythm+'">'+
-                            '</td>'+
-                            '<td>'+response.gap+'</td>'+
-                            '<td class="editable d-none">'+
-                            '<input type="text" class="form-control form-control-sm" name="gap"'+
-                            'value="'+response.gap+'">'+
-                            '</td>'+
-                            '<td>'+response.comment+'</td>'+
-                            '<td class="editable d-none">'+
-                            '<textarea class="form-control form-control-sm"'+
-                            'name="comment">'+response.comment+'</textarea>'+
-                            '</td>'+
+                                '<td class="editable text-warning">' + response.set + '</td>' +
+                                '<td class="editable d-none">' +
+                                '<input type="text" class="form-control form-control-sm" name="set"' +
+                                'value="' + response.set + '">' +
+                                '</td>' +
+                                '<td class="editable">' + response.repeat + '</td>' +
+                                '<td class="editable d-none">' +
+                                '<input type="text" class="form-control form-control-sm" name="repeat"' +
+                                'value="' + response.repeat + '">' +
+                                '</td>' +
+                                '<td>' + response.rhythm + '</td>' +
+                                '<td class="editable d-none">' +
+                                '<input type="text" class="form-control form-control-sm" name="rhythm"' +
+                                'value="' + response.rhythm + '">' +
+                                '</td>' +
+                                '<td>' + response.gap + '</td>' +
+                                '<td class="editable d-none">' +
+                                '<input type="text" class="form-control form-control-sm" name="gap"' +
+                                'value="' + response.gap + '">' +
+                                '</td>' +
+                                '<td>' + response.comment + '</td>' +
+                                '<td class="editable d-none">' +
+                                '<textarea class="form-control form-control-sm"' +
+                                'name="comment">' + response.comment + '</textarea>' +
+                                '</td>' +
                                 '<td class="text-center">' +
                                 '<ul class="table-controls d-flex p-0">' +
                                 '<li class="d-block mx-1"><a href="javascript:void(0);" class="btn-edit">' +
@@ -259,7 +292,7 @@
                 $(this).toggleClass("editing").closest("tr").find(".editable").toggleClass("d-none");
             });
 
-            $(document).on("click",".btn-delete",function (e) {
+            $(document).on("click", ".btn-delete", function (e) {
                 e.preventDefault();
 //                if ($(this).hasClass("btn-success")) {
                 var parent = $(this).closest("tr");
