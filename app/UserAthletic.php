@@ -13,10 +13,10 @@ class UserAthletic extends Model
     }
 
     public function image(){
-        return $this->attachment()->where('type','image')->first();
+//        return $this->attachment()->where('type','image')->first();
     }
 
     public function test(){
-        return $this->attachment()->where('type','test')->first();
+        return $this->attachment()->where('title','test')->first();
     }
 }

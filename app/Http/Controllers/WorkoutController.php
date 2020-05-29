@@ -21,10 +21,11 @@ class WorkoutController extends Controller
         return view('panel.workouts.categories')->with(compact('categories'));
     }
 
-    public function group($id){
+    public function group($id)
+    {
         $category = WorkoutCategory::find($id);
         $workouts = $category->workouts;
-        return view('panel.workouts.index')->with(compact('workouts','category'));
+        return view('panel.workouts.index')->with(compact('workouts', 'category'));
     }
 
     /**
@@ -36,10 +37,14 @@ class WorkoutController extends Controller
     {
         abort_unless(\Gate::allows(Permission::WORKOUT_CREATE), 403);
 
-        if (!(session()->has('validating') && session()->get('validating') === true)) {
-            DraftController::remove();
+        if (session()->has('validating')) {
+            if (session()->get('validating') === true) {
+                session()->put('validating', false);
+            } else {
+                DraftController::remove();
+            }
         } else {
-            session()->put('validating', false);
+            DraftController::remove();
         }
         $cats = WorkoutCategory::all();
         return view('panel.workouts.create', compact('cats'));
@@ -98,10 +103,14 @@ class WorkoutController extends Controller
     {
         abort_unless(\Gate::allows(Permission::WORKOUT_EDIT), 403);
 
-        if (!(session()->has('validating') && session()->get('validating') === true)) {
-            DraftController::remove();
+        if (session()->has('validating')) {
+            if (session()->get('validating') === true) {
+                session()->put('validating', false);
+            } else {
+                DraftController::remove();
+            }
         } else {
-            session()->put('validating', false);
+            DraftController::remove();
         }
         $workout = Workout::find($id);
         $cats = WorkoutCategory::all();

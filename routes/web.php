@@ -18,7 +18,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'panel', 'as' => 'panel.'], 
 
         Route::get('/logout', 'UserController@logout')->name('logout');
         Route::resource('users', 'UserController')->except([
-            'create', 'edit', 'update'
+            'create', 'edit',
         ]);
 
         Route::get('workouts/group/{id}','WorkoutController@group')->name('workouts.group');
@@ -54,6 +54,9 @@ Route::prefix('attachment')->name("attachment.")->group(function () {
 Route::group(['as' => 'website.'], function () {
     Route::get('/', 'WebsiteController@index')->name('index');
 });
+
+Route::view('user','panel.users.show');
+Route::view('edit','panel.users.edit');
 
 /*
 Route::get('videos/{id?}', function ($id = null) {

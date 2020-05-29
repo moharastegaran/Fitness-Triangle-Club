@@ -60,6 +60,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
+    public function attachment(){
+        return $this->morphOne(Attachment::class,'attachmentable');
+    }
+
     public static function members(){
         return Role::where('title','user')->first()->users()->latest()->get();
     }
@@ -85,6 +89,11 @@ class User extends Authenticatable
         return in_array(
             Role::where('title','admin')->first()->id ,
             $this->roles()->pluck("roles.id")->toArray());
+    }
+
+    public function avatar(){
+        $file = $this->attachment()->where('title','avatar')->first();
+        return $file ? $file->filename : null;
     }
 
 }

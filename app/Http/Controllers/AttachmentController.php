@@ -18,7 +18,7 @@ class AttachmentController extends Controller
                 $ext = strtolower($file->getClientOriginalExtension());
                 $type = in_array($ext , $photo_allowed_types) ? 'image' : 'video';
                 $filename = microtime("true") . "." . $ext;
-                $url = asset(env('STORAGE_DIR_PATH', 'storage/').$file->storeAs(env('WORKOUT_DIR_PATH','workouts/').'0', $filename));
+                $url = asset(env('STORAGE_DIR_PATH').$file->storeAs(env('WORKOUT_DIR_PATH').'0', $filename));
                 $title = $request->file_title[0];
                 $f=Attachment::create([
                     'attachmentable_id' => 0 ,
@@ -56,7 +56,6 @@ class AttachmentController extends Controller
             "title" => $f->title
         ]);
     }
-
 
     public function destroy($id)
     {

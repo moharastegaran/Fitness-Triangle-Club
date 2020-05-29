@@ -12,6 +12,7 @@ use App\UserAthletic;
 use App\UserMedical;
 use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
@@ -45,18 +46,18 @@ class UserController extends Controller
     public function updatePersonal(UserPersonalRequest $request, User $user)
     {
         $data = $request->all();
-        if ($request->password) {
-            if (Hash::check($request->password, $user->password)) {
-                $data['password'] = bcrypt($request->new_pwd);
-            } else {
-                return redirect()->back()->withErrors([
-                    'password' => 'گذرواژه فعلی وارد شده مطابقت ندارد'
-                ]);
-            }
-        } else {
-            $data['password'] = $user->password;
-        }
-        $data['birthday'] = CalendarUtils::createCarbonFromFormat('Y-m-d', $data['birthday'])->toDateString();
+//        if ($request->password) {
+//            if (Hash::check($request->password, $user->password)) {
+//                $data['password'] = bcrypt($request->new_pwd);
+//            } else {
+//                return redirect()->back()->withErrors([
+//                    'password' => 'گذرواژه فعلی وارد شده مطابقت ندارد'
+//                ]);
+//            }
+//        } else {
+//            $data['password'] = $user->password;
+//        }
+        $data['birthday'] = CalendarUtils::createCarbonFromFormat('Y-m-d', $data['birth_year'] . '-' . $data['birth_month'] . '-' . $data['birth_day'])->toDateString();
         $user->update($data);
         return redirect()->back();
     }
@@ -70,6 +71,9 @@ class UserController extends Controller
             $data['user_id'] = $user->id;
             UserMedical::create($data);
         }
+
+        $this->uploadMedicalAttachment($request, $user);
+
         return redirect()->back();
     }
 
@@ -85,21 +89,20 @@ class UserController extends Controller
         return redirect()->back();
     }
 
-    public function uploadMedicalAttachment(Request $request)
+    public function uploadMedicalAttachment(Request $request, $user)
     {
-        $user = auth()->user();
         if ($request->hasFile("file")) {
-            $dir = env('MEDICAL_DIR_PATH');
+            $dir = env('STORAGE_DIR_PATH') . env('MEDICAL_DIR_PATH');
             if ($user->medical) {
                 if ($user->medical->attachment)
-                    Storage::deleteDirectory($dir . $user->id);
+                    File::deleteDirectory(public_path($dir . $user->id));
             } else {
                 return \response()->json([
                     'message' => 'ابتدا اطلاعات لازم را وارد کنید',
                     'class' => 'medical'
                 ], 404);
             }
-            return $this->uploadAttachment($request->file, $user->medical->attachment, $dir, $user->medical());
+            return $this->uploadAttachment($request->file, $user->medical->attachment, $dir, $user->medical, 'medical');
         } else {
             return "fuck uuu";
         }
@@ -109,7 +112,7 @@ class UserController extends Controller
     {
         $user = auth()->user();
         return Response::download(
-            storage_path('app/public/' . env('MEDICAL_DIR_PATH') . $user->id . '/' . $user->medical->attachment->filename));
+            public_path(env('MEDICAL_DIR_PATH') . $user->id . '/' . $user->medical->attachment->filename));
     }
 
     public function uploadAthleticImageAttachment(Request $request)
@@ -123,7 +126,7 @@ class UserController extends Controller
             } else {
                 UserAthletic::create(['user_id' => $user->id]);
             }
-            return $this->uploadAttachment($request->file, $user->athletic->image(), $dir, $user->athletic());
+            return $this->uploadAttachment($request->file, $user->athletic->image(), $dir, $user->athletic);
         } else {
             return "fuck uuu";
         }
@@ -148,7 +151,7 @@ class UserController extends Controller
             } else {
                 UserAthletic::create(['user_id' => $user->id]);
             }
-            return $this->uploadAttachment($request->file, $user->athletic->test(), $dir, $user->athletic(), 'test');
+            return $this->uploadAttachment($request->file, $user->athletic->test(), $dir, $user->athletic, 'test');
         } else {
             return "fuck uuu";
         }
@@ -162,7 +165,7 @@ class UserController extends Controller
 
     }
 
-    private function uploadAttachment($file, $attachment, $dir, $attachmentable, $type = null)
+    private function uploadAttachment($file, $attachment, $dir, $object, $title)
     {
         $user = auth()->user();
         $ext = strtolower($file->getClientOriginalExtension());
@@ -174,11 +177,11 @@ class UserController extends Controller
             $isFirst = false;
         } else {
             Attachment::create([
-                'attachmentable_id' => $attachmentable->first()->id,
-                'attachmentable_type' => get_class($attachmentable->getRelated()),
-                'type' => $type ?: 'image',
+                'attachmentable_id' => $object->id,
+                'attachmentable_type' => get_class($object),
+                'type' => 'image',
                 'filename' => $filename,
-                'title' => null
+                'title' => $title
             ]);
             $isFirst = true;
         }
@@ -192,18 +195,19 @@ class UserController extends Controller
 
     /* ADMIN USERS */
 
-    public function store(Request $request){
-        $this->validate($request,[
+    public function store(Request $request)
+    {
+        $this->validate($request, [
             'name' => 'required',
             'family' => 'required',
             'mobile' => 'required',
-        ],[
-            'name.required' => 'وارد کردن نام الزامی است' ,
-            'family.required' => 'وارد کردن نام خانوادگی الزامی است' ,
+        ], [
+            'name.required' => 'وارد کردن نام الزامی است',
+            'family.required' => 'وارد کردن نام خانوادگی الزامی است',
             'mobile.required' => 'وارد کردن موبایل الزامی است'
         ]);
 
-        $data= $request->all();
+        $data = $request->all();
         $data['password'] = bcrypt('123456');
         $user = User::create($data);
         $user->roles()->sync(2);
@@ -222,9 +226,110 @@ class UserController extends Controller
         return redirect()->back()->with('success', 'کاربر مورد نظر با موفقیت حذف شد.');
     }
 
-    public function logout(){
+    public function logout()
+    {
         auth()->logout();
         return redirect()->to('/');
     }
 
+    public function update(Request $request, $id)
+    {
+        $data = $request->all();
+        $user = User::find($id);
+
+        $data['birthday'] = CalendarUtils::createCarbonFromFormat('Y-m-d', $data['birth_year'].'-'.$data['birth_month'].'-'.$data['birth_day'])->toDateString();
+        $user->update(collect($data)->only(['name', 'family', 'email', 'mobile', 'birthday'])->toArray());
+
+        if ($request->hasFile("avatar")) {
+            $dir = env('AVATAR_DIR_PATH') . $user->id;
+            File::deleteDirectory($dir);
+
+            $file = $request->file("avatar");
+            $ext = strtolower($file->getClientOriginalExtension());
+            $filename = microtime("true") . "." . $ext;
+            $file->storeAs($dir, $filename);
+
+            if ($user->avatar()) {
+                $file = $user->attachment;
+                $file->filename = $filename;
+                $file->save();
+            } else {
+                Attachment::create([
+                    'attachmentable_id' => $user->id,
+                    'attachmentable_type' => User::class,
+                    'type' => 'image',
+                    'filename' => $filename,
+                    'title' => 'avatar'
+                ]);
+            }
+        }
+
+        $medical_data = collect($data)->only(['blood_type', 'height', 'weight', 'disease_history', 'injury_history'])->toArray();
+        $user_medical = $user->medical;
+        if ($user_medical) {
+            $user_medical->update($medical_data);
+        } else {
+            $medical_data['user_id'] = $user->id;
+            $user_medical = UserMedical::create($medical_data);
+        }
+
+        if ($request->hasFile("injury_result_test")) {
+            $dir = env('MEDICAL_DIR_PATH') . $user->id;
+            File::deleteDirectory($dir);
+
+            $file = $request->file("injury_result_test");
+            $ext = strtolower($file->getClientOriginalExtension());
+            $filename = microtime("true") . "." . $ext;
+            $file->storeAs($dir, $filename);
+
+            if ($user_medical && $user_medical->attachment) {
+                $file = $user_medical->attachment;
+                $file->filename = $filename;
+                $file->save();
+            } else {
+                Attachment::create([
+                    'attachmentable_id' => $user_medical->id,
+                    'attachmentable_type' => UserMedical::class,
+                    'type' => 'image',
+                    'filename' => $filename,
+                    'title' => 'injury'
+                ]);
+            }
+        }
+
+        $user_athletic = $user->athletic;
+        $athletic_data = collect($data)->only(['target','athletic_history'])->toArray();
+        if ($user_athletic) {
+            $user_athletic->update($data);
+        } else {
+            $athletic_data['user_id'] = $user->id;
+            UserAthletic::create($athletic_data);
+        }
+
+        if ($request->hasFile("body_custom_test")) {
+            $dir = env('ATHLETIC_TEST_DIR_PATH') . $user->id;
+            File::deleteDirectory($dir);
+
+            $file = $request->file("body_custom_test");
+            $ext = strtolower($file->getClientOriginalExtension());
+            $filename = microtime("true") . "." . $ext;
+            $file->storeAs($dir, $filename);
+
+            if ($user_athletic && $user_athletic->test()) {
+                $file = $user_athletic->test();
+                $file->filename = $filename;
+                $file->save();
+            } else {
+                Attachment::create([
+                    'attachmentable_id' => $user_athletic->id,
+                    'attachmentable_type' => UserAthletic::class,
+                    'type' => 'image',
+                    'filename' => $filename,
+                    'title' => 'test'
+                ]);
+            }
+        }
+
+        return redirect()->back();
+    }
 }

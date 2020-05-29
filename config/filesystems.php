@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DRIVER', 'public'),
+    'default' => env('FILESYSTEM_DRIVER', 'custom'),
 
     /*
     |--------------------------------------------------------------------------
@@ -48,6 +48,13 @@ return [
             'root' => storage_path('app'),
         ],
 
+        'custom' => [
+            'driver' => 'local' ,
+            'root' => public_path('assets'),
+            'url' => env('APP_URL').'/assets',
+            'visibility' => 'public',
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
@@ -57,7 +64,7 @@ return [
 
         'draft' => [
             'driver' => 'local',
-            'root' => storage_path('app/public/').env('WORKOUT_DIR_PATH').'0',
+            'root' => public_path('assets\\').env('WORKOUT_DIR_PATH').'0',
         ],
 
         's3' => [

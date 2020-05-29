@@ -9,8 +9,6 @@
 
 @section('content')
 
-    @include('layouts.alert')
-
     <div class="col-md-11 col-12 mx-auto">
         <div class="statbox widget box box-shadow">
             <div class="widget-header pt-3 px-3">
