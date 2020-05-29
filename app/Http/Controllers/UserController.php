@@ -215,9 +215,16 @@ class UserController extends Controller
         return redirect()->route('panel.admin.users.index');
     }
 
-    public function show(User $user)
+    public function show($id)
     {
-        return view('adminlte.users.show', compact('user'));
+        $user = User::find($id);
+        return view('panel.users.show', compact('user'));
+    }
+
+    public function edit($id)
+    {
+        $user = User::find($id);
+        return view('panel.users.edit',compact('user'));
     }
 
     public function destroy(User $user)
@@ -237,7 +244,7 @@ class UserController extends Controller
         $data = $request->all();
         $user = User::find($id);
 
-        $data['birthday'] = CalendarUtils::createCarbonFromFormat('Y-m-d', $data['birth_year'].'-'.$data['birth_month'].'-'.$data['birth_day'])->toDateString();
+        $data['birthday'] = CalendarUtils::createCarbonFromFormat('Y-m-d', $data['birth_year'] . '-' . $data['birth_month'] . '-' . $data['birth_day'])->toDateString();
         $user->update(collect($data)->only(['name', 'family', 'email', 'mobile', 'birthday'])->toArray());
 
         if ($request->hasFile("avatar")) {
@@ -298,7 +305,7 @@ class UserController extends Controller
         }
 
         $user_athletic = $user->athletic;
-        $athletic_data = collect($data)->only(['target','athletic_history'])->toArray();
+        $athletic_data = collect($data)->only(['target', 'athletic_history'])->toArray();
         if ($user_athletic) {
             $user_athletic->update($data);
         } else {
@@ -330,6 +337,6 @@ class UserController extends Controller
             }
         }
 
-        return redirect()->back();
+        return redirect()->route('panel.admin.users.show',$id);
     }
 }

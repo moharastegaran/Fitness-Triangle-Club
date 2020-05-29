@@ -18,7 +18,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'panel', 'as' => 'panel.'], 
 
         Route::get('/logout', 'UserController@logout')->name('logout');
         Route::resource('users', 'UserController')->except([
-            'create', 'edit',
+            'create',
         ]);
 
         Route::get('workouts/group/{id}','WorkoutController@group')->name('workouts.group');

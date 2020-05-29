@@ -10,19 +10,15 @@
 @section('style')
     <link rel="stylesheet" type="text/css" href="{{ asset('cork/plugins/dropify/dropify.min.css') }}">
     <link href="{{ asset('cork/assets/css/users/account-setting.css') }}" rel="stylesheet" type="text/css"/>
-    <link href="{{ asset('cork/plugins/file-upload/file-upload-with-preview.min.css') }}" rel="stylesheet"
+    <link href="{{ asset('cork/plugins/file-upload/file-upload-with-preview.min.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
-    @php
-        $user = auth()->user();
-    @endphp
-    <div class="account-settings-container layout-top-spacing">
-        <form method="post" action="{{ route('panel.admin.users.update',$user->id) }}" enctype="multipart/form-data">
-
+    <div class="col-12 account-settings-container layout-top-spacing mx-md-3">
+        <form method="post" action="{{ route('panel.admin.users.update',$user->id) }}" enctype="multipart/form-data" class="mx-auto">
             @csrf
             @method('PUT')
-            <div class="account-content">
+            <div class="account-content mx-auto">
                 <div class="scrollspy-example" data-spy="scroll" data-target="#account-settings-scroll"
                      data-offset="-100">
                     <div class="row">
@@ -30,11 +26,11 @@
                             <div class="section general-info">
                                 <div class="info">
                                     <h6 class="">اطلاعات شخصی</h6>
-                                    <div class="row">
+                                    {{--<div class="row">--}}
                                         <div class="col-lg-11 mx-auto">
-                                            <div class="row">
-                                                <div class="col-xl-2 col-lg-12 col-md-4">
-                                                    <div class="upload mt-4 pr-md-4">
+                                            <div class="row mx-auto">
+                                                <div class="col-xl-2 col-lg-12 col-md-4 text-center">
+                                                    <div class="upload mt-4 pr-md-4 mx-auto">
                                                         <input type="file" id="input-file-max-fs" class="dropify"
                                                                data-default-file="assets/img/200x200.jpg"
                                                                data-max-file-size="2M" name="avatar"/>
@@ -43,7 +39,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-xl-10 col-lg-12 col-md-8 mt-md-0 mt-4">
-                                                    <div class="form">
+                                                    {{--<div class="form">--}}
                                                         <div class="row">
                                                             <div class="col-sm-4">
                                                                 <div class="form-group">
@@ -160,11 +156,11 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    {{--</div>--}}
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    {{--</div>--}}
                                 </div>
                             </div>
                         </div>
@@ -178,35 +174,35 @@
                                             <div class="form-group">
                                                 <label for="blood_type">گروه خونی</label>
                                                 <select class="form-control" id="blood_type" name="blood_type">
-                                                    <option value="A+"
+                                                    <option value="A+" dir="ltr"
                                                             @if($user->medical && $user->medical->blood_type=='A+') selected @endif>
                                                         A+
                                                     </option>
-                                                    <option value="B+"
+                                                    <option value="B+" dir="ltr"
                                                             @if($user->medical && $user->medical->blood_type=='B+') selected @endif>
                                                         B+
                                                     </option>
-                                                    <option value="O+"
+                                                    <option value="O+" dir="ltr"
                                                             @if($user->medical && $user->medical->blood_type=='O+') selected @endif>
                                                         O+
                                                     </option>
-                                                    <option value="AB+"
+                                                    <option value="AB+" dir="ltr"
                                                             @if($user->medical && $user->medical->blood_type=='AB+') selected @endif>
                                                         AB+
                                                     </option>
-                                                    <option value="A-"
+                                                    <option value="A-" dir="ltr"
                                                             @if($user->medical && $user->medical->blood_type=='A-') selected @endif>
                                                         A-
                                                     </option>
-                                                    <option value="B-"
+                                                    <option value="B-" dir="ltr"
                                                             @if($user->medical && $user->medical->blood_type=='B-') selected @endif>
                                                         B-
                                                     </option>
-                                                    <option value="O-"
+                                                    <option value="O-" dir="ltr"
                                                             @if($user->medical && $user->medical->blood_type=='O-') selected @endif>
                                                         O-
                                                     </option>
-                                                    <option value="AB-"
+                                                    <option value="AB-" dir="ltr"
                                                             @if($user->medical && $user->medical->blood_type=='AB-') selected @endif>
                                                         AB-
                                                     </option>
@@ -232,7 +228,7 @@
                                         <div class="col-lg-4 col-md-6 col-sm-6 col-12 mx-auto">
                                             <div class="form-group">
                                                 <label for="disease_history">سابقه بیماری</label>
-                                                <textarea type="text" class="form-control mb-4" rows="10"
+                                                <textarea type="text" class="form-control mb-4 text-justify" rows="10"
                                                           style="resize: none"
                                                           id="disease_history"
                                                           name="disease_history">{{ $user->medical ? $user->medical->disease_history : '' }}</textarea>
@@ -241,7 +237,7 @@
                                         <div class="col-lg-4 col-md-6 col-sm-6 col-12 mx-auto">
                                             <div class="form-group">
                                                 <label for="injury_history">سابقه مصدومیت</label>
-                                                <textarea type="text" class="form-control mb-4" rows="10"
+                                                <textarea type="text" class="form-control mb-4 text-justify" rows="10"
                                                           style="resize: none"
                                                           id="injury_history"
                                                           name="injury_history">{{ $user->medical ? $user->medical->injury_history : '' }}</textarea>
@@ -277,7 +273,7 @@
                                         <div class="col-lg-4 col-md-6 col-sm-6 col-12 mx-auto">
                                             <div class="form-group">
                                                 <label for="disease_history">هدف از تمرین</label>
-                                                <textarea type="text" class="form-control mb-4" rows="10"
+                                                <textarea type="text" class="form-control mb-4 text-justify" rows="10"
                                                           style="resize: none"
                                                           id="disease_history"
                                                           name="target">{{ $user->athletic ? $user->athletic->target : '' }}</textarea>
@@ -286,7 +282,7 @@
                                         <div class="col-lg-4 col-md-6 col-sm-6 col-12 mx-auto">
                                             <div class="form-group">
                                                 <label for="injury_history">سابقه تمرینی</label>
-                                                <textarea type="text" class="form-control mb-4" rows="10"
+                                                <textarea type="text" class="form-control mb-4 text-justify" rows="10"
                                                           style="resize: none"
                                                           id="injury_history"
                                                           name="athletic_history">{{ $user->athletic ? $user->athletic->athletic_history : '' }}</textarea>
@@ -347,6 +343,8 @@
 
             @if($user->avatar())
             $(".dropify-render img").attr("src", '{{  asset(env('STORAGE_DIR_PATH').env('AVATAR_DIR_PATH').$user->id.'/'.$user->avatar()) }}');
+            @else
+            $(".dropify-render img").attr("src",'{{ asset('icons/user.png') }}');
             @endif
 
             @if($user->medical && $user->medical->attachment)
