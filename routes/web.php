@@ -53,6 +53,8 @@ Route::prefix('attachment')->name("attachment.")->group(function () {
 //website routes
 Route::group(['as' => 'website.'], function () {
     Route::get('/', 'WebsiteController@index')->name('index');
+    Route::get('/articles/all','WebsiteController@articles')->name('articles');
+    Route::get('/article/{id}','WebsiteController@article')->name('article');
 });
 
 Route::view('user','panel.users.show');

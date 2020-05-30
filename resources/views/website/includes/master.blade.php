@@ -144,8 +144,8 @@
             <div class="menu-box">
                 <nav class="full-menu">
                     <ul class="navigation">
-                        <li><a href="index.html">خانه</a></li>
-                        <li><a href="index.html">مقالات</a></li>
+                        <li><a href="{{ route('website.index') }}">خانه</a></li>
+                        <li><a href="{{ route('website.articles') }}">مقالات</a></li>
                         <li><a href="index.html">درباره ما</a></li>
                         <li><a href="index.html">پرسش های متداول</a></li>
                         <li><a href="index.html">تماس با ما</a></li>

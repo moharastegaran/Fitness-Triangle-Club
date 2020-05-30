@@ -69,7 +69,7 @@
             var firstUpload = new FileUploadWithPreview('myFirstImage');
             @if($blog->attachment)
             $(".custom-file-container__image-preview").css({
-                backgroundImage : 'url(/{{ env("STORAGE_DIR_PATH").env("ARTICLE_DIR_PATH").$blog->attachment->filename }})'
+                backgroundImage : 'url({{ asset(env("STORAGE_DIR_PATH").env("ARTICLE_DIR_PATH").$blog->attachment->filename) }})'
             })
             @endif
         });

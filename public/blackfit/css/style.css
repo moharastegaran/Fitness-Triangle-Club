@@ -39,9 +39,9 @@
 
 **********************************************/
 
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+/*@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');*/
 
-/* font-family: 'Poppins', sans-serif; */
+/* font-family : iransans_web; */
 
 @import url('font-awesome.css');
 @import url('flaticon.css');
@@ -102,7 +102,7 @@
  ***/
 
 body {
-	font-family: 'MonumentExtended-Regular';
+	font-family: iransans_web;
 	font-size:14px;
 	color:#777777;
 	line-height:1.7em;
@@ -134,7 +134,7 @@ h1,h2,h3,h4,h5,h6 {
 	margin:0px;
 	background:none;
 	line-height:1.6em;
-	font-family: 'MonumentExtended-Ultrabold';
+	font-family: iransans_web;
 }
 
 input,button,select,textarea{
@@ -298,7 +298,7 @@ img{
 	background-color: transparent;
 	cursor: pointer;
 	text-decoration: none;
-	font-family: 'Poppins', sans-serif;
+	font-family: iransans_web;
 }
 
 .custom-btn:hover {
@@ -335,7 +335,7 @@ img{
 	color: #ffffff;
 	font-size: 16px;
 	font-weight: 600;
-	font-family: 'Poppins', sans-serif;
+	font-family: iransans_web;
 }
 
 /*Btn Style One*/
@@ -353,7 +353,7 @@ img{
 	border-radius:0px;
 	text-transform: uppercase;
 	border:2px solid rgba(255,255,255,0.20);
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	transition: all 300ms ease;
     -moz-transition: all 300ms ease;
     -webkit-transition: all 300ms ease;
@@ -411,7 +411,7 @@ img{
 	border-radius:0px;
 	text-transform: uppercase;
 	border:2px solid #000000;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	transition: all 300ms ease;
     -moz-transition: all 300ms ease;
     -webkit-transition: all 300ms ease;
@@ -469,7 +469,7 @@ img{
 	letter-spacing:2px;
 	background: #000000 !important;
 	text-transform: capitalize;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .btn-style-three .txt{
@@ -776,7 +776,7 @@ img{
     font-weight: 400;
     line-height: 1.6em;
     margin-top: 18px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .sec-title.light h2{
@@ -825,7 +825,7 @@ img{
 	font-size:17px;
 	opacity:0.5;
 	margin-top:30px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .sec-title-two.black h2{
@@ -976,7 +976,7 @@ img{
 	font-size:16px;
 	letter-spacing:1px;
 	text-transform:uppercase;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
  
 .main-header .sticky-header .navbar-header{
@@ -1117,7 +1117,7 @@ img{
 	text-align:center;
 	line-height:18px;
 	background-color:#ffffff;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .main-header.header-style-three .outer-box .cart-box .cart-box-btn:hover{
@@ -1175,7 +1175,7 @@ img{
 	line-height:1.4em;
     letter-spacing: 1px;
     text-transform: capitalize;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .main-header .outer-box .cart-product .inner h3 a{
@@ -1198,7 +1198,7 @@ img{
     font-weight: 300;
     color: #ffffff;
 	margin-top:5px;
-    font-family: 'Poppins', sans-serif;
+    font-family : iransans_web;
 }
 
 .main-header .outer-box .cart-box .cart-panel{
@@ -1226,7 +1226,7 @@ img{
 	font-weight:400;
 	margin-bottom:15px;
 	text-transform:capitalize;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .main-header .outer-box .cart-box .cart-panel .cart-total span{
@@ -1314,7 +1314,7 @@ img{
 	-webkit-transition:all 500ms ease;
 	-ms-transition:all 500ms ease;
 	-o-transition:all 500ms ease;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .sticky-header .main-menu .navigation > li{
@@ -1377,7 +1377,7 @@ img{
 	font-size:15px;
 	text-transform:capitalize;
 	color:#ffffff;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	transition:all 500ms ease;
 	-moz-transition:all 500ms ease;
 	-webkit-transition:all 500ms ease;
@@ -1461,7 +1461,7 @@ img{
 	font-size:15px;
 	text-transform:capitalize;
 	color:#ffffff;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	transition:all 500ms ease;
 	-moz-transition:all 500ms ease;
 	-webkit-transition:all 500ms ease;
@@ -1580,7 +1580,7 @@ body.visible-menu-bar .fullscreen-menu{
 	-ms-transition: all 700ms ease;
 	-o-transition: all 700ms ease;
 	-moz-transition: all 700ms ease;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .fullscreen-menu .close-menu:hover{
@@ -1675,7 +1675,7 @@ body.visible-menu-bar .fullscreen-menu{
 	-webkit-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .fullscreen-menu .full-menu .navigation > li > ul > li > a:hover{
@@ -1903,7 +1903,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-size: 15px;
 	color: #ffffff;
 	text-transform: capitalize;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .mobile-menu .navigation li:hover > a,
@@ -2051,7 +2051,7 @@ body.visible-menu-bar .fullscreen-menu{
 	-ms-transition: all 1000ms ease;
 	-o-transition: all 1000ms ease;
 	transition: all 1000ms ease;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .banner-section .active .content-boxed .text{
@@ -2252,7 +2252,7 @@ body.visible-menu-bar .fullscreen-menu{
 	border-radius:0px;
 	background:none;
 	border:1px solid rgba(255,255,255,0.10);
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .form-group .ui-button .ui-icon{
@@ -2360,7 +2360,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-weight:300;
 	line-height:1.8em;
 	margin-bottom:20px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .testimonial-section .about-text p:last-child{
@@ -2572,7 +2572,7 @@ body.visible-menu-bar .fullscreen-menu{
 	opacity:0.80;
 	font-weight:400;
 	margin-top:18px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .service-block .inner-box .overlay-box-two .content .social-box{
@@ -2612,7 +2612,7 @@ body.visible-menu-bar .fullscreen-menu{
     font-weight: 300;
     line-height: 1.8em;
     margin-bottom: 80px;
-    font-family: 'Poppins', sans-serif;
+    font-family : iransans_web;
 }
 
 .we-are-section.style-two .video-box{
@@ -2976,7 +2976,7 @@ body.visible-menu-bar .fullscreen-menu{
 	margin-top:0px;
 	color:#ffffff;
 	opacity:0.3;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .fact-counter.style-two .column .inner .count-outer{
@@ -3098,7 +3098,7 @@ body.visible-menu-bar .fullscreen-menu{
 	margin-bottom:18px;
 	font-weight:400;
 	color:rgba(255,255,255,0.50);
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .price-block .inner-box .price-list li.hide{
@@ -3120,7 +3120,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-weight:400;
 	display:block;
 	font-size:16px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .price-block .inner-box .theme-btn{
@@ -3331,7 +3331,7 @@ body.visible-menu-bar .fullscreen-menu{
 	opacity:0.80;
 	font-weight:300;
 	margin-top:12px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .coach-block .inner-box .overlay-box-two .content .social-box{
@@ -3389,7 +3389,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-weight:400;
 	margin-left:20px;
 	margin-top:18px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .default-form .form-group input[type="text"],
@@ -3413,7 +3413,7 @@ body.visible-menu-bar .fullscreen-menu{
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
 	transition:all 300ms ease;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .default-form .form-group input[type="text"]:focus,
@@ -3443,7 +3443,7 @@ body.visible-menu-bar .fullscreen-menu{
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
 	transition:all 300ms ease;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .default-form button{
@@ -3579,7 +3579,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-weight:300;
 	font-style:italic;
 	text-align:center;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .testimonial-block-two .inner-box .author-name{
@@ -3590,7 +3590,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-weight:700;
 	text-align:center;
 	text-transform:capitalize;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .testimonial-block-two .inner-box .designation{
@@ -3601,7 +3601,7 @@ body.visible-menu-bar .fullscreen-menu{
 	margin-top:10px;
 	text-align:center;
 	font-weight:400;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .testimonial-section-two .client-thumb-outer{
@@ -3774,7 +3774,7 @@ body.visible-menu-bar .fullscreen-menu{
 	display:inline-block;
 	text-transform:uppercase;
 	border-bottom:1px solid transparent;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	-webkit-transition: -webkit-transform 0.4s ease;
 	transition: -webkit-transform 0.4s ease;
 	transition: transform 0.4s ease;
@@ -3849,7 +3849,7 @@ body.visible-menu-bar .fullscreen-menu{
 
 .news-block .inner-box .image .post-date{
 	position:absolute;
-	left:10px;
+	right:10px;
 	top:10px;
 	z-index:2;
 	width:70px;
@@ -3863,7 +3863,7 @@ body.visible-menu-bar .fullscreen-menu{
 	display:inline-block;
 	text-transform:uppercase;
 	background-color:rgba(0,0,0,0.90);
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	-webkit-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
@@ -3896,7 +3896,7 @@ body.visible-menu-bar .fullscreen-menu{
 .news-block .inner-box .image .content h4 a{
 	position:relative;
 	color:#ffffff;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .news-block .inner-box:hover .image .content h4 a{
@@ -3982,7 +3982,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-weight:600;
 	line-height:1.6em;
 	margin-bottom:15px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .main-footer .logo-widget .info-list li span{
@@ -4065,7 +4065,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-size:16px;
 	line-height:1.4em;
 	text-transform:uppercase;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .main-footer .news-widget .post h5 a{
@@ -4091,7 +4091,7 @@ body.visible-menu-bar .fullscreen-menu{
 	line-height:1em;
 	margin-top:10px;
 	opacity:0.20;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 /* Gallery Widget */
@@ -4140,7 +4140,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-size:16px;
 	line-height:1.8em;
 	margin-bottom:25px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 /* Newslettter Form */
@@ -4172,7 +4172,7 @@ body.visible-menu-bar .fullscreen-menu{
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
 	transition:all 300ms ease;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	border:1px solid rgba(255,255,255,0.40);
 }
 
@@ -4209,7 +4209,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-size:14px;
 	font-weight:300;
 	text-transform:uppercase;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 /*** 
@@ -4365,7 +4365,7 @@ body.visible-menu-bar .fullscreen-menu{
 	-ms-transition: all 1000ms ease;
 	-o-transition: all 1000ms ease;
 	transition: all 1000ms ease;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .banner-section-two .active .content-boxed .text{
@@ -4412,7 +4412,7 @@ body.visible-menu-bar .fullscreen-menu{
 	padding-top:18px;
 	margin-left:40px;
 	color:rgba(255,255,255,0.50);
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .banner-section-two .content-boxed .btns-box .play-box .play-btn{
@@ -4729,7 +4729,7 @@ body.visible-menu-bar .fullscreen-menu{
 	opacity:0.40;
 	margin-top:25px;
 	margin-bottom:25px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .fluid-section-one .content-column .btn-box .theme-btn{
@@ -4750,7 +4750,7 @@ body.visible-menu-bar .fullscreen-menu{
 	-webkit-transition:all 500ms ease;
 	-ms-transition:all 500ms ease;
 	-o-transition:all 500ms ease;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .fluid-section-one .content-column .btn-box .read-more:hover{
@@ -4886,7 +4886,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-size:16px;
 	line-height:1.8em;
 	margin-bottom:30px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 /*** 
@@ -5118,7 +5118,7 @@ body.visible-menu-bar .fullscreen-menu{
 	text-transform:uppercase;
 	transition:all 500ms ease;
 	border-bottom:2px solid transparent;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .timing-section .timing-info-tabs .timing-tabs .tab-btns .tab-btn.active-btn{
@@ -5281,7 +5281,7 @@ body.visible-menu-bar .fullscreen-menu{
 	display:block;
 	letter-spacing:2px;
 	text-transform:uppercase;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .accordion-box .block .content .text{
@@ -5292,7 +5292,7 @@ body.visible-menu-bar .fullscreen-menu{
 	line-height:1.9em;
 	font-size:16px;
 	margin-bottom:25px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .accordion-box .block .content .social-box{
@@ -5331,7 +5331,7 @@ body.visible-menu-bar .fullscreen-menu{
 	padding-bottom:6px;
 	text-transform:uppercase;
 	border-bottom:2px solid #ffffff;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 /*** 
@@ -5388,7 +5388,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-weight:900;
 	margin-bottom:20px;
 	text-transform:uppercase;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .fluid-section-five .image-column .table-outer .table-boxed{
@@ -5417,7 +5417,7 @@ body.visible-menu-bar .fullscreen-menu{
 	float:left;
 	padding:15px 15px;
 	text-transform:uppercase;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .fluid-section-five .image-column .table-outer .table-boxed .table-content .title .col:last-child{
@@ -5440,7 +5440,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-weight:500;
 	padding:15px 15px;
 	border-bottom:1px solid #b3b3b3;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .fluid-section-five .image-column .table-outer .table-boxed ul li:last-child{
@@ -5661,12 +5661,12 @@ body.visible-menu-bar .fullscreen-menu{
 	font-size:16px;
 	font-weight:400;
 	text-transform:capitalize;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .page-breadcrumb li:after{
 	position:absolute;
-	content: "\f101";
+	content: "\f100";
 	right:-2px;
 	top:0px;
 	color:#ffffff;
@@ -5692,7 +5692,7 @@ body.visible-menu-bar .fullscreen-menu{
 	-webkit-transition:all 0.3s ease;
 	-ms-transition:all 0.3s ease;
 	-o-transition:all 0.3s ease;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .page-breadcrumb li a:hover{
@@ -5794,7 +5794,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-weight:300;
 	margin-bottom:30px;
 	letter-spacing:2px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .time-counter .time-countdown .counter-column .count{
@@ -5859,7 +5859,7 @@ body.visible-menu-bar .fullscreen-menu{
     line-height: 1.3em;
 	padding-bottom:12px;
     text-transform: uppercase;
-	font-family: 'MonumentExtended-Regular';
+	font-family: iransans_web_bold;
 	border-bottom:1px solid rgba(255,255,255,0.10);
 }
 
@@ -6002,7 +6002,7 @@ body.visible-menu-bar .fullscreen-menu{
 	margin-top:20px;
 	padding-bottom:25px;
 	border-bottom:1px solid #3d3d3d;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .trainer-detail .inner-box .title-box .category span{
@@ -6017,7 +6017,7 @@ body.visible-menu-bar .fullscreen-menu{
     font-weight: 300;
     line-height: 1.8em;
     margin-bottom: 20px;
-    font-family: 'Poppins', sans-serif;
+    font-family : iransans_web;
 }
 
 .trainer-detail .inner-box .column .image img{
@@ -6052,7 +6052,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-weight:300;
 	letter-spacing:3px;
 	text-transform:uppercase;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .trainer-detail .inner-box .post-share-options .social-box li{
@@ -6105,7 +6105,7 @@ body.visible-menu-bar .fullscreen-menu{
     font-weight: 300;
     line-height: 1.8em;
     margin-bottom: 20px;
-    font-family: 'Poppins', sans-serif;
+    font-family : iransans_web;
 }
 
 .comment-form .form-group{
@@ -6131,7 +6131,7 @@ body.visible-menu-bar .fullscreen-menu{
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
 	transition:all 300ms ease;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	border:1px solid rgba(255,255,255,0.10);
 }
 
@@ -6161,7 +6161,7 @@ body.visible-menu-bar .fullscreen-menu{
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
 	transition:all 300ms ease;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .comment-form .theme-btn{
@@ -6176,7 +6176,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-size:16px;
 	margin-top:18px;
 	margin-left:30px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 /* Bodybuilder Detail */
@@ -6214,7 +6214,7 @@ body.visible-menu-bar .fullscreen-menu{
     font-weight: 300;
     line-height: 1.8em;
     margin-bottom: 20px;
-    font-family: 'Poppins', sans-serif;
+    font-family : iransans_web;
 }
 
 .bodybuilder-detail .inner-box .blockquote{
@@ -6243,7 +6243,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-weight:300;
 	letter-spacing:3px;
 	text-transform:uppercase;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .bodybuilder-detail .post-share-options .social-box li{
@@ -6285,7 +6285,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-weight:300;
 	letter-spacing:3px;
 	text-transform:uppercase;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	-webkit-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
@@ -6305,6 +6305,7 @@ body.visible-menu-bar .fullscreen-menu{
 
 .sidebar-widget{
 	margin-bottom:80px;
+	text-align: right;
 }
 
 /* Gallery Widget */
@@ -6351,7 +6352,7 @@ body.visible-menu-bar .fullscreen-menu{
     font-size: 16px;
     line-height: 1.8em;
     margin-bottom: 25px;
-    font-family: 'Poppins', sans-serif;
+    font-family : iransans_web;
 }
 
 .sidebar .newsletter-form{
@@ -6381,7 +6382,7 @@ body.visible-menu-bar .fullscreen-menu{
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
 	transition:all 300ms ease;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	border:1px solid rgba(255,255,255,0.40);
 }
 
@@ -6416,6 +6417,7 @@ body.visible-menu-bar .fullscreen-menu{
 
 .blog-post-section .news-block{
 	margin-bottom:80px;
+	text-align: right;
 }
 
 .blog-post-section .lower-text{
@@ -6432,7 +6434,7 @@ body.visible-menu-bar .fullscreen-menu{
 	letter-spacing:2px;
 	display:inline-block;
 	text-transform:uppercase;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	-webkit-transition: -webkit-transform 0.4s ease;
 	transition: -webkit-transform 0.4s ease;
 	transition: transform 0.4s ease;
@@ -6504,7 +6506,7 @@ body.visible-menu-bar .fullscreen-menu{
 .news-block-two .inner-box .lower-content h4 a{
 	position:relative;
 	color:#ffffff;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .news-block-two .inner-box .lower-content h4 a:hover{
@@ -6522,7 +6524,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-size:16px;
 	margin-right:20px;
 	display:inline-block;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .news-block-two .inner-box .lower-content .post-info li span{
@@ -6537,7 +6539,7 @@ body.visible-menu-bar .fullscreen-menu{
     font-weight: 300;
     line-height: 1.8em;
     margin-top: 20px;
-    font-family: 'Poppins', sans-serif;
+    font-family : iransans_web;
 }
 
 .blog-classic-section .lower-text{
@@ -6553,7 +6555,7 @@ body.visible-menu-bar .fullscreen-menu{
 	letter-spacing:2px;
 	display:inline-block;
 	text-transform:uppercase;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	-webkit-transition: -webkit-transform 0.4s ease;
 	transition: -webkit-transform 0.4s ease;
 	transition: transform 0.4s ease;
@@ -6613,7 +6615,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-size:16px;
 	line-height:1.4em;
 	text-transform:uppercase;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .sidebar .news-widget .post h5 a{
@@ -6639,7 +6641,7 @@ body.visible-menu-bar .fullscreen-menu{
 	line-height:1em;
 	margin-top:10px;
 	opacity:0.20;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .sidebar .blog-cat{
@@ -6656,7 +6658,7 @@ body.visible-menu-bar .fullscreen-menu{
 	color:#4c4c4c;
 	font-size:16px;
 	text-transform:uppercase;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	-webkit-transition: all 300ms ease;
 	-moz-transition: all 300ms ease;
 	-ms-transition: all 300ms ease;
@@ -6676,6 +6678,7 @@ body.visible-menu-bar .fullscreen-menu{
 .related-posts.style-two{
 	margin-right:0px;
 	margin-left:30px;
+	text-align: right;
 }
 
 /* Bodybuilder Detail */
@@ -6683,6 +6686,7 @@ body.visible-menu-bar .fullscreen-menu{
 .blog-detail{
 	position:relative;
 	margin-bottom:50px;
+	text-align: right;
 }
 
 .blog-detail .inner-box{
@@ -6699,7 +6703,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-size:34px;
 	line-height:1.3em;
 	margin-bottom:50px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .blog-detail .inner-box .image{
@@ -6709,8 +6713,8 @@ body.visible-menu-bar .fullscreen-menu{
 
 .blog-detail .inner-box .image img{
 	position:relative;
-	width:100%;
-	display:block;
+	/*width:100%;*/
+	/*display:block;*/
 }
 
 .blog-detail .inner-box .post-info{
@@ -6725,7 +6729,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-size:16px;
 	margin-right:20px;
 	display:inline-block;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .blog-detail .inner-box .post-info li span{
@@ -6740,7 +6744,7 @@ body.visible-menu-bar .fullscreen-menu{
     font-weight: 300;
     line-height: 1.8em;
     margin-bottom: 20px;
-    font-family: 'Poppins', sans-serif;
+    font-family : iransans_web;
 }
 
 .blog-detail .inner-box .video-box{
@@ -6773,7 +6777,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-weight:300;
 	letter-spacing:3px;
 	text-transform:uppercase;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .blog-detail .post-share-options .social-box li{
@@ -6815,7 +6819,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-weight:300;
 	letter-spacing:3px;
 	text-transform:uppercase;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	-webkit-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
@@ -6913,7 +6917,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-weight:600;
 	line-height:1.6em;
 	margin-bottom:15px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .contact-page-section .info-column .info-list li:last-child{
@@ -6973,7 +6977,7 @@ body.visible-menu-bar .fullscreen-menu{
     font-weight: 300;
     line-height: 1.8em;
     margin-bottom: 20px;
-    font-family: 'Poppins', sans-serif;
+    font-family : iransans_web;
 }
 
 .contact-form .form-group{
@@ -6999,7 +7003,7 @@ body.visible-menu-bar .fullscreen-menu{
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
 	transition:all 300ms ease;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	border:1px solid rgba(255,255,255,0.10);
 }
 
@@ -7029,7 +7033,7 @@ body.visible-menu-bar .fullscreen-menu{
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
 	transition:all 300ms ease;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .contact-form .theme-btn{
@@ -7044,7 +7048,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-size:16px;
 	margin-top:18px;
 	margin-left:30px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 /* Shop Cat */
@@ -7063,7 +7067,7 @@ body.visible-menu-bar .fullscreen-menu{
 	color:#808080;
 	font-size:18px;
 	display:block;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	-webkit-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
@@ -7094,7 +7098,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-size:16px;
 	font-weight:400;
 	margin-top:10px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .range-slider-one .title:before{
@@ -7105,7 +7109,7 @@ body.visible-menu-bar .fullscreen-menu{
 	color:#848484;
 	font-size:16px;
 	font-weight:300;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .range-slider-one .input{
@@ -7115,7 +7119,7 @@ body.visible-menu-bar .fullscreen-menu{
 	padding-left:8px;
 	margin-top:10px;
     position: relative;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .range-slider-one .input input{
@@ -7195,7 +7199,7 @@ body.visible-menu-bar .fullscreen-menu{
 	color:#ffffff;
 	line-height:1.3em;
 	text-transform:capitalize;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .sidebar .related-posts .post h4 a{
@@ -7218,7 +7222,7 @@ body.visible-menu-bar .fullscreen-menu{
 	letter-spacing:1px;
 	font-weight:400;
 	color:#ffffff;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 /* Shop Section */
@@ -7236,7 +7240,7 @@ body.visible-menu-bar .fullscreen-menu{
 	position:relative;
 	color:#808080;
 	font-size:18px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .shop-section .items-sorting .total-items span{
@@ -7357,7 +7361,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-size:22px;
 	font-weight:500;
 	margin-bottom:6px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .shop-item .inner-box .lower-content h3 a{
@@ -7381,7 +7385,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-size:18px;
 	font-weight:300;
 	opacity:0.5;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .shop-item .inner-box .lower-content .cart{
@@ -7408,7 +7412,7 @@ body.visible-menu-bar .fullscreen-menu{
 	display:inline-block;
 	text-transform:uppercase;
 	border-bottom:1px solid #ffffff;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	-webkit-transition: -webkit-transform 0.4s ease;
 	transition: -webkit-transform 0.4s ease;
 	transition: transform 0.4s ease;
@@ -7523,7 +7527,7 @@ body.visible-menu-bar .fullscreen-menu{
 	line-height:1.4em;
 	color:#ffffff;
 	margin-bottom:15px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .product-details .basic-details .details-header h5 a{
@@ -7557,7 +7561,7 @@ body.visible-menu-bar .fullscreen-menu{
 	line-height:24px;
 	letter-spacing:1px;
 	margin-bottom:20px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .product-details .basic-details .text{
@@ -7568,7 +7572,7 @@ body.visible-menu-bar .fullscreen-menu{
     font-weight: 400;
     line-height: 1.7em;
 	margin-bottom:25px;
-    font-family: 'Poppins', sans-serif;
+    font-family : iransans_web;
 }
 
 .product-details .basic-details .availablity{
@@ -7617,7 +7621,7 @@ body.visible-menu-bar .fullscreen-menu{
 	background-color:#000000;
 	color:#ffffff;
 	font-size:24px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	border-color:rgba(255,255,255,0.20);
 }
 
@@ -7659,7 +7663,7 @@ body.visible-menu-bar .fullscreen-menu{
 	color:#ffffff;
 	font-size:18px;
 	margin-bottom:15px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .shop-list li strong{
@@ -7745,7 +7749,7 @@ body.visible-menu-bar .fullscreen-menu{
 	color:#ffffff;
 	font-size:26px;
 	text-transform:capitalize;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .cart-table thead tr th.prod-column{
@@ -7795,7 +7799,7 @@ body.visible-menu-bar .fullscreen-menu{
 	color:#ffffff;
 	font-weight:500;
 	margin-bottom:5px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .cart-table tbody tr .sub-total{
@@ -7803,7 +7807,7 @@ body.visible-menu-bar .fullscreen-menu{
 	color:#ffffff;	
 	font-size:18px;
 	padding-left:20px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .cart-table tbody tr .remove-btn{
@@ -7862,7 +7866,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-weight:400;
 	color:#ffffff;
 	padding-left:10px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .cart-table tbody tr td .quantity-spinner{
@@ -7936,7 +7940,7 @@ body.visible-menu-bar .fullscreen-menu{
 	color:#ffffff;
 	background:none;
 	font-size:14px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .cart-section .estimate-form{
@@ -8001,7 +8005,7 @@ body.visible-menu-bar .fullscreen-menu{
 	line-height:1.4em;
 	margin-bottom:25px;
 	font-weight:500;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .totals-table{
@@ -8014,7 +8018,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-weight:500;
 	font-size:18px;
 	margin-bottom:15px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .totals-table li .col{
@@ -8026,7 +8030,7 @@ body.visible-menu-bar .fullscreen-menu{
 	float:left;
 	color:#666666;
 	font-size:24px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .totals-table li.total{
@@ -8058,7 +8062,7 @@ body.visible-menu-bar .fullscreen-menu{
 	opacity:0.8;
 	font-weight:500;
 	text-transform:capitalize;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .shop-form .form-group{
@@ -8091,7 +8095,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-weight: 500;
 	margin-bottom:15px;
     text-transform: capitalize;
-    font-family: 'Poppins', sans-serif;
+    font-family : iransans_web;
 }
 
 .billing-details .checkout-order-box .upper-box{
@@ -8110,7 +8114,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-size:18px;
 	font-weight:300;
 	color:rgba(255,255,255,0.60);
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .billing-details .checkout-order-box .upper-box ul li i{
@@ -8146,7 +8150,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-size:18px;
 	font-weight:300;
 	color:rgba(255,255,255,0.60);
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .billing-details .checkout-order-box .lower-box ul li i{
@@ -8175,7 +8179,7 @@ body.visible-menu-bar .fullscreen-menu{
 	margin-top:25px;
 	margin-bottom:20px;
 	color:rgba(255,255,255,0.60);
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .billing-details .checkout-order-box button{
@@ -8191,7 +8195,7 @@ body.visible-menu-bar .fullscreen-menu{
 	opacity:0.7;
 	font-size:16px;
 	font-weight:300;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	text-transform:capitalize;
 }
 
@@ -8220,7 +8224,7 @@ body.visible-menu-bar .fullscreen-menu{
 	color:#ffffff;
 	font-size:16px;
 	font-weight:500;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	border:1px solid rgba(255,255,255,0.12);
 	transition:all 300ms ease;
 	-webkit-transition:all 300ms ease;
@@ -8269,7 +8273,7 @@ body.visible-menu-bar .fullscreen-menu{
     font-weight: 500;
 	margin-bottom:25px;
     text-transform: capitalize;
-    font-family: 'Poppins', sans-serif;
+    font-family : iransans_web;
 }
 
 
@@ -8296,7 +8300,7 @@ body.visible-menu-bar .fullscreen-menu{
 	color:#ffffff;
 	font-size:14px;
 	font-weight:400;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	border:1px solid rgba(255,255,255,0.12);
 	transition:all 300ms ease;
 	-webkit-transition:all 300ms ease;
@@ -8548,7 +8552,7 @@ body.visible-menu-bar .fullscreen-menu{
 	-ms-transition: all 700ms ease;
 	-o-transition: all 700ms ease;
 	-moz-transition: all 700ms ease;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .purchase-popup .close-search:hover{
@@ -8592,7 +8596,7 @@ body.visible-menu-bar .fullscreen-menu{
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
 	transition:all 300ms ease;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 	border:1px solid rgba(255,255,255,0.15);
 }
 
@@ -8630,7 +8634,7 @@ body.visible-menu-bar .fullscreen-menu{
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
 	transition:all 300ms ease;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .purchase-form .theme-btn{
@@ -8644,7 +8648,7 @@ body.visible-menu-bar .fullscreen-menu{
 	display:block;
 	margin-top:0px;
 	margin-bottom:20px;
-	font-family: 'Poppins', sans-serif;
+	font-family : iransans_web;
 }
 
 .we-are-section.margin{

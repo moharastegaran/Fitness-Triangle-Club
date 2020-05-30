@@ -18,4 +18,16 @@ class WebsiteController extends Controller
         return view('website.home');
     }
 
+    public function articles()
+    {
+        $articles = Blog::all();
+        return view('website.articles', compact('articles'));
+    }
+
+    public function article($id)
+    {
+        $article = Blog::find($id);
+        $others = Blog::where('id', '!=', $id)->get();
+        return view('website.article', compact('article', 'others'));
+    }
 }
