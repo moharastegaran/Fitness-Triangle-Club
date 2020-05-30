@@ -174,6 +174,7 @@
                                             <div class="form-group">
                                                 <label for="blood_type">گروه خونی</label>
                                                 <select class="form-control" id="blood_type" name="blood_type">
+                                                    <option value="" disabled selected>- انتخاب کنید -</option>
                                                     <option value="A+" dir="ltr"
                                                             @if($user->medical && $user->medical->blood_type=='A+') selected @endif>
                                                         A+

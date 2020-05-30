@@ -224,7 +224,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('panel.users.edit',compact('user'));
+        return view('panel.users.edit', compact('user'));
     }
 
     public function destroy(User $user)
@@ -275,7 +275,12 @@ class UserController extends Controller
         $user_medical = $user->medical;
         if ($user_medical) {
             $user_medical->update($medical_data);
-        } else {
+        } else if ($medical_data['blood_type'] ||
+            $medical_data['weight'] ||
+            $medical_data['height'] ||
+            $medical_data['disease_history'] ||
+            $medical_data['injury_history'] ||
+            $request->hasFile("injury_result_test")) {
             $medical_data['user_id'] = $user->id;
             $user_medical = UserMedical::create($medical_data);
         }
@@ -308,7 +313,9 @@ class UserController extends Controller
         $athletic_data = collect($data)->only(['target', 'athletic_history'])->toArray();
         if ($user_athletic) {
             $user_athletic->update($data);
-        } else {
+        } else if ($athletic_data['target'] ||
+            $athletic_data['athletic_history'] ||
+            $request->hasFile("body_custom_test")) {
             $athletic_data['user_id'] = $user->id;
             UserAthletic::create($athletic_data);
         }
@@ -337,6 +344,6 @@ class UserController extends Controller
             }
         }
 
-        return redirect()->route('panel.admin.users.show',$id);
+        return redirect()->route('panel.admin.users.show', $id);
     }
 }
