@@ -25,7 +25,7 @@ class WorkoutRequest extends FormRequest
     {
         $this->session()->put('validating',true);
         return [
-            'title' => 'required|string|unique:workouts' ,
+            'title' => 'required|string' ,
             'category_id' => 'required'
         ];
     }
@@ -35,8 +35,6 @@ class WorkoutRequest extends FormRequest
         return [
             'title.required' => 'وارد کردن نام حرکت الزامی است',
             'title.string' => 'نام حرکت به صورت رشته نوشته شود',
-            'title.unique' => 'حرکت با این اسم قبلا ثبت شده است',
-
             'category_id.required' => 'مشخص کردن دسته‌بندی تمرین الزامی است'
         ];
     }
