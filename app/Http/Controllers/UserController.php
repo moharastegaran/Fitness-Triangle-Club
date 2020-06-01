@@ -25,21 +25,14 @@ class UserController extends Controller
     public function dashboard()
     {
         $user = auth()->user();
-        return view('panel.dashboard')->with([
+        return view($user->isAdmin() ? 'panel.dashboard' : 'panel.users.show')->with([
             'user' => $user
         ]);
     }
 
     public function index()
     {
-        $users = User::latest()->get();
-        $q = request('q');
-        if ($q) {
-            $users = $users->where('name', 'like', "%$q%")
-                ->orWhere('family', 'like', "%$q%")
-                ->orWhere('mobile', 'like', "%$q%")
-                ->orWhere('email', 'like', "%$q%");
-        }
+        $users = User::members();
         return view('panel.users.index', compact('users'));
     }
 
@@ -212,7 +205,7 @@ class UserController extends Controller
         $user = User::create($data);
         $user->roles()->sync(2);
 
-        return redirect()->route('panel.admin.users.index');
+        return redirect()->route('panel.users.index');
     }
 
     public function show($id)
@@ -241,6 +234,22 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'family' => 'required',
+            'email' => 'nullable|email',
+            'mobile' => 'required|unique:users|digits:11|regex:/^0?9[0-39][0-9]{8}$/',
+        ], [
+            'name.required' => 'وارد کردن نام الزامی است.',
+            'family.required' => 'وارد کردن نام خانوادگی الزامی است.',
+            'email.required' => 'فرمت ایمیل به درستی وارد نشده است.',
+//            'email.unique' => 'وارد کردن ایمیل الزامی است.',
+            'mobile.required' => 'وارد کردن شماره تماس الزامی است.',
+            'mobile.unique' => ' شماره تماس قبلا در سیستم ثبت شده است.',
+            'mobile.digits' => 'شماره تماس ۱۱ رقمی است.',
+            'mobile.regex' => 'فرمت شماره تماس به درستی وارد نشده است.'
+        ]);
+
         $data = $request->all();
         $user = User::find($id);
 
@@ -344,6 +353,6 @@ class UserController extends Controller
             }
         }
 
-        return redirect()->route('panel.admin.users.show', $id);
+        return redirect()->route('panel.users.show', $id);
     }
 }

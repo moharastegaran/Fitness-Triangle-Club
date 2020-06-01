@@ -147,7 +147,7 @@
                     </div>
                 </div>
                 <div class="w-footer">
-                    <a href="{{ route('panel.admin.users.index') }}" class="w-100 btn btn-sm btn-rounded"
+                    <a href="{{ route('panel.users.index') }}" class="w-100 btn btn-sm btn-rounded"
                        style="background-image: linear-gradient(to left, #d09693 0%, #c71d6f 100%);">بیشتر</a>
                     {{--<div class="progress-bar bg-gradient-secondary" role="progressbar" style="width: 57%" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100"></div>--}}
                 </div>

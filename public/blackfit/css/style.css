@@ -1769,7 +1769,7 @@ body.visible-menu-bar .fullscreen-menu{
 .mobile-menu .nav-logo{
 	position:relative;
 	padding:50px 20px 10px;
-	text-align:left;	
+	text-align:right;
 }
 
 .mobile-menu .nav-logo img{
@@ -1902,7 +1902,7 @@ body.visible-menu-bar .fullscreen-menu{
 	padding: 10px 20px;
 	font-size: 15px;
 	color: #ffffff;
-	text-transform: capitalize;
+	text-align: right;
 	font-family : iransans_web;
 }
 
@@ -5818,7 +5818,7 @@ body.visible-menu-bar .fullscreen-menu{
 
 .sidebar-page-container{
 	position:relative;
-	padding:160px 0px 115px;
+	padding:80px 0px 115px;
 	background-color:#0c0c0c;
 }
 
@@ -7059,7 +7059,12 @@ body.visible-menu-bar .fullscreen-menu{
 
 .shop-cat li{
 	position:relative;
-	margin-bottom:12px;
+	padding:6px 0;
+	padding-right: 5px;
+}
+
+.shop-cat li.active{
+	background-color: rgba(89, 89, 89, 0.71);
 }
 
 .shop-cat li a{

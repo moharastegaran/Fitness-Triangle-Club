@@ -36,7 +36,6 @@
                         <option value="" disabled selected>گروه بندی را انتخاب کنید</option>
                         @foreach($cats as $cat)
                             <option value="{{ $cat->id }}"
-                                    {{--{{ dd(old('category_id')) }}--}}
                                     @if(old('category_id') && old('category_id')==$cat->id) selected
                                     @elseif(!old('category_id') && $workout->category->id==$cat->id) selected @endif>{{ $cat->title }}</option>
                         @endforeach
@@ -77,20 +76,30 @@
                     <div class="iransans-web-light">
                         <button class="btn btn-outline-success fileinput-button">
                             <span>آپلود فایل ها</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather feather-plus">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
                             <input type="file" name="files[]" multiple/>
                         </button>
                         {{--<button type="submit" class="btn btn-outline-primary start">--}}
-                            {{--<span>شروع آپلود</span>--}}
-                            {{--<i class="fas fa-upload"></i>--}}
+                        {{--<span>شروع آپلود</span>--}}
+                        {{--<i class="fas fa-upload"></i>--}}
                         {{--</button>--}}
                         <button type="reset" class="btn btn-outline-warning cancel">
                             <span>کنسل آپلود</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-slash"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather feather-slash">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+                            </svg>
                         </button>
                         {{--<button type="reset" class="btn btn-outline-danger delete">--}}
-                            {{--<span>حذف انتخاب‌ها</span>--}}
-                            {{--<i class="fas fa-trash-alt"></i>--}}
+                        {{--<span>حذف انتخاب‌ها</span>--}}
+                        {{--<i class="fas fa-trash-alt"></i>--}}
                         {{--</button>--}}
                         {{--<input type="checkbox" class="toggle" style="transform: scale(1.5);margin-right:.5rem;">--}}
                         {{--<span class="fileupload-process"></s    pan>--}}
@@ -131,12 +140,14 @@
                                                     <a class="fullscreen"
                                                        href="{{ asset($path.$workout->id.'/'.$file->filename) }}"
                                                        title="{{ $file->title }}"
-                                                       download="{{ $file->title }}">{{ $file->title }}</a>                                                </p>
+                                                       download="{{ $file->title }}">{{ $file->title }}</a></p>
                                             </div>
                                         </div>
 
                                         <div class="col-md-4 col-sm-2 col-12 text-center d-flex flex-wrap flex-md-row flex-sm-column-reverse flex-row justify-content-center align-items-center">
-                                            <button class="btn btn-outline-danger delete mr-md-1 mr-sm-0 mr-1" data-type="DELETE" data-url="{{ route('attachment.destroy',$file->id) }}">
+                                            <button class="btn btn-outline-danger delete mr-md-1 mr-sm-0 mr-1"
+                                                    data-type="DELETE"
+                                                    data-url="{{ route('attachment.destroy',$file->id) }}">
                                                 <i class="fas fa-trash-alt">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                          viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -150,7 +161,8 @@
                                                 </i>
                                                 <span>حذف</span>
                                             </button>
-                                            <button class="btn btn-outline-success my-1 update" data-type="PUT" data-url="{{ route('attachment.update',$file->id) }}">
+                                            <button class="btn btn-outline-success my-1 update" data-type="PUT"
+                                                    data-url="{{ route('attachment.update',$file->id) }}">
                                                 <input type="hidden" value="0">
                                                 <i class="fas fa-edit">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -202,12 +214,14 @@
                                                     <a class="fullscreen"
                                                        href="{{ asset($path.'0/'.$file->filename) }}"
                                                        title="{{ $file->title }}"
-                                                       download="{{ $file->title }}">{{ $file->title }}</a>                                                </p>
+                                                       download="{{ $file->title }}">{{ $file->title }}</a></p>
                                             </div>
                                         </div>
 
                                         <div class="col-md-4 col-sm-2 col-12 text-center d-flex flex-wrap flex-md-row flex-sm-column-reverse flex-row justify-content-center align-items-center">
-                                            <button class="btn btn-outline-danger delete mr-md-1 mr-sm-0 mr-1" data-type="DELETE" data-url="{{ route('attachment.destroy',$file->id) }}">
+                                            <button class="btn btn-outline-danger delete mr-md-1 mr-sm-0 mr-1"
+                                                    data-type="DELETE"
+                                                    data-url="{{ route('attachment.destroy',$file->id) }}">
                                                 <i class="fas fa-trash-alt">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                          viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -221,7 +235,8 @@
                                                 </i>
                                                 <span>حذف</span>
                                             </button>
-                                            <button class="btn btn-outline-success my-1 update" data-type="PUT" data-url="{{ route('attachment.update',$file->id) }}">
+                                            <button class="btn btn-outline-success my-1 update" data-type="PUT"
+                                                    data-url="{{ route('attachment.update',$file->id) }}">
                                                 <input type="hidden" value="0">
                                                 <i class="fas fa-edit">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"

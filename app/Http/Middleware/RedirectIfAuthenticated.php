@@ -24,7 +24,7 @@ class RedirectIfAuthenticated
             if (in_array($admin_id , \auth()->user()->roles()->pluck('roles.id')->toArray())){
                 return redirect()->route('panel.dashboard');
             }
-            return redirect()->route('home');
+            return redirect()->route('website.index');
         }
 
         return $next($request);

@@ -14,12 +14,13 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'panel', 'as' => 'panel.'], 
 
     Route::get('dashboard', 'UserController@dashboard')->name('dashboard');
 
+    Route::resource('users', 'UserController')->except([
+        'create',
+    ]);
+
     Route::group(['prefix' => 'admin', 'middleware' => ['admin'], 'as' => 'admin.'], function () {
 
         Route::get('/logout', 'UserController@logout')->name('logout');
-        Route::resource('users', 'UserController')->except([
-            'create',
-        ]);
 
         Route::get('workouts/group/{id}','WorkoutController@group')->name('workouts.group');
         Route::resource('workouts', 'WorkoutController');
@@ -52,13 +53,20 @@ Route::prefix('attachment')->name("attachment.")->group(function () {
 
 //website routes
 Route::group(['as' => 'website.'], function () {
+
     Route::get('/', 'WebsiteController@index')->name('index');
+    Route::get('/v', 'WebsiteController@videos')->name('videos');
     Route::get('/articles/all','WebsiteController@articles')->name('articles');
     Route::get('/article/{id}','WebsiteController@article')->name('article');
-});
 
-Route::view('user','panel.users.show');
-Route::view('edit','panel.users.edit');
+    Route::get('/users/join','WebsiteController@register')->name('users.join');
+    Route::post('/users/store','WebsiteController@store')->name('users.store');
+
+    Route::get('/users/login','WebsiteController@login')->name('users.login');
+    Route::post('/users/login','WebsiteController@check')->name('users.check');
+
+    Route::get('/users/logout','WebsiteController@logout')->name('users.logout');
+});
 
 /*
 Route::get('videos/{id?}', function ($id = null) {

@@ -7,24 +7,24 @@
     <nav id="sidebar">
         <div class="shadow-bottom"></div>
         <ul class="list-unstyled menu-categories" id="accordionExample">
-            <li class="menu active">
-                <a href="{{ route('panel.dashboard') }}"
-                   aria-expanded="{{ strpos($roueName,'panel.dashboard') !== false ? 'true' : 'false' }}"
-                   class="dropdown-toggle">
-                    <div class="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                             class="feather feather-home">
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                        </svg>
-                        <span class="iransans-web">داشبورد</span>
-                    </div>
-                </a>
-            </li>
             @if(auth()->user()->isAdmin())
+                <li class="menu active">
+                    <a href="{{ route('panel.dashboard') }}"
+                       aria-expanded="{{ strpos($roueName,'panel.dashboard') !== false ? 'true' : 'false' }}"
+                       class="dropdown-toggle">
+                        <div class="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                 class="feather feather-home">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            <span class="iransans-web">داشبورد</span>
+                        </div>
+                    </a>
+                </li>
                 <li class="menu">
-                    <a href="{{ route('panel.admin.users.index') }}"
+                    <a href="{{ route('panel.users.index') }}"
                        aria-expanded="{{ strpos($roueName,'admin.users')!==false ? 'true' : 'false' }}"
                        class="dropdown-toggle">
                         <div class="">
@@ -149,6 +149,84 @@
                                 <polyline points="13 2 13 9 20 9"></polyline>
                             </svg>
                             <span class="iransans-web">مقالات</span>
+                        </div>
+                    </a>
+                </li>
+            @else
+                <li class="menu active">
+                    <a href="{{ route('panel.users.show',auth()->user()) }}"
+                       aria-expanded="{{ strpos($roueName,'users.show')!==false ? 'true' : 'false' }}"
+                       class="dropdown-toggle">
+                        <div class="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather feather-user">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <span class="iransans-web">پروفایل من</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="menu">
+                    <a href="{{ route('panel.users.edit',auth()->user()) }}"
+                       aria-expanded="{{ strpos($roueName,'users.edit')!==false ? 'true' : 'false' }}"
+                       class="dropdown-toggle">
+                        <div class="">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 viewBox="0 0 29.643 29.643"  fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather">
+                                <g>
+                                    <path d="M18.621,12.397l-0.546-1.295c0,0,1.267-2.859,1.157-2.969l-1.678-1.639c-0.117-0.113-2.978,1.191-2.978,1.191l-1.32-0.533
+		c0,0-1.169-2.898-1.327-2.898h-2.37c-0.164,0-1.242,2.906-1.242,2.906L6.998,7.695c0,0-2.922-1.242-3.034-1.135L2.287,8.203
+		c-0.116,0.115,1.219,2.916,1.219,2.916l-0.544,1.295c0,0-2.962,1.139-2.962,1.295v2.322c0,0.16,2.969,1.217,2.969,1.217
+		l0.545,1.291c0,0-1.268,2.861-1.157,2.971l1.679,1.641c0.113,0.111,2.976-1.195,2.976-1.195l1.321,0.537
+		c0,0,1.166,2.896,1.326,2.896h2.37c0.163,0,1.244-2.906,1.244-2.906l1.32-0.535c0,0,2.918,1.242,3.031,1.135l1.678-1.643
+		c0.115-0.111-1.221-2.914-1.221-2.914l0.546-1.295c0,0,2.963-1.143,2.963-1.299v-2.32C21.591,13.453,18.621,12.397,18.621,12.397z
+		 M10.795,18.207c-1.905,0-3.459-1.52-3.459-3.387c0-1.865,1.554-3.385,3.459-3.385c1.908,0,3.459,1.52,3.459,3.385
+		C14.254,16.688,12.703,18.207,10.795,18.207z"/>
+                                    <path d="M28.538,9.693l0.014-0.676c0,0,1.118-1.006,1.091-1.076l-0.414-1.048c-0.031-0.072-1.544-0.062-1.544-0.062l-0.474-0.492
+		c0,0,0.058-1.502-0.013-1.533l-1.041-0.467c-0.074-0.033-1.117,1.035-1.117,1.035l-0.684-0.027c0,0-1.039-1.119-1.109-1.092
+		l-1.061,0.393c-0.071,0.025-0.036,1.518-0.036,1.518l-0.495,0.463c0,0-1.523-0.082-1.554-0.014l-0.457,1.02
+		c-0.032,0.072,1.065,1.119,1.065,1.119l-0.014,0.672c0,0-1.117,1.008-1.09,1.078l0.415,1.049c0.03,0.07,1.543,0.059,1.543,0.059
+		l0.473,0.494c0,0-0.055,1.502,0.016,1.533l1.041,0.465c0.072,0.033,1.116-1.029,1.116-1.029l0.685,0.023
+		c0,0,1.037,1.119,1.109,1.094l1.058-0.393c0.073-0.025,0.038-1.52,0.038-1.52l0.494-0.459c0,0,1.523,0.078,1.555,0.01l0.457-1.02
+		C29.634,10.74,28.538,9.693,28.538,9.693z M26.145,9.9c-0.367,0.82-1.347,1.184-2.187,0.809c-0.836-0.373-1.22-1.346-0.853-2.168
+		c0.365-0.818,1.348-1.18,2.184-0.807C26.126,8.111,26.51,9.082,26.145,9.9z"/>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                </g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                                <g></g>
+                            </svg>
+                            <span class="iransans-web">ویرایش پروفایل</span>
                         </div>
                     </a>
                 </li>

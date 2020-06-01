@@ -40,7 +40,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form class="mt-0" method="post" action="{{ route('panel.admin.users.store') }}">
+                    <form class="mt-0" method="post" action="{{ route('panel.users.store') }}">
                         @csrf
 
                         @include('panel.includes.errors')
@@ -106,7 +106,7 @@
             <td>{{ toFaDigits($user->mobile) }}</td>
             <td>
                 <ul class="table-controls">
-                    <li><a href="{{ route('panel.admin.users.show', $user) }}" class="bs-tooltip"
+                    <li><a href="{{ route('panel.users.show', $user) }}" class="bs-tooltip"
                            data-toggle="tooltip" data-placement="top" title=""
                            data-original-title="مشاهده">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -119,7 +119,7 @@
                         </a></li>
                     <li>
                         <form class="form-delete d-none" method="post"
-                              action="{{ route('panel.admin.users.destroy', $user) }}">
+                              action="{{ route('panel.users.destroy', $user) }}">
                             @csrf
                             @method('DELETE')
                         </form>

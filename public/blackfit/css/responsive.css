@@ -540,7 +540,7 @@
 	}
 	
 	.sidebar-page-container{
-		padding-top:80px;
+		padding-top:60px !important;
 	}
 	
 	.blog-detail .inner-box .post-info,

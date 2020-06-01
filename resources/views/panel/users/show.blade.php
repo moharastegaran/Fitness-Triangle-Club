@@ -1,10 +1,12 @@
 @extends('panel.includes.master')
 
-@section('title','مشاهده کاربر')
+@section('title','مشاهده پروفایل کاربر')
 
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="{{ route('panel.admin.users.index') }}">کاربران</a></li>
-    <li class="breadcrumb-item active" aria-current="page"><span>مشاهده کاربر</span></li>
+    @if(auth()->user()->isAdmin())
+        <li class="breadcrumb-item"><a href="{{ route('panel.users.index') }}">کاربران</a></li>
+    @endif
+    <li class="breadcrumb-item active" aria-current="page"><span>مشاهده پروفایل</span></li>
 @endsection
 
 @section('style')
@@ -116,7 +118,7 @@
                 <div class="widget-content widget-content-area">
                     <div class="d-flex justify-content-between">
                         <h3 class="">پروفایل</h3>
-                        <a href="{{ route('panel.admin.users.edit',$user->id) }}" class="mt-2 edit-profile">
+                        <a href="{{ route('panel.users.edit',$user->id) }}" class="mt-2 edit-profile">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                  stroke-linejoin="round" class="feather feather-edit-3">
@@ -184,7 +186,11 @@
                                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                             <polyline points="22,6 12,13 2,6"></polyline>
                                         </svg>
-                                        {{ $user->email }}
+                                        @if($user->email)
+                                            {{ $user->email }}
+                                        @else
+                                            <span class="text-danger">ایمیل وارد نشده است.</span>
+                                        @endif
                                     </a>
                                 </li>
                                 <li class="contacts-block__item">

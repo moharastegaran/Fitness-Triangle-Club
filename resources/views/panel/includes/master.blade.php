@@ -7,12 +7,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title','پنل ادمین')</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('cork/assets/img/logo1.png') }}"/>
-    <link href="{{ asset('cork/assets/css/loader.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('cork/assets/css/loader.css') }}" rel="stylesheet" type="text/css"/>
     <script src="{{ asset('cork/assets/js/loader.js') }}"></script>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link href="{{ asset('cork/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('cork/assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('cork/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('cork/assets/css/plugins.css') }}" rel="stylesheet" type="text/css"/>
     <!-- END GLOBAL MANDATORY STYLES -->
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
@@ -23,9 +23,13 @@
 </head>
 <body>
 <!-- BEGIN LOADER -->
-<div id="load_screen"> <div class="loader"> <div class="loader-content">
+<div id="load_screen">
+    <div class="loader">
+        <div class="loader-content">
             <div class="spinner-grow align-self-center"></div>
-        </div></div></div>
+        </div>
+    </div>
+</div>
 <!--  END LOADER -->
 
 <!--  BEGIN NAVBAR  -->
@@ -38,7 +42,7 @@
     <div class="overlay"></div>
     <div class="search-overlay"></div>
 
-<!--  BEGIN SIDEBAR  -->
+    <!--  BEGIN SIDEBAR  -->
 @include('panel.includes.aside')
 <!--  END SIDEBAR  -->
 
@@ -53,14 +57,16 @@
             </div>
 
         </div>
-        <div class="footer-wrapper mt-4">
-            <div class="footer-section f-section-1">
-                <p class="">Copyright © 2020 <a target="_blank" href="https://designreset.com">DesignReset</a>, All rights reserved.</p>
+        @if(auth()->user()->isAdmin())
+            <div class="footer-wrapper mt-4">
+                <div class="footer-section f-section-1">
+                    <p class="">Copyright © 2020 <a target="_blank" href="https://designreset.com">DesignReset</a>, All rights reserved.</p>
+                </div>
+                <div class="footer-section f-section-2">
+                    <p class="">Coded with <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></p>
+                </div>
             </div>
-            <div class="footer-section f-section-2">
-                <p class="">Coded with <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></p>
-            </div>
-        </div>
+        @endif
     </div>
     <!--  END CONTENT AREA  -->
 
@@ -74,7 +80,7 @@
 <script src="{{ asset('cork/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
 <script src="{{ asset('cork/assets/js/app.js') }}"></script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         App.init();
     });
 </script>
