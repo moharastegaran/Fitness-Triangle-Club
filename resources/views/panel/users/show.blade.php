@@ -129,7 +129,7 @@
                     </div>
                     <div class="text-center user-info">
                         <div class="overlay-container" style="width: 100px;height: 100px;margin: auto">
-                            <img src="{{ asset(($a=auth()->user()->avatar()) ? env('STORAGE_DIR_PATH').env('AVATAR_DIR_PATH').auth()->user()->id.'/'.$a :'icons/user.png')  }}"
+                            <img src="{{ asset(($a=$user->avatar()) ? env('STORAGE_DIR_PATH').env('AVATAR_DIR_PATH').$user->id.'/'.$a :'icons/user.png')  }}"
                                  alt="avatar" width="100" height="100">
                             @if($a)
                                 <div class="overlay-controls">

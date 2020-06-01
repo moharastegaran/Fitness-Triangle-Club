@@ -142,7 +142,7 @@
                         </div>
                     </div>
                     <div class="w-info">
-                        <h6 class="value">{{ toFaDigits(count(\App\User::all())) }}</h6>
+                        <h6 class="value">{{ toFaDigits(count(\App\User::members())) }}</h6>
                         <p class="">کاربران ثبت‌شده</p>
                     </div>
                 </div>

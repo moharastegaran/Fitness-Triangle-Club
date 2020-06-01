@@ -61,28 +61,13 @@ class WorkoutController extends Controller
         session()->remove('validating');
 
         $temp = Workout::where('title', 'like', $request->title)->first();
-        if($temp)
-            return redirect()->back()->with('danger', "قبلا تمرینی با عنوان ". $request->title ." ثبت شده است");
+        if ($temp)
+            return redirect()->back()->with('danger', "قبلا تمرینی با عنوان " . $request->title . " ثبت شده است");
 
         $w = Workout::create($request->all());
         DraftController::syncWith($w->id);
         return redirect()->back()->with('success', $request->title . " به درستی ثبت شد. ");
-}
-
-//    private function correct($data)
-//    {
-//        $data['repeat'] = array_filter($data['repeat'], function ($value) {
-//            return !is_null($value) && $value !== '';
-//        });
-//        $data['repeat'] = array_values($data['repeat']);
-//        $data['repeat'] = count($data['repeat']) ? json_encode($data['repeat']) : null;
-//        $data['period'] = array_filter($data['period'], function ($value) {
-//            return !is_null($value) && $value !== '';
-//        });
-//        $data['period'] = array_values($data['period']);
-//        $data['period'] = count($data['period']) ? json_encode($data['period']) : null;
-//        return $data;
-//    }
+    }
 
     /**
      * Display the specified resource.

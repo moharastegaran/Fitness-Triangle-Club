@@ -96,7 +96,7 @@
                                     <li><a href="{{ route('website.index') }}">خانه</a></li>
                                     @if(!auth()->check())
                                         <li><a href="{{ route('website.users.join') }}">ثبت‌نام</a></li>
-                                        <li><a href="{{ route('website.users.login') }}">ورود</a></li>
+                                        <li><a href="{{ url('login') }}">ورود</a></li>
                                     @else
                                         <li><a href="{{ route(auth()->user()->isAdmin() ? 'panel.dashboard' : 'panel.users.show',auth()->user())  }}">پنل کاربری</a></li>
                                         {{--<li><a href="{{ route('website.users.logout') }}">خروج</a></li>--}}
@@ -165,7 +165,7 @@
                         <li><a href="{{ route('website.index') }}">خانه</a></li>
                         @if(!auth()->check())
                             <li><a href="{{ route('website.users.join') }}">ثبت‌نام</a></li>
-                            <li><a href="{{ route('website.users.login') }}">ورود</a></li>
+                            <li><a href="{{ url('login') }}">ورود</a></li>
                         @else
                             <li><a href="{{ route(auth()->user()->isAdmin() ? 'panel.dashboard' : 'panel.users.show',auth()->user())  }}">پنل کاربری</a></li>
 {{--                            <li><a href="{{ route('website.users.logout') }}">خروج</a></li>--}}

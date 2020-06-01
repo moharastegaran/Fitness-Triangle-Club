@@ -15,7 +15,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 use Morilog\Jalali\CalendarUtils;
 use Morilog\Jalali\Jalalian;
 
@@ -216,6 +218,10 @@ class UserController extends Controller
 
     public function edit($id)
     {
+        if (!Session::has('user_update_first_attempt')) {
+            Session::put('user_update_first_attempt', true);
+        }
+
         $user = User::find($id);
         return view('panel.users.edit', compact('user'));
     }
@@ -234,21 +240,29 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
             'family' => 'required',
             'email' => 'nullable|email',
-            'mobile' => 'required|unique:users|digits:11|regex:/^0?9[0-39][0-9]{8}$/',
+            'mobile' => 'required|digits:11|regex:/^0?9[0-39][0-9]{8}$/',
         ], [
             'name.required' => 'وارد کردن نام الزامی است.',
             'family.required' => 'وارد کردن نام خانوادگی الزامی است.',
             'email.required' => 'فرمت ایمیل به درستی وارد نشده است.',
 //            'email.unique' => 'وارد کردن ایمیل الزامی است.',
             'mobile.required' => 'وارد کردن شماره تماس الزامی است.',
-            'mobile.unique' => ' شماره تماس قبلا در سیستم ثبت شده است.',
+//            'mobile.unique' => ' شماره تماس قبلا در سیستم ثبت شده است.',
             'mobile.digits' => 'شماره تماس ۱۱ رقمی است.',
             'mobile.regex' => 'فرمت شماره تماس به درستی وارد نشده است.'
         ]);
+
+        if ($user = User::where('id', '!=', $id)->where('mobile', '=', $request->mobile)->first()) {
+            $validator->getMessageBag()->merge(['mobile'=>array('شماره تماس قبلا در سیستم ثبت شده است.')]);
+        }
+
+        if($validator->getMessageBag()->count() > 0){
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
         $data = $request->all();
         $user = User::find($id);

@@ -3,16 +3,19 @@
 
         <ul class="navbar-item theme-brand flex-row  text-center">
             <li class="nav-item theme-logo">
-                <a href="#" class="d-md-none d-block">
+                <a href="{{ route('website.index') }}" class="d-md-none d-block">
                     <img src="{{ asset('cork/assets/img/logo1.png') }}" class="navbar-logo" alt="logo">
                 </a>
             </li>
             <li class="nav-item theme-text">
-                <a href="#" class="nav-link"> <img src="{{ asset('cork/assets/img/logo2.png') }}" height="45"> </a>
+                <a href="{{ route('website.index') }}" class="nav-link"> <img src="{{ asset('cork/assets/img/logo2.png') }}" height="45"> </a>
             </li>
         </ul>
 
-        <ul class="navbar-item flex-row ml-md-auto">
+        <ul class="navbar-item flex-row align-items-center ml-md-auto">
+
+            {{ auth()->user()->name.' '.auth()->user()->family }}
+
             @php
                 $notifications = auth()->user()->newMembers();
             @endphp
@@ -155,6 +158,7 @@
                 </div>
             </li>
         </ul>
+
     </header>
 </div>
 <!--  END NAVBAR  -->
