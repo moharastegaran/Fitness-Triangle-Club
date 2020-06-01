@@ -59,10 +59,15 @@ class WorkoutController extends Controller
     public function store(WorkoutRequest $request)
     {
         session()->remove('validating');
+
+        $temp = Workout::where('title', 'like', $request->title)->first();
+        if($temp)
+            return redirect()->back()->with('danger', "قبلا تمرینی با عنوان ". $request->title ." ثبت شده است");
+
         $w = Workout::create($request->all());
         DraftController::syncWith($w->id);
-        return $request->redirect == '1' ? redirect()->back() : redirect()->route('panel.admin.workouts.index');
-    }
+        return redirect()->back()->with('success', $request->title . " به درستی ثبت شد. ");
+}
 
 //    private function correct($data)
 //    {
