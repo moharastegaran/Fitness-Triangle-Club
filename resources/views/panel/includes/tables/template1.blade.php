@@ -55,15 +55,15 @@
     <script src="{{ asset('cork/plugins/table/datatable/button-ext/jszip.min.js') }}"></script>
     <script src="{{ asset('cork/plugins/table/datatable/button-ext/buttons.html5.min.js') }}"></script>
     <script src="{{ asset('cork/plugins/table/datatable/button-ext/buttons.print.min.js') }}"></script>
-{{--    <script src="{{ asset('cork/plugins/notification/snackbar/snackbar.min.js') }}"></script>--}}
+    {{--    <script src="{{ asset('cork/plugins/notification/snackbar/snackbar.min.js') }}"></script>--}}
     <script>
 
         {{--@if(isset($is_deleted) && $is_deleted==true)--}}
         {{--$(document).ready(function () {--}}
-            {{--Snackbar.show({--}}
-                {{--text: 'آیتم با موفقیت حذف شد',--}}
-                {{--pos: 'bottom-right'--}}
-            {{--});--}}
+        {{--Snackbar.show({--}}
+        {{--text: 'آیتم با موفقیت حذف شد',--}}
+        {{--pos: 'bottom-right'--}}
+        {{--});--}}
         {{--});--}}
         {{--@endif--}}
         $('#html5-extension').DataTable({
@@ -88,6 +88,39 @@
             },
             "stripeClasses": [''],
         });
-        </script>
-    @if(count($errors)) <script>$(document).ready(function () { $(".register-modal").modal('show') })</script> @endif
+        @if(count($errors))
+        $(document).ready(function () {
+            $(".register-modal").modal('show')
+        });
+        @endif
+
+        $("input[name^='expense_id']").on("change", function (e) {
+            var total = parseInt(toEnDigits($("#expense_total").text()));
+            var change = parseInt($(this).val() == '1' ? '{{ \App\Expense::where('type','برنامه تمرینی')->first()->price }}' : '{{ \App\Expense::where('type','برنامه غذایی')->first()->price }}');
+            if ($(this).prop("checked")) {
+                total += change;
+            } else {
+                total -= change;
+            }
+            $("#expense_total").text(toFaDigits(total));
+        });
+
+        function toFaDigits(n) {
+            const farsiDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+
+            return n
+                .toString()
+                .split('')
+                .map(x => farsiDigits[x])
+        .join('');
+        };
+
+        function toEnDigits(n) {
+            return n.toString().replace(/[۰-۹]/g, function (chr) {
+                var persian = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+                return persian.indexOf(chr);
+            });
+        }
+        {{--@yield('sub-script')--}}
+    </script>
 @endsection

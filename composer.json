@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.2",
         "almasaeed2010/adminlte": "~3.0",
+        "econea/nusoap": "dev-master",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.2",
         "laravel/tinker": "^2.0",

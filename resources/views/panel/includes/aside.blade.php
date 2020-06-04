@@ -13,7 +13,8 @@
                        aria-expanded="{{ strpos($roueName,'panel.dashboard') !== false ? 'true' : 'false' }}"
                        class="dropdown-toggle">
                         <div class="">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none"
                                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                  class="feather feather-home">
                                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -46,11 +47,13 @@
                        class="dropdown-toggle">
                         <div class="">
                             <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                 width="24" height="24" stroke="currentColor" stroke-width="17" stroke-linecap="round" viewBox="0 0 512.009 512.009" class="feather">
-<g>
-    <g>
-        <path d="M441.071,192.046l-3.729-0.042c-52,0-98.785,29.068-122.577,74.587c-14.966-6.75-31.194-10.587-48.09-10.587
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                 width="24" height="24" stroke="currentColor" stroke-width="17" stroke-linecap="round"
+                                 viewBox="0 0 512.009 512.009" class="feather">
+                                <g>
+                                    <g>
+                                        <path d="M441.071,192.046l-3.729-0.042c-52,0-98.785,29.068-122.577,74.587c-14.966-6.75-31.194-10.587-48.09-10.587
 			c-27.913,0-54.163,9.952-74.945,27.285c-0.401-18.324-2.788-36.573-5.117-52.785c-1.995-13.861-3.909-27.31-4.034-38.509
 			l53.93,0.009c8.542,0,16.583-3.333,22.625-9.375l42.667-42.667c12.195-12.195,12.279-31.755,0.638-44.289
 			c4.066-6.094,6.003-13.393,5.258-20.846c-0.948-9.573-6.083-18.135-14.094-23.469l-25.896-17.26
@@ -73,9 +76,7 @@
 			c25.479,0,49.479,9.875,67.573,27.813c4.188,4.146,10.948,4.125,15.083-0.063c4.146-4.188,4.125-10.938-0.063-15.083
 			c-4.935-4.893-10.345-9.112-15.939-12.999c20.049-38.836,59.803-63.668,104.012-63.668l3.156,0.042
 			c27.667,0.729,50.177,24.677,50.177,53.385V391.213z"/>
-    </g>
-</g>
-                                <g>
+                                    </g>
                                 </g>
                                 <g>
                                 </g>
@@ -105,7 +106,9 @@
                                 </g>
                                 <g>
                                 </g>
-</svg>
+                                <g>
+                                </g>
+                            </svg>
                             <span class="iransans-web">تمرینات</span>
                         </div>
                     </a>
@@ -131,16 +134,20 @@
                             </svg>
                         </div>
                     </a>
-                    <ul class="collapse submenu list-unstyled {{ (strpos($roueName,'admin.workout-programs') !== false || strpos($roueName,'admin.nutrition-programs') !== false || strpos($roueName,'admin.requests') !== false) ? 'show' : '' }}" id="app" data-parent="#accordionExample">
+                    <ul class="collapse submenu list-unstyled {{ (strpos($roueName,'admin.workout-programs') !== false || strpos($roueName,'admin.nutrition-programs') !== false || strpos($roueName,'admin.requests') !== false) ? 'show' : '' }}"
+                        id="app" data-parent="#accordionExample">
                         <li @if(strpos($roueName,'admin.workout-programs') !== false) class="active" @endif><a
                                     href="{{ route('panel.admin.workout-programs.index') }}">تمرینی</a></li>
                         <li @if(strpos($roueName,'admin.nutrition-programs') !== false) class="active" @endif><a
                                     href="{{ route('panel.admin.nutrition-programs.index') }}">غذایی</a></li>
-                        <li><a href="#">درخواست‌ها</a></li>
+                        <li @if(strpos($roueName,'panel.requests') !== false) class="active" @endif>
+                            <a href="{{ route('panel.requests.index') }}">درخواست‌ها</a></li>
                     </ul>
                 </li>
                 <li class="menu">
-                    <a href="{{ route('panel.admin.articles.index') }}" aria-expanded="{{ strpos($roueName,'admin.articles')!==false ? 'true' : 'false'}}" class="dropdown-toggle">
+                    <a href="{{ route('panel.admin.articles.index') }}"
+                       aria-expanded="{{ strpos($roueName,'admin.articles')!==false ? 'true' : 'false'}}"
+                       class="dropdown-toggle">
                         <div class="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -149,6 +156,43 @@
                                 <polyline points="13 2 13 9 20 9"></polyline>
                             </svg>
                             <span class="iransans-web">مقالات</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="menu">
+                    <a href="{{ route('panel.admin.expenses.edit') }}"
+                       aria-expanded="{{ strpos($roueName,'admin.expenses')!==false ? 'true' : 'false'}}"
+                       class="dropdown-toggle">
+                        <div class="">
+                            <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg"
+                                 fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather feather-file">
+                                <g>
+                                    <path d="m62 31h-8.586l9.293-9.293c.391-.391.391-1.023 0-1.414l-19-19c-.391-.391-1.023-.391-1.414 0l-29.707 29.707h-10.586c-.553 0-1 .448-1 1v26c0 .552.447 1 1 1h14.586l3.707 3.707c.195.195.451.293.707.293s.512-.098.707-.293l3.708-3.707h36.585c.553 0 1-.448 1-1v-26c0-.552-.447-1-1-1zm-19-27.586 17.586 17.586-10 10h-7.635c-.229-2.56-1.333-4.938-3.173-6.778-4.288-4.288-11.267-4.289-15.557 0-1.839 1.84-2.943 4.218-3.173 6.778h-5.635zm-15.773 27.586c-.136-.65.046-1.345.53-1.828l1.829 1.828zm10.788 0c-.11-.145-.228-.285-.358-.414-1.561-1.559-4.097-1.56-5.657 0l-2.829-2.828c.756-.755 2.072-.755 2.828 0l1.414-1.414c-.756-.755-1.76-1.171-2.828-1.171s-2.073.416-2.828 1.171l-.001.001-.707-.707-1.414 1.414.707.707c-.879.879-1.268 2.07-1.143 3.243h-2.141c.223-2.025 1.115-3.902 2.576-5.364 3.51-3.509 9.219-3.508 12.729 0 1.461 1.462 2.354 3.339 2.576 5.364h-2.924zm-17.015 29.586-1.586-1.586h3.172zm40-3.586h-58v-24h58z"/>
+                                    <path d="m29 48h-2c0 2.206 1.794 4 4 4v1h2v-1c2.206 0 4-1.794 4-4s-1.794-4-4-4v-4c1.103 0 2 .897 2 2h2c0-2.206-1.794-4-4-4v-1h-2v1c-2.206 0-4 1.794-4 4s1.794 4 4 4v4c-1.103 0-2-.897-2-2zm0-6c0-1.103.897-2 2-2v4c-1.103 0-2-.897-2-2zm4 4c1.103 0 2 .897 2 2s-.897 2-2 2z"/>
+                                    <path d="m32 56c6.065 0 11-4.935 11-11s-4.935-11-11-11-11 4.935-11 11 4.935 11 11 11zm0-20c4.963 0 9 4.038 9 9s-4.037 9-9 9-9-4.038-9-9 4.037-9 9-9z"/>
+                                    <path d="m59 54v-18c0-.552-.447-1-1-1h-12v2h11v16h-11v2h12c.553 0 1-.448 1-1z"/>
+                                    <path d="m6 55h12v-2h-11v-16h11v-2h-12c-.553 0-1 .448-1 1v18c0 .552.447 1 1 1z"/>
+                                    <path d="m46 49h2v2h-2z"/>
+                                    <path d="m50 49h2v2h-2z"/>
+                                    <path d="m46 39h2v2h-2z"/>
+                                    <path d="m50 39h2v2h-2z"/>
+                                    <path d="m43.272 9.414 11.313 11.314-7.778 7.778 1.414 1.414 8.485-8.485c.391-.391.391-1.023 0-1.414l-12.727-12.728c-.375-.375-1.039-.375-1.414 0l-8.485 8.485 1.414 1.414z"/>
+                                    <path d="m44.394 24.678h2v2h-2z"
+                                          transform="matrix(.707 -.707 .707 .707 -4.861 39.619)"/>
+                                    <path d="m47.222 21.849h2v2h-2z"
+                                          transform="matrix(.707 -.707 .707 .707 -2.033 40.79)"/>
+                                    <path d="m37.322 17.607h2v2h-2z"
+                                          transform="matrix(.707 -.707 .707 .707 -1.932 32.548)"/>
+                                    <path d="m40.15 14.778h2v2h-2z"
+                                          transform="matrix(.707 -.707 .707 .707 .896 33.719)"/>
+                                    <path d="m12 39h2v2h-2z"/>
+                                    <path d="m16 39h2v2h-2z"/>
+                                    <path d="m12 49h2v2h-2z"/>
+                                    <path d="m16 49h2v2h-2z"/>
+                                </g>
+                            </svg>
+                            <span class="iransans-web">هزینه‌ها</span>
                         </div>
                     </a>
                 </li>
@@ -175,7 +219,8 @@
                         <div class="">
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                                 viewBox="0 0 29.643 29.643"  fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                 viewBox="0 0 29.643 29.643" fill="none" stroke="currentColor" stroke-width="1.5"
+                                 stroke-linecap="round"
                                  stroke-linejoin="round" class="feather">
                                 <g>
                                     <path d="M18.621,12.397l-0.546-1.295c0,0,1.267-2.859,1.157-2.969l-1.678-1.639c-0.117-0.113-2.978,1.191-2.978,1.191l-1.32-0.533
@@ -227,6 +272,21 @@
                                 <g></g>
                             </svg>
                             <span class="iransans-web">ویرایش پروفایل</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="menu">
+                    <a href="{{ route('panel.requests.index') }}"
+                       aria-expanded="{{ strpos($roueName,'panel.requests')!==false ? 'true' : 'false' }}"
+                       class="dropdown-toggle">
+                        <div class="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather feather-book">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            <span class="iransans-web">برنامه‌های من</span>
                         </div>
                     </a>
                 </li>

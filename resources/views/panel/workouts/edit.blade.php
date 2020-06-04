@@ -267,9 +267,9 @@
 
 @section('script')
 
-    @include('layouts.files.upload')
+    @include('panel.workouts.fileupload.upload')
 
-    @include('layouts.files.download')
+    @include('panel.workouts.fileupload.download')
 
     <script src="{{ asset('cork/plugins/select2/select2.min.js') }}"></script>
 

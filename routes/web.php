@@ -18,6 +18,11 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'panel', 'as' => 'panel.'], 
         'create',
     ]);
 
+    Route::get('order/result/{id}','UserRequestController@orderResult')->name('order.result');
+    Route::resource('requests', 'UserRequestController');
+
+    Route::post('order/add/{id}','UserRequestController@addOrder')->name('order.add');
+
     Route::group(['prefix' => 'admin', 'middleware' => ['admin'], 'as' => 'admin.'], function () {
 
         Route::get('/logout', 'UserController@logout')->name('logout');
@@ -41,7 +46,10 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'panel', 'as' => 'panel.'], 
         Route::delete('nutrition-programs/destroy/item/{id}', 'NutritionProgramController@destroyItem')->name('nutrition-programs.destroy.item');
         Route::resource('nutrition-programs', 'NutritionProgramController');
 //        Route::resource('diet-programs', 'DietProgramController');
-//        Route::resource('requests', 'RequestController');
+
+        Route::get('expenses/edit','ExpenseController@edit')->name('expenses.edit');
+        Route::put('expenses/update','ExpenseController@update')->name('expenses.update');
+
     });
 });
 

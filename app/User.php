@@ -55,6 +55,10 @@ class User extends Authenticatable
         return $this->hasOne(UserAthletic::class);
     }
 
+    public function requests(){
+        return $this->hasMany(UserRequest::class);
+    }
+
     public function roles()
     {
         return $this->belongsToMany(Role::class);
