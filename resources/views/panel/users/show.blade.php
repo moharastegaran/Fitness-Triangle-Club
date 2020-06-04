@@ -11,6 +11,8 @@
 
 @section('style')
     <link href="{{ asset('cork/assets/css/users/user-profile.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('cork/assets/css/dashboard/dash_1.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('cork/plugins/apex/apexcharts.css') }}" rel="stylesheet" type="text/css">
     <style>
         #blueimp-gallery {
             position: fixed;
@@ -109,6 +111,7 @@
 @endsection
 
 @section('content')
+
     <div class="row w-100 layout-spacing mx-2">
 
         <!-- Content -->
@@ -206,6 +209,17 @@
                     </div>
                 </div>
             </div>
+
+            <div class="widget widget-chart-two">
+                <div class="widget-heading">
+                    <h5 class="">برنامه‌ها و درخواست‌ها</h5>
+                </div>
+                <div class="widget-content">
+                    <div id="chart-2" class="iransans-web">
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div class="col-xl-8 col-lg-6 col-md-7 col-sm-12 layout-top-spacing">
@@ -261,18 +275,6 @@
                                              class="img-fluid">
                                         <div class="overlay-controls">
                                             <div class="overlay-items">
-                                                {{--<a href="#" target="_blank">--}}
-                                                {{--<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"--}}
-                                                {{--viewBox="0 0 24 24"--}}
-                                                {{--fill="none" stroke="currentColor" stroke-width="2"--}}
-                                                {{--stroke-linecap="round"--}}
-                                                {{--stroke-linejoin="round"--}}
-                                                {{--class="feather feather-download">--}}
-                                                {{--<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>--}}
-                                                {{--<polyline points="7 10 12 15 17 10"></polyline>--}}
-                                                {{--<line x1="12" y1="15" x2="12" y2="3"></line>--}}
-                                                {{--</svg>--}}
-                                                {{--</a>--}}
                                                 <a href="#" class="fullscreen">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                          viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -324,18 +326,6 @@
                                              class="img-fluid">
                                         <div class="overlay-controls">
                                             <div class="overlay-items">
-                                                {{--<a href="#" target="_blank">--}}
-                                                {{--<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"--}}
-                                                {{--viewBox="0 0 24 24"--}}
-                                                {{--fill="none" stroke="currentColor" stroke-width="2"--}}
-                                                {{--stroke-linecap="round"--}}
-                                                {{--stroke-linejoin="round"--}}
-                                                {{--class="feather feather-download">--}}
-                                                {{--<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>--}}
-                                                {{--<polyline points="7 10 12 15 17 10"></polyline>--}}
-                                                {{--<line x1="12" y1="15" x2="12" y2="3"></line>--}}
-                                                {{--</svg>--}}
-                                                {{--</a>--}}
                                                 <a href="#" class="fullscreen">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                          viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -359,14 +349,289 @@
                     </div>
                 </div>
             </div>
+
+            <div class="skills layout-spacing">
+                <div class="widget widget-table-one">
+                    <div class="widget-heading">
+                        <h5 class="">تراکنش‌ها</h5>
+                    </div>
+                    <div class="widget-content">
+                        {{--<div class="transactions-list">--}}
+                        {{--<div class="t-item">--}}
+                        {{--<div class="t-company-name">--}}
+                        {{--<div class="t-icon">--}}
+                        {{--<div class="icon">--}}
+                        {{--<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"--}}
+                        {{--fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"--}}
+                        {{--stroke-linejoin="round" class="feather feather-home">--}}
+                        {{--<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>--}}
+                        {{--<polyline points="9 22 9 12 15 12 15 22"></polyline>--}}
+                        {{--</svg>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="t-name">--}}
+                        {{--<h4>Electricity Bill</h4>--}}
+                        {{--<p class="meta-date">4 Aug 1:00PM</p>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="t-rate rate-dec">--}}
+                        {{--<p><span>-$16.44</span>--}}
+                        {{--<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"--}}
+                        {{--fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"--}}
+                        {{--stroke-linejoin="round" class="feather feather-arrow-down">--}}
+                        {{--<line x1="12" y1="5" x2="12" y2="19"></line>--}}
+                        {{--<polyline points="19 12 12 19 5 12"></polyline>--}}
+                        {{--</svg>--}}
+                        {{--</p>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+
+                        {{--<div class="transactions-list">--}}
+                        {{--<div class="t-item">--}}
+                        {{--<div class="t-company-name">--}}
+                        {{--<div class="t-icon">--}}
+                        {{--<div class="avatar avatar-xl">--}}
+                        {{--<span class="avatar-title rounded-circle">SP</span>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="t-name">--}}
+                        {{--<h4>Shaun Park</h4>--}}
+                        {{--<p class="meta-date">4 Aug 1:00PM</p>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="t-rate rate-inc">--}}
+                        {{--<p><span>+$66.44</span>--}}
+                        {{--<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"--}}
+                        {{--fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"--}}
+                        {{--stroke-linejoin="round" class="feather feather-arrow-up">--}}
+                        {{--<line x1="12" y1="19" x2="12" y2="5"></line>--}}
+                        {{--<polyline points="5 12 12 5 19 12"></polyline>--}}
+                        {{--</svg>--}}
+                        {{--</p>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+
+                        {{--<div class="transactions-list">--}}
+                        {{--<div class="t-item">--}}
+                        {{--<div class="t-company-name">--}}
+                        {{--<div class="t-icon">--}}
+                        {{--<div class="avatar avatar-xl">--}}
+                        {{--<span class="avatar-title rounded-circle">AD</span>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="t-name">--}}
+                        {{--<h4>Amy Diaz</h4>--}}
+                        {{--<p class="meta-date">4 Aug 1:00PM</p>--}}
+                        {{--</div>--}}
+
+                        {{--</div>--}}
+                        {{--<div class="t-rate rate-inc">--}}
+                        {{--<p><span>+$66.44</span>--}}
+                        {{--<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"--}}
+                        {{--fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"--}}
+                        {{--stroke-linejoin="round" class="feather feather-arrow-up">--}}
+                        {{--<line x1="12" y1="19" x2="12" y2="5"></line>--}}
+                        {{--<polyline points="5 12 12 5 19 12"></polyline>--}}
+                        {{--</svg>--}}
+                        {{--</p>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+
+                        {{--<div class="transactions-list">--}}
+                        {{--<div class="t-item">--}}
+                        {{--<div class="t-company-name">--}}
+                        {{--<div class="t-icon">--}}
+                        {{--<div class="icon">--}}
+                        {{--<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"--}}
+                        {{--fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"--}}
+                        {{--stroke-linejoin="round" class="feather feather-home">--}}
+                        {{--<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>--}}
+                        {{--<polyline points="9 22 9 12 15 12 15 22"></polyline>--}}
+                        {{--</svg>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="t-name">--}}
+                        {{--<h4>Netflix</h4>--}}
+                        {{--<p class="meta-date">4 Aug 1:00PM</p>--}}
+                        {{--</div>--}}
+
+                        {{--</div>--}}
+                        {{--<div class="t-rate rate-dec">--}}
+                        {{--<p><span>-$32.00</span>--}}
+                        {{--<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"--}}
+                        {{--fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"--}}
+                        {{--stroke-linejoin="round" class="feather feather-arrow-down">--}}
+                        {{--<line x1="12" y1="5" x2="12" y2="19"></line>--}}
+                        {{--<polyline points="19 12 12 19 5 12"></polyline>--}}
+                        {{--</svg>--}}
+                        {{--</p>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+                        {{--</div>--}}
+                        @php $is_odd=true; @endphp
+                        @forelse($user->requests as $request)
+                            @php $t = $request->transaction; @endphp
+                            <div class="transactions-list">
+                                <div class="t-item">
+                                    <div class="t-company-name">
+                                        <div class="t-icon">
+                                            @if($request->is_workout_program && !$request->is_nutrition_program)
+                                                @php $abbr = 'WP'; @endphp
+                                            @elseif(!$request->is_workout_program && $request->is_nutrition_program)
+                                                @php $abbr = 'NP'; @endphp
+                                            @else
+                                                @php $abbr = 'W N'; @endphp
+                                            @endif
+                                            <div class="t-icon">
+                                                <div class="avatar avatar-xl">
+                                                    <span class="avatar-title rounded-circle @if($is_odd) bg-danger @else bg-warning @endif">{{ $abbr }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="t-name">
+                                            <h4>
+                                                @if($request->is_workout_program && !$request->is_nutrition_program)
+                                                    برنامه تمرینی
+                                                @elseif(!$request->is_workout_program && $request->is_nutrition_program)
+                                                    برنامه غذایی
+                                                @else
+                                                    برنامه تمرینی و غذایی
+                                                @endif
+                                            </h4>
+                                            <p class="meta-date">{{ toFaDigits(\Morilog\Jalali\Jalalian::forge($t->created_at)->format('%d %B, H:i')) }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="t-rate @if($is_odd) rate-inc @else rate-dec @endif">
+                                        <p><span>{{ normalize($t->price).' تومان' }}</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            @php $is_odd = !$is_odd @endphp
+                        @empty
+                            تراکنشی به ثبت نرسیده است.
+                        @endforelse
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
 @endsection
 
 @section('script')
+    <script src="{{ asset('cork/plugins/apex/apexcharts.min.js') }}"></script>
     <script>
         $(document).ready(function () {
+            var options = {
+                chart: {
+                    type: 'donut',
+                    width: 380
+                },
+                colors: ['#5c1ac3', '#e2a03f', '#e7515a', '#e2a03f'],
+                dataLabels: {
+                    enabled: false
+                },
+                legend: {
+                    position: 'bottom',
+                    horizontalAlign: 'center',
+                    fontFamily: 'iransans_web',
+                    fontSize: '14px',
+                    markers: {
+                        width: 10,
+                        height: 10,
+                    },
+                    itemMargin: {
+                        horizontal: 0,
+                        vertical: 8
+                    }
+                },
+                plotOptions: {
+                    pie: {
+                        donut: {
+                            size: '65%',
+                            background: 'transparent',
+                            fontFamily: 'iransans_web',
+                            labels: {
+                                show: true,
+                                fontFamily: 'iransans_web',
+                                name: {
+                                    show: true,
+                                    fontSize: '29px',
+                                    fontFamily: 'iransans_web',
+                                    color: undefined,
+                                    offsetY: -10
+                                },
+                                value: {
+                                    show: true,
+                                    fontSize: '26px',
+                                    fontFamily: 'iransans_web',
+                                    color: '#bfc9d4',
+                                    offsetY: 16,
+                                    formatter: function (val) {
+                                        return val
+                                    }
+                                },
+                                total: {
+                                    show: true,
+                                    showAlways: true,
+                                    label: 'مجموع',
+                                    color: '#888ea8',
+                                    formatter: function (w) {
+                                        return w.globals.seriesTotals.reduce(function (a, b) {
+                                            return a + b
+                                        }, 0)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                stroke: {
+                    show: true,
+                    width: 25,
+                    colors: '#0e1726'
+                },
+                series: [parseInt('{{ $user_wp_count }}'), parseInt('{{ $user_np_count }}'), parseInt('{{ $user_unapproved_count }}')],
+                labels: ['تمرینی', 'غذایی', 'تایید نشده'],
+                responsive: [{
+                    breakpoint: 1599,
+                    options: {
+                        chart: {
+                            width: '350px',
+                            height: '400px'
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    },
+
+                    breakpoint: 1439,
+                    options: {
+                        chart: {
+                            width: '250px',
+                            height: '390px'
+                        },
+                        legend: {
+                            position: 'bottom'
+                        },
+                        plotOptions: {
+                            pie: {
+                                donut: {
+                                    size: '65%',
+                                }
+                            }
+                        }
+                    },
+                }]
+            }
+            var chart = new ApexCharts(
+                document.querySelector("#chart-2"),
+                options
+            );
+            chart.render();
+
             $("a.fullscreen").on("click", function (e) {
                 e.preventDefault();
                 var link = $(this);

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Expense;
 use App\lib\zarinpal;
 use App\Notifications\UserRequested;
+use App\Transaction;
 use App\User;
 use App\UserRequest;
 use Illuminate\Http\Request;
@@ -22,6 +23,12 @@ class UserRequestController extends Controller
         }
         $requests = $user->isAdmin() ? UserRequest::latest()->get() : $user->requests()->latest()->get();
         return view('panel.user_requests.index', compact('requests'));
+    }
+
+    public function destroy($id){
+        $request = UserRequest::find($id);
+        $request->delete();
+        return redirect()->back();
     }
 
     public function addOrder(Request $request, $id)
@@ -48,6 +55,10 @@ class UserRequestController extends Controller
                 'user_id' => $id,
                 'is_workout_program' => (session()->pull('is_workout_program') === true) ? 1 : 0,
                 'is_nutrition_program' => (session()->pull('is_nutrition_program') === true) ? 1 : 0,
+            ]);
+            Transaction::create([
+                'request_id' => $request->id,
+                'price' => session()->pull('price')
             ]);
             Notification::send(User::admins(),new UserRequested($request));
 
@@ -76,6 +87,10 @@ class UserRequestController extends Controller
                     'user_id' => $id,
                     'is_workout_program' => (session()->pull('is_workout_program') === true) ? 1 : 0,
                     'is_nutrition_program' => (session()->pull('is_nutrition_program') === true) ? 1 : 0,
+                ]);
+                Transaction::create([
+                    'request_id' => $request->id,
+                    'price' => $Amount
                 ]);
                 Notification::send(User::admins(),new UserRequested($request));
 

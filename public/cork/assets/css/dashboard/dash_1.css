@@ -321,7 +321,7 @@ body , html{
     display: flex;
 }
 .widget-table-one .transactions-list {
-    padding: 12px 12px;
+    padding: 5px 12px;
     border: 1px dashed #3b3f5c;
     border-radius: 6px;
     -webkit-transition: all 0.1s ease;
@@ -339,19 +339,21 @@ body , html{
     justify-content: space-between;
 }
 .widget-table-one .transactions-list .t-item .t-company-name {
-    /*display: flex;*/
+    display: flex;
+    align-items: center;
 }
 .widget-table-one .transactions-list .t-item .t-icon {
     margin-left: 12px;
+    width:40px;
+    height: 40px;
 }
 .widget-table-one .transactions-list .t-item .t-icon .avatar {
     position: relative;
     display: inline-block;
-    width: 38px;
-    height: 38px;
-    font-size: 14px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
     font-weight: 600;
-    letter-spacing: 1px;
 }
 .widget-table-one .transactions-list .t-item .t-icon .avatar .avatar-title {
     display: flex;
@@ -359,28 +361,29 @@ body , html{
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-color: #e7515a;
+    /*background-color: #e7515a;*/
     color: #ffe1e2;
 }
 .widget-table-one .transactions-list .t-item .t-icon .icon {
     position: relative;
     display: inline-block;
-    padding: 10px;
-    background-color: #e2a03f;
+    /*padding: 5px;*/
+    width: 40px;
+    height: 40px;
+    /*background-color: #e2a03f;*/
     border-radius: 50%;
 }
 .widget-table-one .transactions-list .t-item .t-icon .icon svg {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     color: #ffeccb;
     stroke-width: 2;
 }
 .widget-table-one .transactions-list .t-item .t-name {
     align-self: center;
-    margin: 1rem 0;
 }
 .widget-table-one .transactions-list .t-item .t-name h4 {
     font-size: 15px;

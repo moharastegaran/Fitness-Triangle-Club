@@ -17,4 +17,16 @@ class UserRequest extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    public function workout_programs(){
+        return $this->hasMany(WorkoutProgram::class,'request_id');
+    }
+
+    public function nutrition_programs(){
+        return $this->hasMany(NutritionProgram::class,'request_id');
+    }
+
+    public function transaction(){
+        return $this->hasOne(Transaction::class,'request_id');
+    }
 }
