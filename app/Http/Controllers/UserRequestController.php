@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Expense;
 use App\lib\zarinpal;
+use App\Notifications\UserRequested;
+use App\User;
 use App\UserRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 use nusoap_client;
 
 class UserRequestController extends Controller
@@ -14,7 +17,10 @@ class UserRequestController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $requests = $user->isAdmin() ? UserRequest::all() : $user->requests;
+        if (\request('mark_as_read')){
+            auth()->user()->unreadNotifications->where('type',UserRequested::class)->markAsRead();
+        }
+        $requests = $user->isAdmin() ? UserRequest::latest()->get() : $user->requests()->latest()->get();
         return view('panel.user_requests.index', compact('requests'));
     }
 
@@ -38,11 +44,12 @@ class UserRequestController extends Controller
     {
         if (env('ZARINPAL_IS_MOCKED')) {
 
-            UserRequest::create([
+            $request = UserRequest::create([
                 'user_id' => $id,
                 'is_workout_program' => (session()->pull('is_workout_program') === true) ? 1 : 0,
                 'is_nutrition_program' => (session()->pull('is_nutrition_program') === true) ? 1 : 0,
             ]);
+            Notification::send(User::admins(),new UserRequested($request));
 
             return redirect()->route('panel.requests.index',$id);
         }
@@ -65,12 +72,12 @@ class UserRequestController extends Controller
                 ],
             ]);
             if ($result['Status'] == 100) {
-
-                UserRequest::create([
+                $request = UserRequest::create([
                     'user_id' => $id,
                     'is_workout_program' => (session()->pull('is_workout_program') === true) ? 1 : 0,
                     'is_nutrition_program' => (session()->pull('is_nutrition_program') === true) ? 1 : 0,
                 ]);
+                Notification::send(User::admins(),new UserRequested($request));
 
                 return redirect()->route('home');
             } else {

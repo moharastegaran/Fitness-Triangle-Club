@@ -77,18 +77,6 @@ class User extends Authenticatable
         return Role::where('title','admin')->first()->users;
     }
 
-    public function newMembers(){
-        return $this->unreadNotifications()
-            ->where('type' , UserRegistered::class)
-            ->get();
-    }
-
-    public function newMessages(){
-        return $this->unreadNotifications()
-            ->where('type',ContactSent::class)
-            ->get();
-    }
-
     public function isAdmin(){
         return in_array(
             Role::where('title','admin')->first()->id ,

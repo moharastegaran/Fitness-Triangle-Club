@@ -6,6 +6,7 @@ use App\Attachment;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\UserMedicalRequest;
 use App\Http\Requests\UserPersonalRequest;
+use App\Notifications\UserRegistered;
 use App\Permission;
 use App\User;
 use App\UserAthletic;
@@ -212,6 +213,9 @@ class UserController extends Controller
 
     public function show($id)
     {
+        if(\request('mark_as_read')){
+            auth()->user()->unreadNotifications->where('type',UserRegistered::class)->MarkAsRead();
+        }
         $user = User::find($id);
         return view('panel.users.show', compact('user'));
     }

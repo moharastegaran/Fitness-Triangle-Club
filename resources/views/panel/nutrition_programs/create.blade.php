@@ -35,12 +35,12 @@
             <div class="col-md-4 col-sm-6 col-12">
                 <label for="from">تاریخ آغاز برنامه</label>
                 <input type="text" name="from" class="form-control form-control-sm" id="from" autocomplete="off"
-                       placeholder="تاریخ آغاز برنامه" value="{{ old('from') }}">
+                       placeholder="تاریخ آغاز برنامه" value="{{ old('from') }}" required>
             </div>
             <div class="col-md-4 col-sm-6 col-12">
                 <label for="duration">مدت زمان اجرای برنامه (روز)</label>
                 <input type="number" min="1" name="duration" class="form-control form-control-sm" id="from"
-                       placeholder="30" value="{{ old('duration') }}">
+                       placeholder="30" value="{{ old('duration') }}" required>
             </div>
             <div class="col-md-4 col-sm-6 col-12">
                 <label for="comment">توضیحات</label>

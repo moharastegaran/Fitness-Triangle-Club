@@ -57,7 +57,7 @@
                                         <span class="new-chk-content">برنامه تمرینی</span>
                                     </label>
                                 </div>
-                                <div id="expense_workout">{{ toFaDigits(\App\Expense::where('type','برنامه تمرینی')->first()->price ?: 0).' تومان' }}</div>
+                                <div id="expense_workout">{{ normalize(\App\Expense::where('type','برنامه تمرینی')->first()->price ?: 0).' تومان' }}</div>
                             </div>
                             <div class="m-2 d-flex justify-content-between">
                                 <div class="n-chk">
@@ -67,7 +67,7 @@
                                         <span class="new-chk-content">برنامه غذایی</span>
                                     </label>
                                 </div>
-                                <div id="expense_nutrition">{{ toFaDigits(\App\Expense::where('type','برنامه غذایی')->first()->price ?: 0).' تومان' }}</div>
+                                <div id="expense_nutrition">{{ normalize(\App\Expense::where('type','برنامه غذایی')->first()->price ?: 0).' تومان' }}</div>
                             </div>
                             <hr>
                             <div class="m-2 d-flex justify-content-between">
@@ -86,10 +86,12 @@
 @section('table-header')
     <tr>
         <th class="text-left" style="width: 20px">#</th>
-        @if($is_admin)<th>درخواست دهنده</th>@endif
+        @if($is_admin)
+            <th>درخواست دهنده</th>@endif
         <th>برنامه تمرینی</th>
         <th>برنامه غذایی</th>
-        @if(!$is_admin)<th>تایید شده</th>@endif
+        @if(!$is_admin)
+            <th>تایید شده</th>@endif
         <th>تاریخ ثبت</th>
         <th>توضیحات</th>
         <th>
@@ -108,7 +110,8 @@
     @foreach($requests as $request)
         <tr>
             <td>{{ $index }}</td>
-            @if($is_admin)<td>{{ $request->user->name.' '.$request->user->family }}</td>@endif
+            @if($is_admin)
+                <td>{{ $request->user->name.' '.$request->user->family }}</td>@endif
             <td>
                 @if($request->is_workout_program)
                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
@@ -160,7 +163,7 @@
                 </td>
             @endif
             <td>{{ \Morilog\Jalali\Jalalian::forge($request->created_at)->format('%y-%m-%d')}}</td>
-            <td>{{ $request->comment ? ellipsize($request->comment) : '-' }}</td>
+            <td @if($request->comment) title="{{ $request->comment }}" @endif>{{ $request->comment ? ellipsize($request->comment) : '-' }}</td>
             <td></td>
         </tr>
         @php $index++; @endphp

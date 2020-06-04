@@ -27,12 +27,12 @@
                         </div>
                     </div>
                     <div class="w-info">
-                        <h6 class="value">{{ toFaDigits('0') }}</h6>
+                        <h6 class="value">{{ toFaDigits(auth()->user()->unreadNotifications()->where('type',\App\Notifications\UserRequested::class)->count()) }}</h6>
                         <p class="">درخواست برنامه جدید</p>
                     </div>
                 </div>
                 <div class="w-footer">
-                    <a href="#" class="w-100 btn btn-sm btn-rounded"
+                    <a href="{{ route('panel.requests.index',['mark_as_read'=>1]) }}" class="w-100 btn btn-sm btn-rounded"
                        style="background-image: linear-gradient(to left, #7579ff 0%, #b224ef 100%);">بیشتر</a>
                     {{--<div class="progress-bar bg-gradient-secondary" role="progressbar" style="width: 57%" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100"></div>--}}
                 </div>

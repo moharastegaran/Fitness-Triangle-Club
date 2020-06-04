@@ -47,7 +47,7 @@ class UserRegistered extends Notification
     {
         return [
             'admin' => $notifiable ,
-            'user' => $this->registered_user
+            'user' => $this->registered_user,
         ];
     }
 }

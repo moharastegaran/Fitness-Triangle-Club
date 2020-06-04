@@ -12,15 +12,14 @@
             </li>
         </ul>
 
-        <ul class="navbar-item flex-row align-items-center ml-md-auto">
+        <ul class="navbar-item flex-row align-items-center ml-auto">
 
             {{ auth()->user()->name.' '.auth()->user()->family }}
 
-            @php
-                $notifications = auth()->user()->newMembers();
-            @endphp
-
             @if(auth()->user()->isAdmin())
+                @php
+                    $notifications = auth()->user()->unreadNotifications;
+                @endphp
                 <li class="nav-item dropdown notification-dropdown">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="notificationDropdown"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -35,27 +34,8 @@
                     <div class="dropdown-menu position-absolute" aria-labelledby="notificationDropdown">
                         <div class="notification-scroll">
                             @forelse($notifications as $notification)
-                                <div class="dropdown-item">
-                                    <a href="{{ route('panel.users.show',$notification->data['user']['id']) }}">
-                                        <div class="media">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round" stroke-linejoin="round"
-                                                 class="feather feather-user-plus">
-                                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                                <circle cx="8.5" cy="7" r="4"></circle>
-                                                <line x1="20" y1="8" x2="20" y2="14"></line>
-                                                <line x1="23" y1="11" x2="17" y2="11"></line>
-                                            </svg>
-                                            <div class="media-body">
-                                                <div class="notification-para">
-                                                    <span class="user-name">{{ $notification->data['user']['name'].' '.$notification->data['user']['family'] }}</span>
-                                                    به سایت پیوست
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+
+                                @include('panel.includes.notifications.'.Str::snake(class_basename($notification->type)))
                             @empty
                                 <div class="dropdown-item text-light">
                                     اعلان جدیدی وجود ندارد
