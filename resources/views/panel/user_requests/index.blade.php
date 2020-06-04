@@ -72,7 +72,7 @@
                             <hr>
                             <div class="m-2 d-flex justify-content-between">
                                 <div>هزینه کل</div>
-                                <div><span id="expense_total">0</span> تومان</div>
+                                <div><span id="expense_total">۰</span> تومان</div>
                             </div>
                             <button type="submit" class="btn btn-primary mt-5 mb-2">ثبت و پرداخت</button>
                         </form>
@@ -165,23 +165,46 @@
             <td>{{ \Morilog\Jalali\Jalalian::forge($request->created_at)->format('%y-%m-%d')}}</td>
             <td @if($request->comment) title="{{ $request->comment }}" @endif>{{ $request->comment ? ellipsize($request->comment) : '-' }}</td>
             <td>
-                <ul class="table-controls">
-                    <li>
-                        <form class="d-none" method="post"
-                              action="{{ route('panel.requests.destroy', $request) }}">
-                            @csrf
-                            @method('DELETE')
-                        </form>
-                        <a href="#delete-modal" data-toggle="modal" onclick="$(this).addClass('deletable');">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                 class="feather feather-trash text-dark p-1 br-6 mb-1">
-                                <polyline points="3 6 5 6 21 6"></polyline>
-                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
+                <div class="dropdown custom-dropdown">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink6" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-more-horizontal">
+                            <circle cx="12" cy="12" r="1"></circle>
+                            <circle cx="19" cy="12" r="1"></circle>
+                            <circle cx="5" cy="12" r="1"></circle>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink6"
+                         style="will-change: transform; position: absolute; transform: translate3d(29px, 20px, 0px); top: 0px; left: 0px;"
+                         x-placement="bottom-start">
+                        @if(auth()->user()->isAdmin())
+                            @if($request->is_workout_program && !$request->workout_program)<a class="dropdown-item"
+                                                                href="{{ route('panel.admin.workout-programs.create',['requester_name' => $request->user->name.' '.$request->user->family,'request_id' => $request->id]) }}">برنامه تمرینی</a>@endif
+                            @if($request->is_nutrition_program &&  !$request->nutrition_program)<a class="dropdown-item"
+                                                                  href="{{ route('panel.admin.nutrition-programs.create',['requester_name' => $request->user->name.' '.$request->user->family,'request_id' => $request->id]) }}">برنامه غذایی</a>@endif
+                        @endif
+                        <a class="dropdown-item" href="#delete-modal" data-toggle="modal">حذف</a>
+                    </div>
+                </div>
+                {{--<ul class="table-controls">--}}
+                {{--<li>--}}
+                {{--<form class="d-none" method="post"--}}
+                {{--action="{{ route('panel.requests.destroy', $request) }}">--}}
+                {{--@csrf--}}
+                {{--@method('DELETE')--}}
+                {{--</form>--}}
+                {{--<a href="#delete-modal" data-toggle="modal" onclick="$(this).addClass('deletable');">--}}
+                {{--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"--}}
+                {{--stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"--}}
+                {{--class="feather feather-trash text-dark p-1 br-6 mb-1">--}}
+                {{--<polyline points="3 6 5 6 21 6"></polyline>--}}
+                {{--<path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>--}}
+                {{--</svg>--}}
+                {{--</a>--}}
+                {{--</li>--}}
+                {{--</ul>--}}
             </td>
         </tr>
         @php $index++; @endphp

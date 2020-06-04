@@ -18,12 +18,12 @@ class UserRequest extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function workout_programs(){
-        return $this->hasMany(WorkoutProgram::class,'request_id');
+    public function workout_program(){
+        return $this->hasOne(WorkoutProgram::class,'request_id');
     }
 
-    public function nutrition_programs(){
-        return $this->hasMany(NutritionProgram::class,'request_id');
+    public function nutrition_program(){
+        return $this->hasOne(NutritionProgram::class,'request_id');
     }
 
     public function transaction(){

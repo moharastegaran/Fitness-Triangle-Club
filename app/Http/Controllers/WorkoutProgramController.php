@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProgramRequest;
 use App\User;
+use App\UserRequest;
 use App\Workout;
 use App\WorkoutCategory;
 use App\Permission;
@@ -38,6 +39,12 @@ class WorkoutProgramController extends Controller
         $data['coach_id']=auth()->user()->id;
         $data['day_type']= ($data['day_type']=='false' ? 0 : 1);
         $data['from'] = CalendarUtils::createCarbonFromFormat('Y-m-d', $data['from'])->toDateString();
+        if(array_key_exists('request_id',$data)){
+            $data['request_id']=intval($data['request_id']);
+            $req = UserRequest::find($data['request_id']);
+            $req->is_approved = 1;
+            $req->save();
+        }
         $program = WorkoutProgram::create($data);
         if ($request->has('items')){
             foreach ($data['items'] as $key => $day){

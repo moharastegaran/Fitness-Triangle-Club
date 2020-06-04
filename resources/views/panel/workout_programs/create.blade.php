@@ -17,7 +17,7 @@
 @endsection
 
 @section('content')
-    <form role="form" class="col-12" action="{{ route('panel.admin.workout-programs.store') }}" method="post">
+    <form role="form" class="col-12" action="{{ route('panel.admin.workout-programs.store',['request_id'=>request('request_id')]) }}" method="post">
 
         @include('panel.includes.errors')
 
@@ -29,7 +29,8 @@
                     <option value="" disabled selected>-- انتخاب کنید --</option>
                     @foreach($members as $member)
                         <option value="{{ $member->name.' '.$member->family }}"
-                                @if(old('requester_name')==$member->name.' '.$member->family) selected @endif>
+                                @if(request('requester_name')==$member->name.' '.$member->family) selected
+                                @elseif(old('requester_name')==$member->name.' '.$member->family) selected @endif>
                             {{ $member->name.' '.$member->family.' __ '.$member->mobile }}
                         </option>
                     @endforeach

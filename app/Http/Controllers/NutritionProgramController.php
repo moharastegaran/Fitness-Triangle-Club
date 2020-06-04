@@ -8,6 +8,7 @@ use App\Nutrition;
 use App\NutritionProgram;
 use App\NutritionProgramItem;
 use App\User;
+use App\UserRequest;
 use Illuminate\Http\Request;
 use Morilog\Jalali\CalendarUtils;
 use niklasravnsborg\LaravelPdf\Facades\Pdf as PDF;
@@ -51,6 +52,12 @@ class NutritionProgramController extends Controller
         $data['coach_id']=auth()->user()->id;
         $data['day_type']= ($data['day_type']=='false' ? 0 : 1);
         $data['from'] = CalendarUtils::createCarbonFromFormat('Y-m-d', $data['from'])->toDateString();
+        if(array_key_exists('request_id',$data)){
+            $data['request_id']=intval($data['request_id']);
+            $req = UserRequest::find($data['request_id']);
+            $req->is_approved = 1;
+            $req->save();
+        }
         $program = NutritionProgram::create($data);
         if ($request->has('items')) {
             foreach ($data['items'] as $key => $day) {

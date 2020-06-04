@@ -41,7 +41,7 @@
             <td>{{ $nutritionProgram->getRequesterName() }}</td>
             <td>{{ toFaDigits(\Morilog\Jalali\Jalalian::forge($nutritionProgram->from)->format('%y-%m-%d'))}}</td>
             <td>{{ toFaDigits($nutritionProgram->duration)  }}</td>
-            <td title="{{ $nutritionProgram->comment }}">{{ ellipsize($nutritionProgram->comment) ?? '-' }}</td>
+            <td title="{{ $nutritionProgram->comment }}">{{ ellipsize($nutritionProgram->comment) ?: '-' }}</td>
             <td>
                 <ul class="table-controls">
                     <li><a href="{{ route('panel.admin.nutrition-programs.export-pdf',$nutritionProgram) }}" target="_blank">

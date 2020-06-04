@@ -13,6 +13,7 @@ class WorkoutProgram extends Model
 
     protected $fillable = [
         'coach_id',
+        'request_id',
         'requester_name',
         'duration',
         'from',
@@ -32,9 +33,9 @@ class WorkoutProgram extends Model
 
     public function getRequesterName()
     {
-        if ($this->request) {
-            return $this->request->user->name . ' ' . $this->request->user->family;
-        }
+//        if ($this->request) {
+//            return $this->request->user->name . ' ' . $this->request->user->family;
+//        }
         return $this->requester_name;
     }
 }
