@@ -53,7 +53,7 @@
             <td title="{{ $workoutProgram->comment }}">{{ ellipsize($workoutProgram->comment) ?? '-' }}</td>
             <td>
                 <ul class="table-controls">
-                    <li><a href="{{ route('panel.admin.workout-programs.export-pdf',$workoutProgram) }}" target="_blank">
+                    <li><a href="{{ route('panel.workout-programs.export-pdf',$workoutProgram) }}" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                  stroke-linejoin="round" class="feather feather-download text-secondary px-1 mb-1">
@@ -62,7 +62,7 @@
                                 <line x1="12" y1="15" x2="12" y2="3"></line>
                             </svg>
                         </a></li>
-                    <li><a href="{{ route('panel.admin.workout-programs.show', $workoutProgram) }}" class="bs-tooltip"
+                    <li><a href="{{ route('panel.workout-programs.show', $workoutProgram) }}" class="bs-tooltip"
                            data-toggle="tooltip" data-placement="top" title=""
                            data-original-title="مشاهده">
                             <svg xmlns="http://www.w3.org/2000/svg"

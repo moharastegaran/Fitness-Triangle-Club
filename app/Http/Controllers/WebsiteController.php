@@ -64,7 +64,6 @@ class WebsiteController extends Controller
 
     public function store(Request $request)
     {
-//        dd($request->all());
         $this->validate($request, [
             'name' => 'required',
             'family' => 'required',
@@ -92,7 +91,7 @@ class WebsiteController extends Controller
         Notification::send(User::admins(),new UserRegistered($user));
         auth()->login($user);
 
-        return redirect()->route('website.index');
+        return redirect()->route('panel.dashboard');
     }
 
     public function login()

@@ -22,8 +22,9 @@ class NutritionProgramController extends Controller
      */
     public function index()
     {
-        $nutritionPrograms = NutritionProgram::query()->latest()->get();
+        abort_unless(auth()->user()->can('viewAny',NutritionProgram::class),403);
 
+        $nutritionPrograms = NutritionProgram::query()->latest()->get();
         return view('panel.nutrition_programs.index', compact('nutritionPrograms'));
     }
 
@@ -34,6 +35,8 @@ class NutritionProgramController extends Controller
      */
     public function create()
     {
+        abort_unless(auth()->user()->can('create',NutritionProgram::class),403);
+
         $nutritions = Nutrition::all();
         $meals = Meal::all();
         $members = User::members();
@@ -48,6 +51,8 @@ class NutritionProgramController extends Controller
      */
     public function store(ProgramRequest $request)
     {
+        abort_unless(auth()->user()->can('create',NutritionProgram::class),403);
+
         $data = $request->all();
         $data['coach_id']=auth()->user()->id;
         $data['day_type']= ($data['day_type']=='false' ? 0 : 1);
@@ -93,6 +98,8 @@ class NutritionProgramController extends Controller
     public function show($id)
     {
         $program = NutritionProgram::find($id);
+        abort_unless(auth()->user()->can('view',$program),403);
+
         $nutritions = Nutrition::get(['id','name']);
         $meals = Meal::all();
         return view('panel.nutrition_programs.show',compact('program','nutritions','meals'));
@@ -107,6 +114,8 @@ class NutritionProgramController extends Controller
     public function edit($id)
     {
         $program = NutritionProgram::find($id);
+        abort_unless(auth()->user()->can('update',$program),403);
+
         $nutritions = Nutrition::all();
         $meals = Meal::all();
         $members = User::members();
@@ -123,6 +132,8 @@ class NutritionProgramController extends Controller
     public function update(ProgramRequest $request, $id)
     {
         $program = NutritionProgram::find($id);
+        abort_unless(auth()->user()->can('update',$program),403);
+
         $data = $request->all();
         $data['coach_id']=auth()->user()->id;
         $data['day_type']= ($data['day_type']=='false' ? 0 : 1);
@@ -151,8 +162,9 @@ class NutritionProgramController extends Controller
     public function destroy($id)
     {
         $program = NutritionProgram::find($id);
-        $program->delete();
+        abort_unless(auth()->user()->can('delete',$program),403);
 
+        $program->delete();
         return redirect()->back()->with([
             'is_deleted' => true
         ]);
@@ -186,8 +198,11 @@ class NutritionProgramController extends Controller
         ]);
     }
 
-    public function exportPDF($id){
+    public function exportPDF($id)
+    {
         $program = NutritionProgram::find($id);
+        abort_unless(auth()->user()->can('view',$program),403);
+
         return PDF::loadView('panel.nutrition_programs.pdf_en', compact('program'), [], [
             'format' => 'A5-L','mode' => 'utf-8'
         ])->stream('برنامه غذایی_'.$program->requester_name.'.pdf');

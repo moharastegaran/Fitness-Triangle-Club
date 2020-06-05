@@ -115,7 +115,7 @@
                 </li>
                 <li class="menu">
                     <a href="#app" data-toggle="collapse"
-                       aria-expanded="{{ (strpos($roueName,'admin.workout-programs') !== false || strpos($roueName,'admin.nutrition-programs') !== false || strpos($roueName,'admin.requests') !== false) ? 'true' : 'false'}}"
+                       aria-expanded="{{ (strpos($roueName,'admin.workout-programs') !== false || strpos($roueName,'admin.nutrition-programs') !== false || strpos($roueName,'panel.requests') !== false) ? 'true' : 'false'}}"
                        class="dropdown-toggle">
                         <div class="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -134,7 +134,7 @@
                             </svg>
                         </div>
                     </a>
-                    <ul class="collapse submenu list-unstyled {{ (strpos($roueName,'admin.workout-programs') !== false || strpos($roueName,'admin.nutrition-programs') !== false || strpos($roueName,'admin.requests') !== false) ? 'show' : '' }}"
+                    <ul class="collapse submenu list-unstyled {{ (strpos($roueName,'admin.workout-programs') !== false || strpos($roueName,'admin.nutrition-programs') !== false || strpos($roueName,'panel.requests') !== false) ? 'show' : '' }}"
                         id="app" data-parent="#accordionExample">
                         <li @if(strpos($roueName,'admin.workout-programs') !== false) class="active" @endif><a
                                     href="{{ route('panel.admin.workout-programs.index') }}">تمرینی</a></li>

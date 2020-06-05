@@ -19,22 +19,25 @@ class WorkoutProgramController extends Controller
 {
     public function index()
     {
-        $workoutPrograms = WorkoutProgram::query()->latest()->get();
+        $this->authorize('viewAny',WorkoutProgram::class);
 
+        $workoutPrograms = WorkoutProgram::query()->latest()->get();
         return view('panel.workout_programs.index', compact('workoutPrograms'));
     }
 
     public function create()
     {
-        $request_id = request('request_id');
-        $request = null;
+        $this->authorize('create',WorkoutProgram::class);
+
         $categories = WorkoutCategory::orderBy('title')->get();
         $members = User::members();
-        return view('panel.workout_programs.create', compact('categories', 'request','members'));
+        return view('panel.workout_programs.create', compact('categories','members'));
     }
 
     public function store(ProgramRequest $request)
     {
+        $this->authorize('create',WorkoutProgram::class);
+
         $data = $request->all();
         $data['coach_id']=auth()->user()->id;
         $data['day_type']= ($data['day_type']=='false' ? 0 : 1);
@@ -76,18 +79,18 @@ class WorkoutProgramController extends Controller
 
     public function show($id)
     {
-        abort_unless(Gate::allows(Permission::WORKOUT_ACCESS), 403);
-
         $program = WorkoutProgram::find($id);
+        $this->authorize('view',$program);
+
         $workouts = Workout::all();
         return view('panel.workout_programs.show',compact('program','workouts'));
     }
 
     public function edit($id)
     {
-        abort_unless(Gate::allows(Permission::WORKOUT_EDIT), 403);
-
         $program = WorkoutProgram::find($id);
+        $this->authorize('update',$program);
+
         $categories = WorkoutCategory::orderBy('title')->get();
         $members = User::members();
         return view('panel.workout_programs.edit',compact('program','categories','members'));
@@ -95,12 +98,13 @@ class WorkoutProgramController extends Controller
 
     public function update(ProgramRequest $request, $id)
     {
-        abort_unless(Gate::allows(Permission::WORKOUT_EDIT), 403);
+        $program = WorkoutProgram::find($id);
+        $this->authorize('update',$program);
+
         $data = $request->all();
         $data['coach_id']=auth()->user()->id;
         $data['day_type']= ($data['day_type']=='false' ? 0 : 1);
         $data['from'] = CalendarUtils::createCarbonFromFormat('Y-m-d', $data['from'])->toDateString();
-        $program = WorkoutProgram::find($id);
         $program->update($data);
         $program->items()->delete();
         if ($request->has('items')){
@@ -120,11 +124,10 @@ class WorkoutProgramController extends Controller
 
     public function destroy($id)
     {
-        abort_unless(Gate::allows(Permission::CATEGORY_DELETE), 403);
-
         $program = WorkoutProgram::find($id);
-        $program->delete();
+        $this->authorize('delete',$program);
 
+        $program->delete();
         return redirect()->back()->with([
             'is_deleted' => true
         ]);
@@ -134,8 +137,11 @@ class WorkoutProgramController extends Controller
         return $request->all();
     }
 
-    public function exportPDF($id){
+    public function exportPDF($id)
+    {
         $program = WorkoutProgram::find($id);
+        $this->authorize('view',$program);
+
         return PDF::loadView('panel.workout_programs.pdf_en', compact('program'), [], [
             'format' => 'A5-L','mode' => 'utf-8'
         ])->stream('برنامه تمرینی_'.$program->requester_name.'.pdf');

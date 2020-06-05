@@ -28,7 +28,7 @@ class NutritionProgram extends Model
 
     public function request()
     {
-        return $this->belongsTo(ProgramRequest::class, 'request_id');
+        return $this->belongsTo(UserRequest::class, 'request_id');
     }
 
     public function getRequesterName()

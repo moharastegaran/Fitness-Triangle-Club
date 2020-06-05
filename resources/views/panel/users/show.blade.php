@@ -137,18 +137,6 @@
                             @if($a)
                                 <div class="overlay-controls">
                                     <div class="overlay-items">
-                                        {{--<a href="#" target="_blank">--}}
-                                        {{--<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"--}}
-                                        {{--viewBox="0 0 24 24"--}}
-                                        {{--fill="none" stroke="currentColor" stroke-width="2"--}}
-                                        {{--stroke-linecap="round"--}}
-                                        {{--stroke-linejoin="round"--}}
-                                        {{--class="feather feather-download">--}}
-                                        {{--<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>--}}
-                                        {{--<polyline points="7 10 12 15 17 10"></polyline>--}}
-                                        {{--<line x1="12" y1="15" x2="12" y2="3"></line>--}}
-                                        {{--</svg>--}}
-                                        {{--</a>--}}
                                         <a href="#" class="fullscreen">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -213,8 +201,16 @@
             <div class="skills layout-spacing widget-chart-two">
                 <div class="widget-content widget-content-area">
                     <h3>برنامه‌ها و درخواست‌ها</h3>
-                    <div id="chart-2" class="iransans-web">
-                    </div>
+                    @if(count($user->requests))
+                        <div id="chart-2" class="iransans-web">
+                        </div>
+                    @else
+                        هنوز درخواست برنامه‌ای را ثبت نکرده‌اید.
+                        <div class="text-center mt-3">
+                            <a href="{{ route('panel.requests.index',['is_redirected'=>1]) }}"
+                               class="btn btn-rounded btn-outline-success mb-2">درخواست برنامه</a>
+                        </div>
+                    @endif
                 </div>
             </div>
 
@@ -403,113 +399,115 @@
     <script src="{{ asset('cork/plugins/apex/apexcharts.min.js') }}"></script>
     <script>
         $(document).ready(function () {
+                    @if(count($user->requests))
             var options = {
-                chart: {
-                    type: 'donut',
-                    width: 380
-                },
-                colors: ['#5c1ac3', '#e2a03f', '#e7515a', '#e2a03f'],
-                dataLabels: {
-                    enabled: false
-                },
-                legend: {
-                    position: 'bottom',
-                    horizontalAlign: 'center',
-                    fontFamily: 'iransans_web',
-                    fontSize: '14px',
-                    markers: {
-                        width: 10,
-                        height: 10,
+                    chart: {
+                        type: 'donut',
+                        width: 380
                     },
-                    itemMargin: {
-                        horizontal: 0,
-                        vertical: 8
-                    }
-                },
-                plotOptions: {
-                    pie: {
-                        donut: {
-                            size: '65%',
-                            background: 'transparent',
-                            fontFamily: 'iransans_web',
-                            labels: {
-                                show: true,
+                    colors: ['#5c1ac3', '#e2a03f', '#e7515a', '#e2a03f'],
+                    dataLabels: {
+                        enabled: false
+                    },
+                    legend: {
+                        position: 'bottom',
+                        horizontalAlign: 'center',
+                        fontFamily: 'iransans_web',
+                        fontSize: '14px',
+                        markers: {
+                            width: 10,
+                            height: 10,
+                        },
+                        itemMargin: {
+                            horizontal: 0,
+                            vertical: 8
+                        }
+                    },
+                    plotOptions: {
+                        pie: {
+                            donut: {
+                                size: '65%',
+                                background: 'transparent',
                                 fontFamily: 'iransans_web',
-                                name: {
+                                labels: {
                                     show: true,
-                                    fontSize: '29px',
                                     fontFamily: 'iransans_web',
-                                    color: undefined,
-                                    offsetY: -10
-                                },
-                                value: {
-                                    show: true,
-                                    fontSize: '26px',
-                                    fontFamily: 'iransans_web',
-                                    color: '#bfc9d4',
-                                    offsetY: 16,
-                                    formatter: function (val) {
-                                        return val
-                                    }
-                                },
-                                total: {
-                                    show: true,
-                                    showAlways: true,
-                                    label: 'مجموع',
-                                    color: '#888ea8',
-                                    formatter: function (w) {
-                                        return w.globals.seriesTotals.reduce(function (a, b) {
-                                            return a + b
-                                        }, 0)
+                                    name: {
+                                        show: true,
+                                        fontSize: '29px',
+                                        fontFamily: 'iransans_web',
+                                        color: undefined,
+                                        offsetY: -10
+                                    },
+                                    value: {
+                                        show: true,
+                                        fontSize: '26px',
+                                        fontFamily: 'iransans_web',
+                                        color: '#bfc9d4',
+                                        offsetY: 16,
+                                        formatter: function (val) {
+                                            return val
+                                        }
+                                    },
+                                    total: {
+                                        show: true,
+                                        showAlways: true,
+                                        label: 'مجموع',
+                                        color: '#888ea8',
+                                        formatter: function (w) {
+                                            return w.globals.seriesTotals.reduce(function (a, b) {
+                                                return a + b
+                                            }, 0)
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
-                },
-                stroke: {
-                    show: true,
-                    width: 25,
-                    colors: '#0e1726'
-                },
-                series: [parseInt('{{ $user_wp_count }}'), parseInt('{{ $user_np_count }}'), parseInt('{{ $user_unapproved_count }}')],
-                labels: ['تمرینی', 'غذایی', 'تایید نشده'],
-                responsive: [{
-                    breakpoint: 1599,
-                    options: {
-                        chart: {
-                            width: '350px',
-                            height: '400px'
-                        },
-                        legend: {
-                            position: 'bottom'
-                        }
                     },
+                    stroke: {
+                        show: true,
+                        width: 25,
+                        colors: '#0e1726'
+                    },
+                    series: [parseInt('{{ $user_wp_count }}'), parseInt('{{ $user_np_count }}'), parseInt('{{ $user_unapproved_count }}')],
+                    labels: ['تمرینی', 'غذایی', 'تایید نشده'],
+                    responsive: [{
+                        breakpoint: 1599,
+                        options: {
+                            chart: {
+                                width: '350px',
+                                height: '400px'
+                            },
+                            legend: {
+                                position: 'bottom'
+                            }
+                        },
 
-                    breakpoint: 1439,
-                    options: {
-                        chart: {
-                            width: '250px',
-                            height: '390px'
-                        },
-                        legend: {
-                            position: 'bottom'
-                        },
-                        plotOptions: {
-                            pie: {
-                                donut: {
-                                    size: '65%',
+                        breakpoint: 1439,
+                        options: {
+                            chart: {
+                                width: '250px',
+                                height: '390px'
+                            },
+                            legend: {
+                                position: 'bottom'
+                            },
+                            plotOptions: {
+                                pie: {
+                                    donut: {
+                                        size: '65%',
+                                    }
                                 }
                             }
-                        }
-                    },
-                }]
-            }
+                        },
+                    }]
+                }
             var chart = new ApexCharts(
                 document.querySelector("#chart-2"),
                 options
             );
             chart.render();
+            @endif
 
             $("a.fullscreen").on("click", function (e) {
                 e.preventDefault();

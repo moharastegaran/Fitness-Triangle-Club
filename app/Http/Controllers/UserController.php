@@ -28,9 +28,11 @@ class UserController extends Controller
     public function dashboard()
     {
         $user = auth()->user();
-        return view($user->isAdmin() ? 'panel.dashboard' : 'panel.users.show')->with([
-            'user' => $user
-        ]);
+        if ($user->isAdmin()) {
+            return view('panel.dashboard')->with(['user' => $user]);
+        } else {
+            return redirect()->route('panel.users.show', $user->id);
+        }
     }
 
     public function index()
@@ -213,30 +215,29 @@ class UserController extends Controller
 
     public function show($id)
     {
-        if(\request('mark_as_read')){
-            auth()->user()->unreadNotifications->where('type',UserRegistered::class)->MarkAsRead();
-        }
         $user = User::find($id);
-        $user_wp_count = $user->requests()->where('is_workout_program',1)
-            ->where('is_nutrition_program',0)
-            ->where('is_approved',1)
-            ->count();
-        $user_np_count = $user->requests()->where('is_workout_program',0)
-            ->where('is_nutrition_program',1)
-            ->where('is_approved',1)
-            ->count();
-        $user_unapproved_count = $user->requests()->where('is_approved',0)
-            ->count();
-        return view('panel.users.show', compact('user','user_wp_count','user_np_count','user_unapproved_count'));
+        $this->authorize('view', $user);
+
+        if (\request('mark_as_read')) {
+            auth()->user()->unreadNotifications->where('type', UserRegistered::class)->MarkAsRead();
+        }
+
+        $user_wp_count = $user->requests()->where('is_workout_program', 1)
+            ->where('is_nutrition_program', 0)->where('is_approved', 1)->count();
+        $user_np_count = $user->requests()->where('is_workout_program', 0)
+            ->where('is_nutrition_program', 1)->where('is_approved', 1)->count();
+        $user_unapproved_count = $user->requests()->where('is_approved', 0)->count();
+        return view('panel.users.show', compact('user', 'user_wp_count', 'user_np_count', 'user_unapproved_count'));
     }
 
     public function edit($id)
     {
+        $user = User::find($id);
+        $this->authorize('update', $user);
+
         if (!Session::has('user_update_first_attempt')) {
             Session::put('user_update_first_attempt', true);
         }
-
-        $user = User::find($id);
         return view('panel.users.edit', compact('user'));
     }
 
@@ -254,6 +255,9 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
+        $user = User::find($id);
+        $this->authorize('update', $user);
+
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'family' => 'required',
@@ -270,17 +274,15 @@ class UserController extends Controller
             'mobile.regex' => 'فرمت شماره تماس به درستی وارد نشده است.'
         ]);
 
-        if ($user = User::where('id', '!=', $id)->where('mobile', '=', $request->mobile)->first()) {
-            $validator->getMessageBag()->merge(['mobile'=>array('شماره تماس قبلا در سیستم ثبت شده است.')]);
+        if (User::where('id', '!=', $id)->where('mobile','=',$request->mobile)->first()) {
+            $validator->getMessageBag()->merge(['mobile' => array('شماره تماس قبلا در سیستم ثبت شده است.')]);
         }
 
-        if($validator->getMessageBag()->count() > 0){
+        if ($validator->getMessageBag()->count() > 0) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
         $data = $request->all();
-        $user = User::find($id);
-
         $data['birthday'] = CalendarUtils::createCarbonFromFormat('Y-m-d', $data['birth_year'] . '-' . $data['birth_month'] . '-' . $data['birth_day'])->toDateString();
         $user->update(collect($data)->only(['name', 'family', 'email', 'mobile', 'birthday'])->toArray());
 

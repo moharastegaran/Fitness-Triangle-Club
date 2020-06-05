@@ -38,7 +38,7 @@
                     <div class="d-flex justify-content-between align-items-center col-12">
                         <h4>مشخصات</h4>
                         <div class="d-flex flex-wrap">
-                            <a href="{{ route('panel.admin.workout-programs.export-pdf',$program) }}" target="_blank">
+                            <a href="{{ route('panel.workout-programs.export-pdf',$program) }}" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                      stroke-linejoin="round" class="feather feather-download text-secondary mb-1">
@@ -47,29 +47,16 @@
                                     <line x1="12" y1="15" x2="12" y2="3"></line>
                                 </svg>
                             </a>
-                            <a href="{{ route('panel.admin.workout-programs.edit', $program) }}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                     stroke-linecap="round" stroke-linejoin="round"
-                                     class="feather feather-edit-2 text-warning ml-2">
-                                    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
-                                </svg>
-                            </a>
-                            {{--<li>--}}
-                            {{--<form class="d-none" method="post"--}}
-                            {{--action="{{ route('panel.admin.workout-programs.destroy', $workoutProgram) }}">--}}
-                            {{--@csrf--}}
-                            {{--@method('DELETE')--}}
-                            {{--</form>--}}
-                            {{--<a href="#delete-modal" data-toggle="modal" onclick="$(this).addClass('deletable');">--}}
-                            {{--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"--}}
-                            {{--stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"--}}
-                            {{--class="feather feather-trash text-dark p-1 br-6 mb-1">--}}
-                            {{--<polyline points="3 6 5 6 21 6"></polyline>--}}
-                            {{--<path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>--}}
-                            {{--</svg>--}}
-                            {{--</a>--}}
-                            {{--</li>--}}
+                            @if(auth()->user()->isAdmin())
+                                <a href="{{ route('panel.admin.workout-programs.edit', $program) }}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                         stroke-linecap="round" stroke-linejoin="round"
+                                         class="feather feather-edit-2 text-warning ml-2">
+                                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                    </svg>
+                                </a>
+                            @endif
                         </div>
                     </div>
                 </div>

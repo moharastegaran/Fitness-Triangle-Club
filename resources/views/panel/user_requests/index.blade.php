@@ -180,10 +180,31 @@
                          style="will-change: transform; position: absolute; transform: translate3d(29px, 20px, 0px); top: 0px; left: 0px;"
                          x-placement="bottom-start">
                         @if(auth()->user()->isAdmin())
-                            @if($request->is_workout_program && !$request->workout_program)<a class="dropdown-item"
-                                                                href="{{ route('panel.admin.workout-programs.create',['requester_name' => $request->user->name.' '.$request->user->family,'request_id' => $request->id]) }}">برنامه تمرینی</a>@endif
+                            @if($request->is_workout_program && !$request->workout_program)
+                                <a class="dropdown-item"
+                                   href="{{ route('panel.admin.workout-programs.create',['requester_name' => $request->user->name.' '.$request->user->family,'request_id' => $request->id]) }}">برنامه
+                                    تمرینی</a>
+                            @endif
                             @if($request->is_nutrition_program &&  !$request->nutrition_program)<a class="dropdown-item"
-                                                                  href="{{ route('panel.admin.nutrition-programs.create',['requester_name' => $request->user->name.' '.$request->user->family,'request_id' => $request->id]) }}">برنامه غذایی</a>@endif
+                                                                                                   href="{{ route('panel.admin.nutrition-programs.create',['requester_name' => $request->user->name.' '.$request->user->family,'request_id' => $request->id]) }}">برنامه
+                                غذایی</a>@endif
+                        @else
+                            @if($request->is_workout_program && $request->workout_program)
+                                <a class="dropdown-item"
+                                   href="{{ route('panel.workout-programs.export-pdf',$request->workout_program->id) }}">دانلود
+                                    برنامه تمرینی</a>
+                                <a class="dropdown-item"
+                                   href="{{ route('panel.workout-programs.show',$request->workout_program->id) }}">مشاهده
+                                    برنامه تمرینی</a>
+                            @endif
+                            @if($request->is_nutrition_program && $request->nutrition_program)
+                                <a class="dropdown-item"
+                                   href="{{ route('panel.nutrition-programs.export-pdf',$request->nutrition_program->id) }}">دانلود
+                                    برنامه غذایی</a>
+                                <a class="dropdown-item"
+                                   href="{{ route('panel.nutrition-programs.show',$request->nutrition_program->id) }}">مشاهده
+                                    برنامه غذایی</a>
+                            @endif
                         @endif
                         <a class="dropdown-item" href="#delete-modal" data-toggle="modal">حذف</a>
                     </div>

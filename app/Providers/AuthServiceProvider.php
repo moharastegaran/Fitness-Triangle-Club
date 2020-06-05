@@ -2,6 +2,12 @@
 
 namespace App\Providers;
 
+use App\NutritionProgram;
+use App\Policies\NutritionProgramPolicy;
+use App\Policies\UserPolicy;
+use App\Policies\WorkoutProgramPolicy;
+use App\User;
+use App\WorkoutProgram;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -13,7 +19,9 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        // 'App\Model' => 'App\Policies\ModelPolicy',
+        User::class => UserPolicy::class,
+        WorkoutProgram::class => WorkoutProgramPolicy::class,
+        NutritionProgram::class => NutritionProgramPolicy::class
     ];
 
     /**
@@ -24,7 +32,6 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
         //
     }
 }

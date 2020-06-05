@@ -88,7 +88,7 @@
             },
             "stripeClasses": [''],
         });
-        @if(count($errors))
+        @if(count($errors) || request('is_redirected'))
         $(document).ready(function () {
             $(".register-modal").modal('show')
         });
@@ -121,6 +121,5 @@
                 return persian.indexOf(chr);
             });
         }
-        {{--@yield('sub-script')--}}
     </script>
 @endsection

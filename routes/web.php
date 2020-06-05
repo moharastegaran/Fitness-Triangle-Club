@@ -23,6 +23,11 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'panel', 'as' => 'panel.'], 
 
     Route::post('order/add/{id}','UserRequestController@addOrder')->name('order.add');
 
+    Route::get('workout-programs/export-pdf/{id}','WorkoutProgramController@exportPDF')->name('workout-programs.export-pdf');
+    Route::get('workout-programs/show/{id}','WorkoutProgramController@show')->name('workout-programs.show');
+    Route::get('nutrition-programs/export-pdf/{id}','NutritionProgramController@exportPDF')->name('nutrition-programs.export-pdf');
+    Route::get('nutrition-programs/show/{id}','NutritionProgramController@show')->name('nutrition-programs.show');
+
     Route::group(['prefix' => 'admin', 'middleware' => ['admin'], 'as' => 'admin.'], function () {
 
         Route::get('/logout', 'UserController@logout')->name('logout');
@@ -32,19 +37,17 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'panel', 'as' => 'panel.'], 
 
         Route::put('workout-programs/update/item/{id}', 'WorkoutProgramController@updateItem')->name('workout-programs.update.item');
         Route::delete('workout-programs/destroy/item/{id}', 'WorkoutProgramController@destroyItem')->name('workout-programs.destroy.item');
-        Route::get('workout-programs/export-pdf/{id}','WorkoutProgramController@exportPDF')->name('workout-programs.export-pdf');
-        Route::resource('workout-programs', 'WorkoutProgramController');
+        Route::resource('workout-programs', 'WorkoutProgramController')->except(['show']);
 
         Route::get('articles/attachment/download/{blog}', 'ArticleController@downloadAttachment')->name('articles.attachment.download');
         Route::resource('articles', 'ArticleController');
 
         Route::resource('nutritions', 'NutritionController');
 
-        Route::get('nutrition-programs/export-pdf/{id}','NutritionProgramController@exportPDF')->name('nutrition-programs.export-pdf');
         Route::get('nutrition-programs/ratio', 'NutritionProgramController@getRatio')->name('nutrition-programs.ratio');
         Route::put('nutrition-programs/update/item/{id}', 'NutritionProgramController@updateItem')->name('nutrition-programs.update.item');
         Route::delete('nutrition-programs/destroy/item/{id}', 'NutritionProgramController@destroyItem')->name('nutrition-programs.destroy.item');
-        Route::resource('nutrition-programs', 'NutritionProgramController');
+        Route::resource('nutrition-programs', 'NutritionProgramController')->except(['show']);
 //        Route::resource('diet-programs', 'DietProgramController');
 
         Route::get('expenses/edit','ExpenseController@edit')->name('expenses.edit');
