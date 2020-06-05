@@ -143,7 +143,7 @@
                     </div>
                     <div class="w-info">
                         <h6 class="value">{{ toFaDigits(count(\App\User::members())) }}</h6>
-                        <p class="">کاربران ثبت‌شده</p>
+                        <p class="">کاربران عضو‌شده</p>
                     </div>
                 </div>
                 <div class="w-footer">
