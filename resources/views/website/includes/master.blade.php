@@ -9,6 +9,7 @@
     <link href="{{ asset('blackfit/css/responsive.css') }}" rel="stylesheet">
     <link href="{{ asset('style/font.css') }}" rel="stylesheet">
     <link href="{{ asset('blackfit/css/rtl-persian.css') }}" rel="stylesheet">
+    <link href="{{ asset('blackfit/css/font-awesome.css') }}" rel="stylesheet">
     @yield('style')
 
 
@@ -117,7 +118,7 @@
 
         <!-- Sticky Header  -->
         <div class="sticky-header">
-            <div class="auto-container clearfix">
+            <div class="auto-container clearfix d-flex flex-row justify-content-between">
                 <!--Logo-->
                 <div class="logo pull-left">
                     <a href="{{ route('website.index') }}" title=""><img src="{{ asset('cork/assets/img/logo2.png') }}" alt=""
@@ -196,28 +197,28 @@
                             <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                                 <div class="footer-widget logo-widget">
                                     <div class="logo">
-                                        <a href="{{ route('website.index') }}"><img src="{{ asset('blackfit/images/footer-logo.svg') }}"
-                                                                  alt=""></a>
+                                        <a href="{{ route('website.index') }}"><img src="{{ asset('cork/assets/img/logo2.png') }}"
+                                                                  width="100" alt=""></a>
                                     </div>
                                     <!-- Footer Mobile Logo -->
                                     <div class="footer-mobile-logo">
-                                        <a href="{{ route('website.index') }}"><img src="{{ asset('blackfit/images/logo.svg') }}" alt=""
+                                        <a href="{{ route('website.index') }}"><img src="{{ asset('cork/assets/img/logo2.png') }}" alt=""
                                                                   title=""></a>
                                     </div>
                                     <ul class="info-list">
-                                        <li><span>Address:</span>4578 Marmora Road, Glasgow</li>
-                                        <li><span>Phones:</span>
-                                            <a href="tel:1-123-456-78-89">+1-123-456-78-89</a><br>
-                                            <a href="tel:1-123-456-78-80">+1-123-456-78-80</a>
+                                        {{--<li><span>Address:</span>4578 Marmora Road, Glasgow</li>--}}
+                                        <li><span>شماره تماس:</span>
+                                            <a href="tel:1-123-456-78-89">+98 912 1212 477</a><br>
+                                            {{--<a href="tel:1-123-456-78-80">+1-123-456-78-80</a>--}}
                                         </li>
-                                        <li><span>Working Hours:</span>Monday-Sunday: 07:00 - 22:00</li>
-                                        <li><span>Email:</span><a href="mailto:info@bigbear.com">info@bigbear.com</a>
+                                        {{--<li><span>Working Hours:</span>Monday-Sunday: 07:00 - 22:00</li>--}}
+                                        <li><span>ایمیل:</span><a href="mailto:moharastegaran@gmail.com">moharastegaran@gmail.com</a>
                                         </li>
-                                        <li class="social-links"><span>Our Socials:</span>
-                                            <a href="#" class="fa fa-facebook"></a>
-                                            <a href="#" class="fa fa-twitter"></a>
-                                            <a href="#" class="fa fa-instagram"></a>
-                                            <a href="#" class="fa fa-linkedin"></a>
+                                        <li class="social-links"><span>ما را در فضای مجازی دنبال کنید</span>
+                                            <a href="#" class="fab fa-facebook"></a>
+                                            <a href="#" class="fab fa-twitter"></a>
+                                            <a href="#" class="fab fa-instagram"></a>
+                                            <a href="#" class="fab fa-linkedin"></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -226,33 +227,22 @@
                             <!--Footer Column-->
                             <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                                 <div class="footer-widget news-widget">
-                                    <h6>BLOG POSTS</h6>
+                                    <h6>آخرین مقالات</h6>
+                                    @php $latest_articles = \App\Blog::latest()->limit(3)->get(); @endphp
                                     <div class="widget-content">
-
-                                        <div class="post">
-                                            <div class="thumb"><a href="blog-detail.html"><img
-                                                            src="images\resource\post-thumb-1.jpg" alt=""></a></div>
-                                            <h5><a href="blog-detail.html">HOW TO MAXIMISE TIME SPENT AT THE GYM</a>
-                                            </h5>
-                                            <span class="date">JUNE 21, 2020</span>
-                                        </div>
-
-                                        <div class="post">
-                                            <div class="thumb"><a href="blog-detail.html"><img
-                                                            src="images\resource\post-thumb-2.jpg" alt=""></a></div>
-                                            <h5><a href="blog-detail.html">10 TIPS HOW TO PREPARE MEALS FAST AND
-                                                    EASY</a></h5>
-                                            <span class="date">JUNE 21, 2020</span>
-                                        </div>
-
-                                        <div class="post">
-                                            <div class="thumb"><a href="blog-detail.html"><img
-                                                            src="images\resource\post-thumb-3.jpg" alt=""></a></div>
-                                            <h5><a href="blog-detail.html">SIMPLE CONDITION FOR ALL AROUND FITNESS</a>
-                                            </h5>
-                                            <span class="date">JUNE 21, 2020</span>
-                                        </div>
-
+                                        @forelse($latest_articles as $article)
+                                            <div class="post">
+                                                <h5><a href="{{ route('website.article',$article->id) }}">{{ $article->title }}</a></h5>
+                                                <span class="date">{{ toFaDigits(\Morilog\Jalali\Jalalian::forge($article->created_at)->ago()) }}</span>
+                                                <div class="thumb">
+                                                    <a href="{{ route('website.article',$article->id) }}">
+                                                        <img src="{{ asset(env('STORAGE_DIR_PATH').env('ARTICLE_DIR_PATH').$article->attachment->filename) }}" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        @empty
+                                            هنوز مقاله‌ای به ثبت نرسیده است.
+                                        @endforelse
                                     </div>
                                 </div>
                             </div>
@@ -267,82 +257,14 @@
                             <!-- Footer Column -->
                             <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                                 <div class="footer-widget gallery-widget">
-                                    <h6>Instagram</h6>
+                                    <h6>شبکه‎‌های اجتماعی</h6>
                                     <div class="widget-content">
 
-                                        <div class="images-outer clearfix">
-                                            <!--Image Box-->
-                                            <figure class="image-box"><a href="images\gallery\1.jpg"
-                                                                         class="lightbox-image"
-                                                                         data-fancybox="footer-gallery"
-                                                                         title="Image Title Here"
-                                                                         data-fancybox-group="footer-gallery"><img
-                                                            src="images\gallery\footer-gallery-thumb-1.jpg" alt=""></a>
-                                            </figure>
-                                            <!--Image Box-->
-                                            <figure class="image-box"><a href="images\gallery\2.jpg"
-                                                                         class="lightbox-image"
-                                                                         data-fancybox="footer-gallery"
-                                                                         title="Image Title Here"
-                                                                         data-fancybox-group="footer-gallery"><img
-                                                            src="images\gallery\footer-gallery-thumb-2.jpg" alt=""></a>
-                                            </figure>
-                                            <!--Image Box-->
-                                            <figure class="image-box"><a href="images\gallery\3.jpg"
-                                                                         class="lightbox-image"
-                                                                         data-fancybox="footer-gallery"
-                                                                         title="Image Title Here"
-                                                                         data-fancybox-group="footer-gallery"><img
-                                                            src="images\gallery\footer-gallery-thumb-3.jpg" alt=""></a>
-                                            </figure>
-                                            <!--Image Box-->
-                                            <figure class="image-box"><a href="images\gallery\4.jpg"
-                                                                         class="lightbox-image"
-                                                                         data-fancybox="footer-gallery"
-                                                                         title="Image Title Here"
-                                                                         data-fancybox-group="footer-gallery"><img
-                                                            src="images\gallery\footer-gallery-thumb-4.jpg" alt=""></a>
-                                            </figure>
-                                            <!--Image Box-->
-                                            <figure class="image-box"><a href="images\gallery\5.jpg"
-                                                                         class="lightbox-image"
-                                                                         data-fancybox="footer-gallery"
-                                                                         title="Image Title Here"
-                                                                         data-fancybox-group="footer-gallery"><img
-                                                            src="images\gallery\footer-gallery-thumb-5.jpg" alt=""></a>
-                                            </figure>
-                                            <!--Image Box-->
-                                            <figure class="image-box"><a href="images\gallery\6.jpg"
-                                                                         class="lightbox-image"
-                                                                         data-fancybox="footer-gallery"
-                                                                         title="Image Title Here"
-                                                                         data-fancybox-group="footer-gallery"><img
-                                                            src="images\gallery\footer-gallery-thumb-6.jpg" alt=""></a>
-                                            </figure>
-                                            <!--Image Box-->
-                                            <figure class="image-box"><a href="images\gallery\7.jpg"
-                                                                         class="lightbox-image"
-                                                                         data-fancybox="footer-gallery"
-                                                                         title="Image Title Here"
-                                                                         data-fancybox-group="footer-gallery"><img
-                                                            src="images\gallery\footer-gallery-thumb-7.jpg" alt=""></a>
-                                            </figure>
-                                            <!--Image Box-->
-                                            <figure class="image-box"><a href="images\gallery\8.jpg"
-                                                                         class="lightbox-image"
-                                                                         data-fancybox="footer-gallery"
-                                                                         title="Image Title Here"
-                                                                         data-fancybox-group="footer-gallery"><img
-                                                            src="images\gallery\footer-gallery-thumb-8.jpg" alt=""></a>
-                                            </figure>
-                                            <!--Image Box-->
-                                            <figure class="image-box"><a href="images\gallery\9.jpg"
-                                                                         class="lightbox-image"
-                                                                         data-fancybox="footer-gallery"
-                                                                         title="Image Title Here"
-                                                                         data-fancybox-group="footer-gallery"><img
-                                                            src="images\gallery\footer-gallery-thumb-9.jpg" alt=""></a>
-                                            </figure>
+                                        <div class="images-outer text-center">
+                                            <p><a href="#"><i class="fab fa-telegram-plane fa-2x text-light"></i></a></p>
+                                            <p><a href="#"><i class="fab fa-instagram fa-2x text-light"></i></a></p>
+                                            <p><a href="#"><i class="fab fa-twitter fa-2x text-light"></i></a></p>
+                                            <p><a href="#"><i class="fab fa-facebook-f fa-2x text-light"></i></a></p>
                                         </div>
 
                                     </div>
@@ -352,22 +274,24 @@
                             <!--Footer Column-->
                             <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                                 <div class="footer-widget newsletter-widget">
-                                    <h6>Newsletter</h6>
-                                    <div class="text">BLACKFIT – fitness health center where your body gets its shape!
-                                        Start training now to stay fit and healthy all year round!
+                                    <h6>درباره ما</h6>
+                                    <div class="text">
+                                        باشگاه مثلث فیتنس - مرکز استاندارد تناسب اندام در ایران که اندام شما در اینجا شکل می‌گیرد.
+                                    <br>
+                                        اکنون تمرین را شروع کنید تا تمام سال تندرست و سلامت باشید.
                                     </div>
                                     <!-- Newsletter Form -->
-                                    <div class="newsletter-form">
-                                        <form method="post" action="contact.html">
-                                            <div class="form-group">
-                                                <input type="email" name="email" value="" placeholder="Email"
-                                                       required="">
-                                                <button type="submit" class="theme-btn submit-btn"><span><img
-                                                                src="{{ asset('blackfit/images/icons/message-icon.png') }}"
-                                                                alt=""></span></button>
-                                            </div>
-                                        </form>
-                                    </div>
+                                    {{--<div class="newsletter-form">--}}
+                                        {{--<form method="post" action="contact.html">--}}
+                                            {{--<div class="form-group">--}}
+                                                {{--<input type="email" name="email" value="" placeholder="Email"--}}
+                                                       {{--required="">--}}
+                                                {{--<button type="submit" class="theme-btn submit-btn"><span><img--}}
+                                                                {{--src="{{ asset('blackfit/images/icons/message-icon.png') }}"--}}
+                                                                {{--alt=""></span></button>--}}
+                                            {{--</div>--}}
+                                        {{--</form>--}}
+                                    {{--</div>--}}
 
                                 </div>
                             </div>
@@ -380,7 +304,7 @@
 
             <!-- Footer Bottom -->
             <div class="footer-bottom">
-                <div class="copyright">FITNESS TRIANGLE CLUB</div>
+                <div class="copyright">باشگاه مثلث فیتنس</div>
             </div>
 
         </div>
@@ -441,16 +365,16 @@
     </div>
 </div>
 
-<script src="{{ asset('blackfit/js\jquery.js') }}"></script>
-<script src="{{ asset('blackfit/js\popper.min.js') }}"></script>
-<script src="{{ asset('blackfit/js\bootstrap.min.js') }}"></script>
-<script src="{{ asset('blackfit/js\jquery.mCustomScrollbar.concat.min.js') }}"></script>
-<script src="{{ asset('blackfit/js\jquery.fancybox.js') }}"></script>
-<script src="{{ asset('blackfit/js\appear.js') }}"></script>
-<script src="{{ asset('blackfit/js\owl.js') }}"></script>
-<script src="{{ asset('blackfit/js\wow.js') }}"></script>
-<script src="{{ asset('blackfit/js\jquery-ui.js') }}"></script>
-<script src="{{ asset('blackfit/js\script.js') }}"></script>
+<script src="{{ asset('blackfit/js/jquery.js') }}"></script>
+<script src="{{ asset('blackfit/js/popper.min.js') }}"></script>
+<script src="{{ asset('blackfit/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('blackfit/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+<script src="{{ asset('blackfit/js/jquery.fancybox.js') }}"></script>
+<script src="{{ asset('blackfit/js/appear.js') }}"></script>
+<script src="{{ asset('blackfit/js/owl.js') }}"></script>
+<script src="{{ asset('blackfit/js/wow.js') }}"></script>
+<script src="{{ asset('blackfit/js/jquery-ui.js') }}"></script>
+<script src="{{ asset('blackfit/js/script.js') }}"></script>
 @yield('script')
 
 </body>

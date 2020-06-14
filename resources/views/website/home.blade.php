@@ -1,5 +1,7 @@
 @extends('website.includes.master')
 
+@section('title','باشگاه مثلث فیتنس')
+
 @section('content')
     <!-- Banner Section -->
     <section class="banner-section">
@@ -11,11 +13,11 @@
                     <!-- Content Boxed -->
                     <div class="content-boxed">
                         <div class="inner-boxed">
-                            <h1>KEEP YOUR BODY <span>FIT & STRONG</span></h1>
-                            <div class="text">BLACKFIT – fitness health center where your body gets its shape! <br> Start training now to stay fit and healthy all year round!</div>
-                            <div class="btns-box">
-                                <div class="theme-btn purchase-box-btn btn-style-one"><span class="txt">LET’S TRAIN</span></div>
-                            </div>
+                            <h1>اندام خود را <span>قوی و مناسب نگه دارید</span></h1>
+                            <div class="text">باشگاه مثلث فیتنس - لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </div>
+                            {{--<div class="btns-box">--}}
+                                {{--<div class="theme-btn purchase-box-btn btn-style-one"><span class="txt">LET’S TRAIN</span></div>--}}
+                            {{--</div>--}}
                         </div>
                     </div>
                 </div>
@@ -28,11 +30,11 @@
                     <!-- Content Boxed -->
                     <div class="content-boxed">
                         <div class="inner-boxed">
-                            <h1>KEEP YOUR BODY <span>FIT & STRONG</span></h1>
-                            <div class="text">BLACKFIT – fitness health center where your body gets its shape! <br> Start training now to stay fit and healthy all year round!</div>
-                            <div class="btns-box">
-                                <div class="theme-btn purchase-box-btn btn-style-one"><span class="txt">LET’S TRAIN</span></div>
-                            </div>
+                            <h1>اندام خود را <span>قوی و مناسب نگه دارید</span></h1>
+                            <div class="text">باشگاه مثلث فیتنس - لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </div>
+                            {{--<div class="btns-box">--}}
+                            {{--<div class="theme-btn purchase-box-btn btn-style-one"><span class="txt">LET’S TRAIN</span></div>--}}
+                            {{--</div>--}}
                         </div>
                     </div>
                 </div>
@@ -45,11 +47,11 @@
                     <!-- Content Boxed -->
                     <div class="content-boxed">
                         <div class="inner-boxed">
-                            <h1>KEEP YOUR BODY <span>FIT & STRONG</span></h1>
-                            <div class="text">BLACKFIT – fitness health center where your body gets its shape! <br> Start training now to stay fit and healthy all year round!</div>
-                            <div class="btns-box">
-                                <div class="theme-btn purchase-box-btn btn-style-one"><span class="txt">LET’S TRAIN</span></div>
-                            </div>
+                            <h1>اندام خود را <span>قوی و مناسب نگه دارید</span></h1>
+                            <div class="text">باشگاه مثلث فیتنس - لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </div>
+                            {{--<div class="btns-box">--}}
+                            {{--<div class="theme-btn purchase-box-btn btn-style-one"><span class="txt">LET’S TRAIN</span></div>--}}
+                            {{--</div>--}}
                         </div>
                     </div>
                 </div>
@@ -62,11 +64,11 @@
                     <!-- Content Boxed -->
                     <div class="content-boxed">
                         <div class="inner-boxed">
-                            <h1>KEEP YOUR BODY <span>FIT & STRONG</span></h1>
-                            <div class="text">BLACKFIT – fitness health center where your body gets its shape! <br> Start training now to stay fit and healthy all year round!</div>
-                            <div class="btns-box">
-                                <div class="theme-btn purchase-box-btn btn-style-one"><span class="txt">LET’S TRAIN</span></div>
-                            </div>
+                            <h1>اندام خود را <span>قوی و مناسب نگه دارید</span></h1>
+                            <div class="text">باشگاه مثلث فیتنس - لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </div>
+                            {{--<div class="btns-box">--}}
+                            {{--<div class="theme-btn purchase-box-btn btn-style-one"><span class="txt">LET’S TRAIN</span></div>--}}
+                            {{--</div>--}}
                         </div>
                     </div>
                 </div>
@@ -77,7 +79,7 @@
 
         <!--Scroll Dwwn Btn-->
         <div class="mouse-btn-down scroll-to-target" data-target=".testimonial-section">
-            <span class="icon"><img src="{{ asset('blackfit/images/icons/scroll.png')}}" alt=""></span>
+{{--            <span class="icon"><img src="{{ asset('blackfit/images/icons/scroll.png')}}" alt=""></span>--}}
         </div>
 
     </section>
@@ -93,7 +95,11 @@
                 <!-- Testimonial Block -->
                 <div class="testimonial-block">
                     <div class="inner-box">
-                        <div class="text">Want to be healthy and have a perfect body? BLACKFIT is the right decision for you! It will create your personal training program and balance your diet so you could get the <br> shape of your dream shortly!</div>
+                        <div class="text">
+                            می‌خواهید سالم باشید و بدن اندامی و کاملی داشته باشید؟ Fitness Triangle Club انتخاب صحیحی برای شماست. با آموزش‌ها و برنامه‌های ما
+                            <br>
+                        به زوودی به اندام رویایی خود برسید.
+                        </div>
                     </div>
                 </div>
 
@@ -165,7 +171,7 @@
                 <div class="default-form">
 
                     <!-- Default Form -->
-                    <form method="post" action="contact.html">
+                    <form method="post">
                         <div class="row clearfix">
 
                             <div class="col-lg-4 col-md-6 col-sm-12 form-group">
@@ -188,16 +194,16 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col-lg-4 col-md-6 col-sm-12">
-                                <select class="custom-select-box">
-                                    <option>Select an activity factor</option>
-                                    <option>Factor 01</option>
-                                    <option>Factor 02</option>
-                                </select>
-                            </div>
+                            {{--<div class="form-group col-lg-4 col-md-6 col-sm-12">--}}
+                                {{--<select class="custom-select-box">--}}
+                                    {{--<option>Select an activity factor</option>--}}
+                                    {{--<option>Factor 01</option>--}}
+                                    {{--<option>Factor 02</option>--}}
+                                {{--</select>--}}
+                            {{--</div>--}}
 
                             <div class="form-group col-lg-4 col-md-6 col-sm-12">
-                                <button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="txt">CALCULATE</span></button>
+                                <button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="txt">محاسبه</span></button>
                             </div>
 
                         </div>

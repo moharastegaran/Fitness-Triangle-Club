@@ -1400,7 +1400,7 @@ img{
 }
 
 .main-menu .navigation > li > ul > li.dropdown > a:after{
-	font-family: 'FontAwesome';
+	font-family: 'Font Awesome 5 Free';
 	content: "\f105";
 	position:absolute;
 	right:15px;
@@ -1475,7 +1475,7 @@ img{
 }
 
 .main-menu .navigation > li > ul > li > ul > li.dropdown > a:after{
-	font-family: 'FontAwesome';
+	font-family: 'Font Awesome 5 Free';
 	content: "\f105";
 	position:absolute;
 	right:10px;
@@ -2264,7 +2264,7 @@ body.visible-menu-bar .fullscreen-menu{
 }
 
 .form-group .ui-button .ui-icon:before{
-	font-family: 'FontAwesome';
+	font-family: 'Font Awesome 5 Free';
 	content: "\f107";
 	position:absolute;
 	right:0px;
@@ -3944,6 +3944,8 @@ body.visible-menu-bar .fullscreen-menu{
 .main-footer .footer-widget{
 	position:relative;
 	margin-bottom:30px;
+	text-align: right;
+	direction: rtl;
 }
 
 .main-footer .footer-widget h6{
@@ -4019,8 +4021,9 @@ body.visible-menu-bar .fullscreen-menu{
 .main-footer .news-widget .post{
 	position: relative;
 	min-height: 90px;
-	padding-left: 100px;
+	padding-right: 100px;
 	margin-bottom: 20px;
+	text-align: right;
 }
 
 .main-footer .news-widget .post:last-child{
@@ -4029,7 +4032,7 @@ body.visible-menu-bar .fullscreen-menu{
 
 .main-footer .news-widget .post .thumb{
 	position: absolute;
-	left: 0;
+	right: 0;
 	top: 0;
 	height: 85px;
 	width: 85px;
@@ -4064,6 +4067,7 @@ body.visible-menu-bar .fullscreen-menu{
 	font-weight: 500;
 	font-size:16px;
 	line-height:1.4em;
+	text-align: right;
 	text-transform:uppercase;
 	font-family : iransans_web;
 }
@@ -4090,6 +4094,7 @@ body.visible-menu-bar .fullscreen-menu{
 	color: #e6e6e6;
 	line-height:1em;
 	margin-top:10px;
+	text-align: right;
 	opacity:0.20;
 	font-family : iransans_web;
 }
@@ -5671,7 +5676,7 @@ body.visible-menu-bar .fullscreen-menu{
 	top:0px;
 	color:#ffffff;
 	font-size:14px;
-	font-family: 'FontAwesome';
+	font-family : 'Font Awesome 5 Free';
 }
 
 .page-breadcrumb li:last-child::after{
@@ -7647,7 +7652,7 @@ body.visible-menu-bar .fullscreen-menu{
     content: "\f106";
 	font-size: 18px;
 	font-style:normal;
-	font-family: 'FontAwesome';
+	font-family: 'Font Awesome 5 Free';
 }
 
 .bootstrap-touchspin .glyphicon-chevron-down:before {
@@ -7655,7 +7660,7 @@ body.visible-menu-bar .fullscreen-menu{
     content: "\f107";
 	font-size: 18px;
 	font-style:normal;
-	font-family: 'FontAwesome';
+	font-family: 'Font Awesome 5 Free';
 }
 
 .shop-list{

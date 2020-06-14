@@ -1,6 +1,6 @@
 @extends('website.includes.master')
 
-@section('title','ثبت نام در پنل کاربری')
+@section('title','باشگاه مثلث فیتنس - ثبت نام')
 
 @section('style')
     <link type="text/css" rel="stylesheet" href="{{ asset('style/persianDatepicker.css') }}">

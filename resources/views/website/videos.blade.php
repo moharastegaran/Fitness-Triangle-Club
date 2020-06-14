@@ -1,5 +1,7 @@
 @extends('website.includes.master')
 
+@section('title','باشگاه مثلث فیتنس - ویدئوها')
+
 @section('content')
     <!--Page Title-->
     <section class="page-title" style="background-image:url({{ asset('blackfit/images/background/11.jpg') }})">
