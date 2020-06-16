@@ -33,6 +33,11 @@ class UserRequestController extends Controller
 
     public function addOrder(Request $request, $id)
     {
+        $this->validate($request,[
+           'expense_id' => 'required'
+        ],[
+            'expense_id.required' => 'نوع برنامه خود را وارد کنید.'
+        ]);
         $total = 0;
         $ids = $request->expense_id;
         foreach ($ids as $_id) {
@@ -94,8 +99,9 @@ class UserRequestController extends Controller
                 ]);
                 Notification::send(User::admins(),new UserRequested($request));
 
-                return redirect()->route('home');
+                return redirect()->route('panel.requests.index');
             } else {
+
                 return redirect()->back();
             }
         } else {

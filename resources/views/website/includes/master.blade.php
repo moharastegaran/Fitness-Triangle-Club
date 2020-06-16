@@ -49,8 +49,9 @@
 
                     <!-- Logo -->
                     <div class="mobile-logo pull-left">
-                        <a href="{{ route('website.index') }}" title=""><img src="{{ asset('cork/assets/img/logo1.png') }}" alt=""
-                                                           title="" width="75"></a>
+                        <a href="{{ route('website.index') }}" title=""><img
+                                    src="{{ asset('cork/assets/img/logo1.png') }}" alt=""
+                                    title="" width="75"></a>
                     </div>
 
                     <!-- Header Social Box -->
@@ -99,7 +100,9 @@
                                         <li><a href="{{ route('website.users.join') }}">ثبت‌نام</a></li>
                                         <li><a href="{{ url('login') }}">ورود</a></li>
                                     @else
-                                        <li><a href="{{ route(auth()->user()->isAdmin() ? 'panel.dashboard' : 'panel.users.show',auth()->user())  }}">پنل کاربری</a></li>
+                                        <li>
+                                            <a href="{{ route(auth()->user()->isAdmin() ? 'panel.dashboard' : 'panel.users.show',auth()->user())  }}">پنل
+                                                کاربری</a></li>
                                         {{--<li><a href="{{ route('website.users.logout') }}">خروج</a></li>--}}
                                     @endif
                                     <li><a href="{{ route('website.articles') }}">مقالات</a></li>
@@ -121,8 +124,9 @@
             <div class="auto-container clearfix d-flex flex-row justify-content-between">
                 <!--Logo-->
                 <div class="logo pull-left">
-                    <a href="{{ route('website.index') }}" title=""><img src="{{ asset('cork/assets/img/logo2.png') }}" alt=""
-                                                       width="145"></a>
+                    <a href="{{ route('website.index') }}" title=""><img src="{{ asset('cork/assets/img/logo2.png') }}"
+                                                                         alt=""
+                                                                         width="145"></a>
                 </div>
                 <!--Right Col-->
                 <div class="pull-right">
@@ -168,8 +172,10 @@
                             <li><a href="{{ route('website.users.join') }}">ثبت‌نام</a></li>
                             <li><a href="{{ url('login') }}">ورود</a></li>
                         @else
-                            <li><a href="{{ route(auth()->user()->isAdmin() ? 'panel.dashboard' : 'panel.users.show',auth()->user())  }}">پنل کاربری</a></li>
-{{--                            <li><a href="{{ route('website.users.logout') }}">خروج</a></li>--}}
+                            <li>
+                                <a href="{{ route(auth()->user()->isAdmin() ? 'panel.dashboard' : 'panel.users.show',auth()->user())  }}">پنل
+                                    کاربری</a></li>
+                            {{--                            <li><a href="{{ route('website.users.logout') }}">خروج</a></li>--}}
                         @endif
                         <li><a href="{{ route('website.articles') }}">مقالات</a></li>
                         <li><a href="{{ route('website.videos') }}">کلیپ‌ها</a></li>
@@ -183,12 +189,12 @@
 @yield('content')
 
 <!-- Main Footer -->
-    <footer class="main-footer" style="background-image:url({{ asset('blackfit/images/background/2.jpg') }})">
+    <footer class="main-footer"
+            style="background-image:url({{ asset('images/style3_1.png') }});background-size: contain;background-repeat: no-repeat;background-position-x: 800px;">
         <div class="auto-container">
             <!-- Widgets Section -->
-            <div class="widgets-section">
+            <div class="widgets-section pb-md-3">
                 <div class="row clearfix">
-
                     <!-- Big Column -->
                     <div class="big-column col-lg-6 col-md-12 col-sm-12">
                         <div class="row clearfix">
@@ -197,13 +203,15 @@
                             <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                                 <div class="footer-widget logo-widget">
                                     <div class="logo">
-                                        <a href="{{ route('website.index') }}"><img src="{{ asset('cork/assets/img/logo2.png') }}"
-                                                                  width="100" alt=""></a>
+                                        <a href="{{ route('website.index') }}"><img
+                                                    src="{{ asset('cork/assets/img/logo2.png') }}"
+                                                    width="100" alt=""></a>
                                     </div>
                                     <!-- Footer Mobile Logo -->
                                     <div class="footer-mobile-logo">
-                                        <a href="{{ route('website.index') }}"><img src="{{ asset('cork/assets/img/logo2.png') }}" alt=""
-                                                                  title=""></a>
+                                        <a href="{{ route('website.index') }}"><img
+                                                    src="{{ asset('cork/assets/img/logo2.png') }}" alt=""
+                                                    title=""></a>
                                     </div>
                                     <ul class="info-list">
                                         {{--<li><span>Address:</span>4578 Marmora Road, Glasgow</li>--}}
@@ -232,11 +240,14 @@
                                     <div class="widget-content">
                                         @forelse($latest_articles as $article)
                                             <div class="post">
-                                                <h5><a href="{{ route('website.article',$article->id) }}">{{ $article->title }}</a></h5>
+                                                <h5>
+                                                    <a href="{{ route('website.article',$article->id) }}">{{ $article->title }}</a>
+                                                </h5>
                                                 <span class="date">{{ toFaDigits(\Morilog\Jalali\Jalalian::forge($article->created_at)->ago()) }}</span>
                                                 <div class="thumb">
                                                     <a href="{{ route('website.article',$article->id) }}">
-                                                        <img src="{{ asset(env('STORAGE_DIR_PATH').env('ARTICLE_DIR_PATH').$article->attachment->filename) }}" alt="">
+                                                        <img src="{{ asset(env('STORAGE_DIR_PATH').env('ARTICLE_DIR_PATH').$article->attachment->filename) }}"
+                                                             alt="">
                                                     </a>
                                                 </div>
                                             </div>
@@ -261,7 +272,8 @@
                                     <div class="widget-content">
 
                                         <div class="images-outer text-center">
-                                            <p><a href="#"><i class="fab fa-telegram-plane fa-2x text-light"></i></a></p>
+                                            <p><a href="#"><i class="fab fa-telegram-plane fa-2x text-light"></i></a>
+                                            </p>
                                             <p><a href="#"><i class="fab fa-instagram fa-2x text-light"></i></a></p>
                                             <p><a href="#"><i class="fab fa-twitter fa-2x text-light"></i></a></p>
                                             <p><a href="#"><i class="fab fa-facebook-f fa-2x text-light"></i></a></p>
@@ -276,21 +288,22 @@
                                 <div class="footer-widget newsletter-widget">
                                     <h6>درباره ما</h6>
                                     <div class="text">
-                                        باشگاه مثلث فیتنس - مرکز استاندارد تناسب اندام در ایران که اندام شما در اینجا شکل می‌گیرد.
-                                    <br>
+                                        باشگاه مثلث فیتنس - مرکز استاندارد تناسب اندام در ایران که اندام شما در اینجا
+                                        شکل می‌گیرد.
+                                        <br>
                                         اکنون تمرین را شروع کنید تا تمام سال تندرست و سلامت باشید.
                                     </div>
                                     <!-- Newsletter Form -->
                                     {{--<div class="newsletter-form">--}}
-                                        {{--<form method="post" action="contact.html">--}}
-                                            {{--<div class="form-group">--}}
-                                                {{--<input type="email" name="email" value="" placeholder="Email"--}}
-                                                       {{--required="">--}}
-                                                {{--<button type="submit" class="theme-btn submit-btn"><span><img--}}
-                                                                {{--src="{{ asset('blackfit/images/icons/message-icon.png') }}"--}}
-                                                                {{--alt=""></span></button>--}}
-                                            {{--</div>--}}
-                                        {{--</form>--}}
+                                    {{--<form method="post" action="contact.html">--}}
+                                    {{--<div class="form-group">--}}
+                                    {{--<input type="email" name="email" value="" placeholder="Email"--}}
+                                    {{--required="">--}}
+                                    {{--<button type="submit" class="theme-btn submit-btn"><span><img--}}
+                                    {{--src="{{ asset('blackfit/images/icons/message-icon.png') }}"--}}
+                                    {{--alt=""></span></button>--}}
+                                    {{--</div>--}}
+                                    {{--</form>--}}
                                     {{--</div>--}}
 
                                 </div>
@@ -298,8 +311,12 @@
 
                         </div>
                     </div>
-
                 </div>
+                {{--<div class="row text-right mb-0">--}}
+                    {{--<div style="width: 70px;margin-left: auto">--}}
+                        {{--<script src="https://www.zarinpal.com/webservice/TrustCode" type="text/javascript"></script>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
             </div>
 
             <!-- Footer Bottom -->
@@ -317,53 +334,53 @@
 <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
 
 <!-- Purchase Popup -->
-<div id="purchase-popup" class="purchase-popup">
-    <div class="close-search theme-btn"><span>Close</span></div>
-    <div class="popup-inner">
-        <div class="overlay-layer"></div>
+{{--<div id="purchase-popup" class="purchase-popup">--}}
+{{--<div class="close-search theme-btn"><span>Close</span></div>--}}
+{{--<div class="popup-inner">--}}
+{{--<div class="overlay-layer"></div>--}}
 
-        <div class="purchase-form">
-            <div class="sec-title centered">
-                <h2><span>GET FREE</span> CONSULTATION</h2>
-                <div class="text">If you need of a Personal Trainer, Fitness Instructor advice, or a healthy <br> living
-                    product review, please feel free to contact us
-                </div>
-            </div>
+{{--<div class="purchase-form">--}}
+{{--<div class="sec-title centered">--}}
+{{--<h2><span>GET FREE</span> CONSULTATION</h2>--}}
+{{--<div class="text">If you need of a Personal Trainer, Fitness Instructor advice, or a healthy <br> living--}}
+{{--product review, please feel free to contact us--}}
+{{--</div>--}}
+{{--</div>--}}
 
-            <!-- Default Form -->
-            <form method="post" action="contact.html">
-                <div class="row clearfix">
+{{--<!-- Default Form -->--}}
+{{--<form method="post" action="contact.html">--}}
+{{--<div class="row clearfix">--}}
 
-                    <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                        <input type="text" name="name" placeholder="Name" required="">
-                    </div>
+{{--<div class="col-lg-6 col-md-6 col-sm-12 form-group">--}}
+{{--<input type="text" name="name" placeholder="Name" required="">--}}
+{{--</div>--}}
 
-                    <div class="col-lg-6 col-md-6 col-sm-12 form-group">
-                        <input type="email" name="email" placeholder="Email" required="">
-                    </div>
+{{--<div class="col-lg-6 col-md-6 col-sm-12 form-group">--}}
+{{--<input type="email" name="email" placeholder="Email" required="">--}}
+{{--</div>--}}
 
-                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                        <input type="text" name="subject" placeholder="Subject" required="">
-                    </div>
+{{--<div class="col-lg-12 col-md-12 col-sm-12 form-group">--}}
+{{--<input type="text" name="subject" placeholder="Subject" required="">--}}
+{{--</div>--}}
 
-                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                        <textarea class="darma" name="message" placeholder="Your Message"></textarea>
-                    </div>
+{{--<div class="col-lg-12 col-md-12 col-sm-12 form-group">--}}
+{{--<textarea class="darma" name="message" placeholder="Your Message"></textarea>--}}
+{{--</div>--}}
 
-                    <div class="form-group text-center col-lg-12 col-md-12 col-sm-12">
-                        <span class="data">* Personal data will be encrypted</span>
-                        <button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="txt">SEND MESSAGE</span>
-                        </button>
-                    </div>
+{{--<div class="form-group text-center col-lg-12 col-md-12 col-sm-12">--}}
+{{--<span class="data">* Personal data will be encrypted</span>--}}
+{{--<button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="txt">SEND MESSAGE</span>--}}
+{{--</button>--}}
+{{--</div>--}}
 
-                </div>
-            </form>
+{{--</div>--}}
+{{--</form>--}}
 
 
-        </div>
+{{--</div>--}}
 
-    </div>
-</div>
+{{--</div>--}}
+{{--</div>--}}
 
 <script src="{{ asset('blackfit/js/jquery.js') }}"></script>
 <script src="{{ asset('blackfit/js/popper.min.js') }}"></script>

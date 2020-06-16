@@ -8,7 +8,7 @@
         <div class="main-slider-carousel owl-carousel owl-theme">
 
             <div class="slide">
-                <div class="image-layer" style="background-image:url({{ asset('blackfit/images/main-slider/image-1.jpg') }})"></div>
+                <div class="image-layer" style="background-image:url({{ asset('images/style1.jpg') }})"></div>
                 <div class="auto-container">
                     <!-- Content Boxed -->
                     <div class="content-boxed">
@@ -25,7 +25,7 @@
             </div>
 
             <div class="slide">
-                <div class="image-layer" style="background-image:url({{ asset('blackfit/images/main-slider/image-3.jpg') }})"></div>
+                <div class="image-layer" style="background:url({{ asset('images/style4.jpg') }}) center right"></div>
                 <div class="auto-container">
                     <!-- Content Boxed -->
                     <div class="content-boxed">
@@ -42,7 +42,7 @@
             </div>
 
             <div class="slide">
-                <div class="image-layer" style="background-image:url({{ asset('blackfit/images/main-slider/image-4.jpg') }})"></div>
+                <div class="image-layer" style="background-image:url({{ asset('images/style6.jpg') }})"></div>
                 <div class="auto-container">
                     <!-- Content Boxed -->
                     <div class="content-boxed">
@@ -57,24 +57,6 @@
                 </div>
 
             </div>
-
-            <div class="slide">
-                <div class="image-layer" style="background-image:url({{ asset('blackfit/images/main-slider/image-5.jpg') }})"></div>
-                <div class="auto-container">
-                    <!-- Content Boxed -->
-                    <div class="content-boxed">
-                        <div class="inner-boxed">
-                            <h1>اندام خود را <span>قوی و مناسب نگه دارید</span></h1>
-                            <div class="text">باشگاه مثلث فیتنس - لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </div>
-                            {{--<div class="btns-box">--}}
-                            {{--<div class="theme-btn purchase-box-btn btn-style-one"><span class="txt">LET’S TRAIN</span></div>--}}
-                            {{--</div>--}}
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
         </div>
 
         <!--Scroll Dwwn Btn-->
@@ -109,7 +91,7 @@
     <!-- End Testimonial Section -->
 
     <!-- Pricing Section -->
-    <section class="pricing-section" style="background-image: url({{ asset('blackfit/images/background/1.jpg') }})">
+    <section class="pricing-section" style="background-image: url({{ asset('images/style2.jpg') }});background-position: top">
         <div class="auto-container">
             <div class="sec-title centered">
 {{--                <h2><span>Program</span> Pricing</h2>--}}
