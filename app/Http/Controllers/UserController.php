@@ -224,11 +224,9 @@ class UserController extends Controller
         }
 
 //        dd($user->workout_programs()->get());
-        $user_wp_count = $user->requests()->where('is_workout_program', 1)
-            ->where('is_nutrition_program', 0)->where('is_approved', 1)->count();
-        $user_np_count = $user->requests()->where('is_workout_program', 0)
-            ->where('is_nutrition_program', 1)->where('is_approved', 1)->count();
-        $user_unapproved_count = $user->requests()->where('is_approved', 0)->count();
+        $user_wp_count = count($user->workout_programs);
+        $user_np_count = count($user->nutrition_programs);
+        $user_unapproved_count = $user->requests()->where('is_approved',0)->count();
         return view('panel.users.show', compact('user', 'user_wp_count', 'user_np_count', 'user_unapproved_count'));
     }
 

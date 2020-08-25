@@ -106,7 +106,7 @@
             <td>{{ toFaDigits($user->mobile) }}</td>
             <td>
                 <ul class="table-controls">
-                    <li><a href="{{ route('panel.users.show', $user) }}" class="bs-tooltip"
+                    <li><a href="{{ route('panel.users.show', $user->id) }}" class="bs-tooltip"
                            data-toggle="tooltip" data-placement="top" title=""
                            data-original-title="مشاهده">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
