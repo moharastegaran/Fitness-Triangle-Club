@@ -57,6 +57,9 @@ class NutritionProgramController extends Controller
         $data['coach_id']=auth()->user()->id;
         $data['day_type']= ($data['day_type']=='false' ? 0 : 1);
         $data['from'] = CalendarUtils::createCarbonFromFormat('Y-m-d', $data['from'])->toDateString();
+        $idname = explode("%%", $data['requester_name']);
+        $data['requester_name'] = $idname[1];
+        $data['requester_id'] = $idname[0];
         if(array_key_exists('request_id',$data)){
             $data['request_id']=intval($data['request_id']);
             $req = UserRequest::find($data['request_id']);
@@ -138,6 +141,9 @@ class NutritionProgramController extends Controller
         $data['coach_id']=auth()->user()->id;
         $data['day_type']= ($data['day_type']=='false' ? 0 : 1);
         $data['from'] = CalendarUtils::createCarbonFromFormat('Y-m-d', $data['from'])->toDateString();
+        $idname = explode("%%", $data['requester_name']);
+        $data['requester_name'] = $idname[1];
+        $data['requester_id'] = $idname[0];
         $program->update($data);
         $program->items()->delete();
         if ($request->has('items')) {

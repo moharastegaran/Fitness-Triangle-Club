@@ -18,7 +18,7 @@
 
             @if(auth()->user()->isAdmin())
                 @php
-                    $notifications = auth()->user()->unreadNotifications;
+                    $notifications = auth()->user()->unreadNotifications->whereNotIn('type',[\App\Notifications\DeadlineWarning::class]);
                 @endphp
                 <li class="nav-item dropdown notification-dropdown">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="notificationDropdown"

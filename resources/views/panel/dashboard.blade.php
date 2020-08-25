@@ -7,6 +7,7 @@
 @endsection
 
 @section('style')
+    <link href="{{ asset('cork/assets/css/dashboard/dash_1.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('cork/assets/css/dashboard/dash_2.css') }}" rel="stylesheet" type="text/css"/>
 @endsection
 
@@ -274,12 +275,12 @@
                         </div>
                     </div>
                     <div class="w-info">
-                        <h6 class="value">{{ toFaDigits('13,000,000').' ریال' }}</h6>
-                        <p class="">مبالغ واریز‌شده</p>
+                        <h6 class="value">{{ toFaDigits(\App\Transaction::sum('price')).' تومان' }}</h6>
+                        <p class="">هزینه واریز‌شده</p>
                     </div>
                 </div>
                 <div class="w-footer">
-                    <a href="#" class="w-100 btn btn-sm btn-rounded"
+                    <a href="{{ route('panel.admin.transactions') }}" class="w-100 btn btn-sm btn-rounded"
                        style="background-image: linear-gradient(to left, #0081ff 0%, #0045ff 100%);">بیشتر</a>
                     {{--<div class="progress-bar bg-gradient-secondary" role="progressbar" style="width: 57%" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100"></div>--}}
                 </div>
@@ -287,4 +288,56 @@
         </div>
     </div>
 
+    @php
+    $deadline_notifications = auth()->user()->unreadNotifications->whereIn('type',[\App\Notifications\DeadlineWarning::class]);
+    @endphp
+    @if(count($deadline_notifications))
+        <div class="col-md-4 col-sm-8 col-12 my-2">
+            <div class="widget widget-activity-four">
+
+                <div class="widget-heading pt-md-3 pt-2 pr-md-3 pr-2">
+                    <h5 class="">اعلانات</h5>
+                </div>
+
+                <div class="widget-content">
+
+                    <div class="mt-container mx-auto ps ps--active-y">
+                        <div class="timeline-line">
+
+                            @foreach($deadline_notifications as $notification)
+                                @include('panel.includes.notifications.'.\Illuminate\Support\Str::snake(class_basename($notification->type)))
+                            @endforeach
+
+                        </div>
+                        <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+                            <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                        </div>
+                        <div class="ps__rail-y" style="top: 0px; height: 272px; right: 215px;">
+                            <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 140px;"></div>
+                        </div>
+                    </div>
+                    <div class="tm-action-btn">
+                        <a href="{{ route('panel.admin.notifications.deadlineWarning.markAsRead') }}">
+                            <button class="btn btn-outline-primary btn-rounded p-2">
+                                پاک کردن اعلانات
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none"
+                                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                     class="feather feather-chevron-down">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
+@endsection
+
+@section('script')
+    <script>
+        const ps = new PerfectScrollbar(document.querySelector('.mt-container'));
+    </script>
 @endsection

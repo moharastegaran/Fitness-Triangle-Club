@@ -11,7 +11,7 @@
         <div class="auto-container">
             <h2>ثبت‌نام</h2>
             <ul class="page-breadcrumb">
-                <li>ثبت‌نام در سایت ftc pro</li>
+                <li>ثبت‌نام</li>
                 <li><a href="{{ route('website.index') }}">خانه</a></li>
             </ul>
         </div>

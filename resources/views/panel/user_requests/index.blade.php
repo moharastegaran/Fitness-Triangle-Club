@@ -49,25 +49,70 @@
                         <form class="mt-0" method="post" action="{{ route('panel.order.add',auth()->user()->id) }}">
                             @csrf
                             @include('panel.includes.errors')
-                            <div class="m-2 d-flex justify-content-between">
+                            <div class="m-2 d-flex flex-wrap justify-content-between">
                                 <div class="n-chk">
-                                    <label class="new-control new-checkbox new-checkbox-text checkbox-outline-warning">
-                                        <input type="checkbox" class="new-control-input" name="expense_id[]" value="1">
-                                        <span class="new-control-indicator"></span>
-                                        <span class="new-chk-content">برنامه تمرینی</span>
+                                    <label class="new-control new-radio new-radio-text radio-warning">
+                                        <input type="radio" class="new-control-input" name="expense_id" value="[1,2]" id="program-total">
+                                        <span class="new-control-indicator"></span><span class="new-radio-content">تمرینی و تغذیه</span>
                                     </label>
                                 </div>
-                                <div id="expense_workout">{{ normalize(\App\Expense::where('type','برنامه تمرینی')->first()->price ?: 0).' تومان' }}</div>
+                                <div id="expense_workout">
+                                    <span class="price">{{ normalize((intval(\App\Expense::where('type','برنامه تمرینی')->first()->price ?: 0))+intval(\App\Expense::where('type','برنامه غذایی')->first()->price ?: 0)) }}</span>
+                                    تومان
+                                </div>
+                                <div class="days collapse text-left py-2">
+                                    <label class="font-s">تعداد روزهای تمرینی در هفته</label>
+                                    <div class="d-flex flex-wrap">
+                                        <div class="col-6">
+                                            <div class="n-chk">
+                                                <label class="new-control new-radio new-radio-text radio-primary">
+                                                    <input type="radio" class="new-control-input" name="days" value="3">
+                                                    <span class="new-control-indicator"></span><span
+                                                            class="new-radio-content">۳ روز</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="n-chk">
+                                                <label class="new-control new-radio new-radio-text radio-primary">
+                                                    <input type="radio" class="new-control-input" name="days" value="4">
+                                                    <span class="new-control-indicator"></span><span
+                                                            class="new-radio-content">۴ روز</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="n-chk">
+                                                <label class="new-control new-radio new-radio-text radio-primary">
+                                                    <input type="radio" class="new-control-input" name="days" value="5">
+                                                    <span class="new-control-indicator"></span><span
+                                                            class="new-radio-content">۵ روز</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="n-chk">
+                                                <label class="new-control new-radio new-radio-text radio-primary">
+                                                    <input type="radio" class="new-control-input" name="days" value="6">
+                                                    <span class="new-control-indicator"></span><span
+                                                            class="new-radio-content">۶ روز</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="m-2 d-flex justify-content-between">
                                 <div class="n-chk">
-                                    <label class="new-control new-checkbox new-checkbox-text checkbox-outline-warning">
-                                        <input type="checkbox" class="new-control-input" name="expense_id[]" value="2">
-                                        <span class="new-control-indicator"></span>
-                                        <span class="new-chk-content">برنامه غذایی</span>
+                                    <label class="new-control new-radio new-radio-text radio-warning">
+                                        <input type="radio" class="new-control-input" name="expense_id" value="[2]">
+                                        <span class="new-control-indicator"></span><span class="new-radio-content">فقط تغذیه</span>
                                     </label>
                                 </div>
-                                <div id="expense_nutrition">{{ normalize(\App\Expense::where('type','برنامه غذایی')->first()->price ?: 0).' تومان' }}</div>
+                                <div id="expense_nutrition">
+                                    <span class="price">{{ normalize(\App\Expense::where('type','برنامه غذایی')->first()->price ?: 0) }}</span>
+                                    تومان
+                                </div>
                             </div>
                             <hr>
                             <div class="m-2 d-flex justify-content-between">
@@ -92,6 +137,7 @@
         <th>برنامه غذایی</th>
         @if(!$is_admin)
             <th>تایید شده</th>@endif
+        <th>چند روزه</th>
         <th>تاریخ ثبت</th>
         <th>توضیحات</th>
         <th>
@@ -162,7 +208,8 @@
                     @endif
                 </td>
             @endif
-            <td>{{ \Morilog\Jalali\Jalalian::forge($request->created_at)->format('%y-%m-%d')}}</td>
+            <td>{{ toFaDigits($request->days).(is_numeric($request->days) ? ' روزه' : '') }}</td>
+            <td>{{ toFaDigits(\Morilog\Jalali\Jalalian::forge($request->created_at)->format('%Y-%m-%d')) }}</td>
             <td @if($request->comment) title="{{ $request->comment }}" @endif>{{ $request->comment ? ellipsize($request->comment) : '-' }}</td>
             <td>
                 <div class="dropdown custom-dropdown">
@@ -209,23 +256,6 @@
                         <a class="dropdown-item" href="#delete-modal" data-toggle="modal">حذف</a>
                     </div>
                 </div>
-                {{--<ul class="table-controls">--}}
-                {{--<li>--}}
-                {{--<form class="d-none" method="post"--}}
-                {{--action="{{ route('panel.requests.destroy', $request) }}">--}}
-                {{--@csrf--}}
-                {{--@method('DELETE')--}}
-                {{--</form>--}}
-                {{--<a href="#delete-modal" data-toggle="modal" onclick="$(this).addClass('deletable');">--}}
-                {{--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"--}}
-                {{--stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"--}}
-                {{--class="feather feather-trash text-dark p-1 br-6 mb-1">--}}
-                {{--<polyline points="3 6 5 6 21 6"></polyline>--}}
-                {{--<path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>--}}
-                {{--</svg>--}}
-                {{--</a>--}}
-                {{--</li>--}}
-                {{--</ul>--}}
             </td>
         </tr>
         @php $index++; @endphp

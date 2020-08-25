@@ -4,7 +4,6 @@ use App\WorkoutProgram;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-
 Auth::routes(['verify' => false]);
 
 Route::post('/login','Auth\LoginController@login')->name('login');
@@ -14,6 +13,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'panel', 'as' => 'panel.'], 
 
     Route::get('dashboard', 'UserController@dashboard')->name('dashboard');
 
+    Route::get('/user/attachments/upload/{id}','UserController@userAttachments')->name('user.attachments');
+//    Route::get('/user/attachments/upload','UserController@userAttachments')->name('user.attachments');
     Route::resource('users', 'UserController')->except([
         'create',
     ]);
@@ -30,7 +31,11 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'panel', 'as' => 'panel.'], 
 
     Route::group(['prefix' => 'admin', 'middleware' => ['admin'], 'as' => 'admin.'], function () {
 
-        Route::get('/logout', 'UserController@logout')->name('logout');
+        Route::get('notifications/deadlineWarning/markAsRead','UserController@deadlineWarning_markAsRead')->name('notifications.deadlineWarning.markAsRead');
+
+        Route::get('transactions/all','ExpenseController@transactions')->name('transactions');
+
+        Route::get('logout', 'UserController@logout')->name('logout');
 
         Route::get('workouts/group/{id}','WorkoutController@group')->name('workouts.group');
         Route::resource('workouts', 'WorkoutController');
@@ -60,13 +65,18 @@ Route::prefix('attachment')->name("attachment.")->group(function () {
     Route::post('store', 'AttachmentController@store')->name('store');
     Route::delete('destroy/{id}', 'AttachmentController@destroy')->name('destroy');
     Route::put('update/{id}', 'AttachmentController@update')->name('update');
+
+    Route::post('/user/store', 'AttachmentController@userStore')->name('user.store');
+    Route::put('/user/update/{id}', 'AttachmentController@userUpdate')->name('user.update');
+    Route::delete('/user/delete/{id}', 'AttachmentController@userDestroy')->name('user.destroy');
+
 });
 
 //website routes
 Route::group(['as' => 'website.'], function () {
 
     Route::get('/', 'WebsiteController@index')->name('index');
-    Route::get('/v', 'WebsiteController@videos')->name('videos');
+    Route::get('/workout-videos', 'WebsiteController@videos')->name('videos');
     Route::get('/articles/all','WebsiteController@articles')->name('articles');
     Route::get('/article/{id}','WebsiteController@article')->name('article');
 

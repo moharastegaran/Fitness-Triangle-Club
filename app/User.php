@@ -59,13 +59,17 @@ class User extends Authenticatable
         return $this->hasMany(UserRequest::class);
     }
 
+    public function workout_programs(){
+        return $this->hasMany(WorkoutProgram::class,'requester_id');
+    }
+
     public function roles()
     {
         return $this->belongsToMany(Role::class);
     }
 
     public function attachment(){
-        return $this->morphOne(Attachment::class,'attachmentable');
+        return $this->morphMany(Attachment::class,'attachmentable');
     }
 
     public static function members(){

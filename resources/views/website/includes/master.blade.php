@@ -13,8 +13,8 @@
     @yield('style')
 
 
-    <link rel="shortcut icon" href="{{ asset('blackfit/images/favicon.png') }}" type="image/x-icon">
-    <link rel="icon" href="{{ asset('blackfit/images/favicon.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('cork/assets/img/logo1.png') }}" type="image/*">
+    <link rel="icon" href="{{ asset('cork/assets/img/logo1.png') }}" type="image/*">
 
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,7 +38,7 @@
         <!--Header-Upper-->
         <div class="header-upper">
             <div class="outer-container">
-                <div class="inner-container clearfix">
+                <div class="inner-container clearfix d-flex d-md-block justify-content-between align-items-center">
 
                     <!-- Logo Box -->
                     <div class="logo-box">
@@ -94,7 +94,7 @@
                             </div>
 
                             <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
-                                <ul class="navigation clearfix">
+                                <ul class="navigation clearfix d-flex flex-wrap flex-md-row-reverse flex-column">
                                     <li><a href="{{ route('website.index') }}">خانه</a></li>
                                     @if(!auth()->check())
                                         <li><a href="{{ route('website.users.join') }}">ثبت‌نام</a></li>
@@ -288,10 +288,10 @@
                                 <div class="footer-widget newsletter-widget">
                                     <h6>درباره ما</h6>
                                     <div class="text">
-                                        باشگاه مثلث فیتنس - مرکز استاندارد تناسب اندام در ایران که اندام شما در اینجا
-                                        شکل می‌گیرد.
+                                        جسمی بسازید که باعث افتخار شما شود
                                         <br>
-                                        اکنون تمرین را شروع کنید تا تمام سال تندرست و سلامت باشید.
+                                        <span style="text-decoration: line-through">من خسته‌ام. من تنهام. خیلی سرده. خیلی گرمه. خیلی دیره.</span>
+                                         همه اینارو بنداز دور و شروع کن.
                                     </div>
                                     <!-- Newsletter Form -->
                                     {{--<div class="newsletter-form">--}}

@@ -28,9 +28,9 @@
                 <select name="requester_name" class="form-control form-control-sm" id="requester_name">
                     <option value="" disabled selected>-- انتخاب کنید --</option>
                     @foreach($members as $member)
-                        <option value="{{ $member->name.' '.$member->family }}"
+                        <option value="{{ $member->id.'%%'.$member->name.' '.$member->family }}"
                                 @if(request('requester_name')==$member->name.' '.$member->family) selected
-                                @elseif(old('requester_name')==$member->name.' '.$member->family) selected @endif>
+                                @elseif(old('requester_name')==$member->id.'%%'.$member->name.' '.$member->family) selected @endif>
                             {{ $member->name.' '.$member->family.' __ '.$member->mobile }}
                         </option>
                     @endforeach

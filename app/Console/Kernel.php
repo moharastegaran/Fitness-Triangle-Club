@@ -2,8 +2,10 @@
 
 namespace App\Console;
 
+use App\Console\Commands\DeadlineWarning;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 
 class Kernel extends ConsoleKernel
@@ -14,7 +16,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        DeadlineWarning::class
     ];
 
     /**
@@ -26,10 +28,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
          $schedule->call(function (){
-             dd("test");
-             DB::table('files')->delete();
-         })->everyMinute();
-//                  ->everyMinute();
+             Artisan::call('deadline:warning');
+         })->cron("0 0 */3 * *");
     }
 
     /**

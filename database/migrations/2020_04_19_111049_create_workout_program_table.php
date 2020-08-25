@@ -17,6 +17,7 @@ class CreateWorkoutProgramTable extends Migration
             $table->bigIncrements('id');
             $table->integer('coach_id')->index();
             $table->integer('request_id')->index()->nullable();
+            $table->integer('requester_id');
             $table->string('requester_name')->nullable();
             $table->date('from');
             $table->integer('duration');

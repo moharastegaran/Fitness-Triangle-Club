@@ -8,13 +8,13 @@
         <div class="main-slider-carousel owl-carousel owl-theme">
 
             <div class="slide">
-                <div class="image-layer" style="background-image:url({{ asset('images/style1.jpg') }})"></div>
+                <div class="image-layer" style="background-image:url({{ asset('images/DSC_3791.jpg') }})"></div>
                 <div class="auto-container">
                     <!-- Content Boxed -->
                     <div class="content-boxed">
                         <div class="inner-boxed">
-                            <h1>اندام خود را <span>قوی و مناسب نگه دارید</span></h1>
-                            <div class="text">باشگاه مثلث فیتنس - لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </div>
+                            {{--<h1>موفقیت <span>از شروع یک ایده است</span></h1>--}}
+                            {{--<div class="text">امروز فرصتی دیگر برای درست کردن است پس دوباره تلاش کن</div>--}}
                             {{--<div class="btns-box">--}}
                                 {{--<div class="theme-btn purchase-box-btn btn-style-one"><span class="txt">LET’S TRAIN</span></div>--}}
                             {{--</div>--}}
@@ -25,13 +25,13 @@
             </div>
 
             <div class="slide">
-                <div class="image-layer" style="background:url({{ asset('images/style4.jpg') }}) center right"></div>
+                <div class="image-layer" style="background-image:url({{ asset('images/DSC_3766.jpg') }});background-position:top center"></div>
                 <div class="auto-container">
                     <!-- Content Boxed -->
                     <div class="content-boxed">
                         <div class="inner-boxed">
-                            <h1>اندام خود را <span>قوی و مناسب نگه دارید</span></h1>
-                            <div class="text">باشگاه مثلث فیتنس - لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </div>
+                            {{--<h1>بهترین‌ها <span>به‌دست می‌آید، داده‌نمی‌شود.</span></h1>--}}
+                            {{--<div class="text">من می‌توانم پس انجام‌ خواهم‌داد این است آخر داستان</div>--}}
                             {{--<div class="btns-box">--}}
                             {{--<div class="theme-btn purchase-box-btn btn-style-one"><span class="txt">LET’S TRAIN</span></div>--}}
                             {{--</div>--}}
@@ -42,13 +42,13 @@
             </div>
 
             <div class="slide">
-                <div class="image-layer" style="background-image:url({{ asset('images/style6.jpg') }})"></div>
+                <div class="image-layer" style="background-image:url({{ asset('images/DSC_3776.jpg') }})"></div>
                 <div class="auto-container">
                     <!-- Content Boxed -->
                     <div class="content-boxed">
                         <div class="inner-boxed">
-                            <h1>اندام خود را <span>قوی و مناسب نگه دارید</span></h1>
-                            <div class="text">باشگاه مثلث فیتنس - لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </div>
+                            {{--<h1>بیدار شوید <span>زمان ساختن است</span></h1>--}}
+                            {{--<div class="text">اگر خسته‌شدید، یاد‌بگیرید که استراحت‌کنید، نه ترک‌کنید</div>--}}
                             {{--<div class="btns-box">--}}
                             {{--<div class="theme-btn purchase-box-btn btn-style-one"><span class="txt">LET’S TRAIN</span></div>--}}
                             {{--</div>--}}
@@ -78,9 +78,13 @@
                 <div class="testimonial-block">
                     <div class="inner-box">
                         <div class="text">
-                            می‌خواهید سالم باشید و بدن اندامی و کاملی داشته باشید؟ Fitness Triangle Club انتخاب صحیحی برای شماست. با آموزش‌ها و برنامه‌های ما
-                            <br>
-                        به زوودی به اندام رویایی خود برسید.
+                            دیگه وقتشه استایل زندگیمون عوض بشه، اینجایم تا شروع‌کنیم. یادت‌ باشه هیچ‌وقت دیر نیست.
+<br>
+                            تغذیه، ریکاوری و تمرین، تنها راز ساختن بدنی منحصربه‌فرد
+
+                            {{--می‌خواهید سالم باشید و بدن اندامی و کاملی داشته باشید؟ Fitness Triangle Club انتخاب صحیحی برای شماست. با آموزش‌ها و برنامه‌های ما--}}
+                            {{--<br>--}}
+                        {{--به زوودی به اندام رویایی خود برسید.--}}
                         </div>
                     </div>
                 </div>
@@ -134,47 +138,47 @@
     <!-- End Pricing Section -->
 
     <!-- Calculator Section -->
-    <section class="calculator-section">
-        <div class="auto-container">
-            <div class="sec-title centered">
-                <h2><span>bmi</span> محاسبه</h2>
-                <div class="text persian">
-                    شاخص توده بدنی BMI مقیاسی برای اندازه گیری میزان چربی بدن و تناسب اندام بر اساس نسبت وزن به قد فرد است.
-                    <br>
-                    این شاخص از طریق حاصل تقسیم وزن بر مجذور قد فرد محاسبه میشود و برای افراد بالای 20 سال چه خانم چه آقا درست کار میکند.
-                    <br>
-                    اعداد متوسط این شاخص برای کودکان بالای دو سال متفاوت است.
-                </div>
-            </div>
+    {{--<section class="calculator-section">--}}
+        {{--<div class="auto-container">--}}
+            {{--<div class="sec-title centered">--}}
+                {{--<h2><span>bmi</span> محاسبه</h2>--}}
+                {{--<div class="text persian">--}}
+                    {{--شاخص توده بدنی BMI مقیاسی برای اندازه گیری میزان چربی بدن و تناسب اندام بر اساس نسبت وزن به قد فرد است.--}}
+                    {{--<br>--}}
+                    {{--این شاخص از طریق حاصل تقسیم وزن بر مجذور قد فرد محاسبه میشود و برای افراد بالای 20 سال چه خانم چه آقا درست کار میکند.--}}
+                    {{--<br>--}}
+                    {{--اعداد متوسط این شاخص برای کودکان بالای دو سال متفاوت است.--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
-            <div class="inner-container">
+            {{--<div class="inner-container">--}}
 
-                <!-- Default Form -->
-                <div class="default-form">
+                {{--<!-- Default Form -->--}}
+                {{--<div class="default-form">--}}
 
-                    <!-- Default Form -->
-                    <form method="post">
-                        <div class="row clearfix">
+                    {{--<!-- Default Form -->--}}
+                    {{--<form method="post">--}}
+                        {{--<div class="row clearfix">--}}
 
-                            <div class="col-lg-4 col-md-6 col-sm-12 form-group">
-                                <input type="text" name="cm" placeholder="قد (سانتیمتر)" required>
-                            </div>
+                            {{--<div class="col-lg-4 col-md-6 col-sm-12 form-group">--}}
+                                {{--<input type="text" name="cm" placeholder="قد (سانتیمتر)" required>--}}
+                            {{--</div>--}}
 
-                            <div class="col-lg-4 col-md-6 col-sm-12 form-group">
-                                <input type="text" name="weight" placeholder="وزن (کیلوگرم)" required>
-                            </div>
+                            {{--<div class="col-lg-4 col-md-6 col-sm-12 form-group">--}}
+                                {{--<input type="text" name="weight" placeholder="وزن (کیلوگرم)" required>--}}
+                            {{--</div>--}}
 
-                            <div class="col-lg-4 col-md-6 col-sm-12 form-group">
-                                <input type="text" name="age" placeholder="سن" required>
-                            </div>
+                            {{--<div class="col-lg-4 col-md-6 col-sm-12 form-group">--}}
+                                {{--<input type="text" name="age" placeholder="سن" required>--}}
+                            {{--</div>--}}
 
-                            <div class="form-group col-lg-4 col-md-6 col-sm-12">
-                                <select class="custom-select-box" required>
-                                    <option value="">جنسیت</option>
-                                    <option value="male">مرد</option>
-                                    <option value="female">زن</option>
-                                </select>
-                            </div>
+                            {{--<div class="form-group col-lg-4 col-md-6 col-sm-12">--}}
+                                {{--<select class="custom-select-box" required>--}}
+                                    {{--<option value="">جنسیت</option>--}}
+                                    {{--<option value="male">مرد</option>--}}
+                                    {{--<option value="female">زن</option>--}}
+                                {{--</select>--}}
+                            {{--</div>--}}
 
                             {{--<div class="form-group col-lg-4 col-md-6 col-sm-12">--}}
                                 {{--<select class="custom-select-box">--}}
@@ -184,19 +188,19 @@
                                 {{--</select>--}}
                             {{--</div>--}}
 
-                            <div class="form-group col-lg-4 col-md-6 col-sm-12">
-                                <button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="txt">محاسبه</span></button>
-                            </div>
+                            {{--<div class="form-group col-lg-4 col-md-6 col-sm-12">--}}
+                                {{--<button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="txt">محاسبه</span></button>--}}
+                            {{--</div>--}}
 
-                        </div>
-                    </form>
+                        {{--</div>--}}
+                    {{--</form>--}}
 
-                    <!--End Default Form -->
-                </div>
+                    {{--<!--End Default Form -->--}}
+                {{--</div>--}}
 
-            </div>
+            {{--</div>--}}
 
-        </div>
-    </section>
+        {{--</div>--}}
+    {{--</section>--}}
     <!-- End Calculator Section -->
 @endsection

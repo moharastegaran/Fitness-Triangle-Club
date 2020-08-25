@@ -14,6 +14,7 @@ class NutritionProgram extends Model
     protected $fillable = [
         'coach_id',
         'request_id',
+        'requester_id',
         'requester_name',
         'duration',
         'from',
@@ -37,5 +38,9 @@ class NutritionProgram extends Model
 //            return $this->request->user->name . ' ' . $this->request->user->family;
 //        }
         return $this->requester_name;
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class,'requester_id');
     }
 }

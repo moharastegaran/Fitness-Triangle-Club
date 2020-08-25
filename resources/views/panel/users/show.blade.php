@@ -346,6 +346,22 @@
                 </div>
             </div>
 
+            <div class="skills layout-spacing">
+                <div class="widget-content widget-content-area">
+                    <h3 class="">اسناد و مدارک</h3>
+                    <div class="d-flex flex-wrap justify-content-between align-items-center">
+                        <div>
+                            شما تا کنون
+                            <strong>{{ toFaDigits($user->attachment ? count($user->attachment) : '0') }}</strong>
+                            فایل بارگزاری کرده اید.
+                        </div>
+                        <a href="{{ route('panel.user.attachments',$user->id) }}" class="btn btn-outline-success">
+                            آپلود فایل جدید
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             @if(!$user->isAdmin())
                 <div class="skills layout-spacing">
                     <div class="widget-content widget-content-area widget-table-one">

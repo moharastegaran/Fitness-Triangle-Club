@@ -976,7 +976,7 @@
 	
 	.main-header .nav-outer{
 		width:100%;
-		margin-top:-80px;
+		margin-top:-20px;
 	}
 	
 	.nav-outer .mobile-nav-toggler{
@@ -1550,7 +1550,6 @@
 		margin-bottom:40px;
 	}
 	
-	.sidebar-widget.category-widget,
 	.sidebar-widget.instagram-widget,
 	.sidebar-widget.newsletter-widget,
 	.related-posts{

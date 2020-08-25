@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Expense;
+use App\Transaction;
 use Illuminate\Http\Request;
 
 class ExpenseController extends Controller
@@ -32,5 +33,10 @@ class ExpenseController extends Controller
         $np_expense->save();
 
         return redirect()->back();
+    }
+
+    public function transactions(){
+        $transactions = Transaction::all();
+        return view('panel.expenses.transactions',compact('transactions'));
     }
 }

@@ -24,7 +24,7 @@ $(document).ready(function () {
     //     $("#btn-prev , #btn-submit").addClass("d-none");
     // });
 
-    $("#btn-submit").on("click",function () {
-        $("#fileupload").submit();
-    });
+    // $("#btn-submit").on("click",function () {
+    //     $("#fileupload").submit();
+    // });
 });

@@ -5,11 +5,15 @@ namespace App\Http\Controllers;
 use App\Attachment;
 use App\Blog;
 use App\Http\Requests\ArticleRequest;
+use App\Notifications\DeadlineWarning;
 use App\Notifications\UserRegistered;
+use App\NutritionProgram;
 use App\Permission;
 use App\User;
 use App\Workout;
 use App\WorkoutCategory;
+use App\WorkoutProgram;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
@@ -24,6 +28,29 @@ class WebsiteController extends Controller
 
     public function index()
     {
+        $workout_programs = WorkoutProgram::all();
+        foreach ($workout_programs as $wp) {
+            $expected = Carbon::parse($wp->from)->addDays($wp->duration);
+            $diff=$expected->diffInDays(now(),false);
+            if($diff < 0 && $diff > -7){
+//                $diff = abs($diff);
+                dump($diff);
+//                Notification::send(User::admins(),new \App\Notifications\DeadlineWarning($wp,$diff));
+            }
+        }
+
+        $nutrition_programs = NutritionProgram::all();
+        foreach ($nutrition_programs as $np) {
+            $expected = Carbon::parse($np->from)->addDays($np->duration);
+            $diff=$expected->diffInDays(now(),false);
+            if($diff < 0 && $diff > -7){
+//                $diff = abs($diff);
+                dump($diff);
+//                Notification::send(User::admins(),new \App\Notifications\DeadlineWarning($np,$diff));
+            }
+        }
+        dd();
+
         return view('website.home');
     }
 

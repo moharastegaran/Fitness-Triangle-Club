@@ -18,7 +18,7 @@
     <!-- Sidebar Page Container -->
     <div class="sidebar-page-container overflow-hidden">
         <div class="auto-container">
-            <div class="row clearfix">
+            <div class="row clearfix d-flex flex-lg-row flex-column-reverse flex-wrap ">
 
                 <!-- Content Side -->
                 <div class="content-side col-lg-8 col-md-12 col-sm-12">
@@ -77,7 +77,7 @@
                 </div>
 
                 <!-- Sidebar Side -->
-                <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+                <div class="sidebar-side col-lg-4 col-md-12 col-sm-12 mb-3">
                     <aside class="sidebar sticky-top">
                         <div class="sidebar-inner padding-left">
 

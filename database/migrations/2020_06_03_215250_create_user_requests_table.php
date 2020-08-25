@@ -19,6 +19,7 @@ class CreateUserRequestsTable extends Migration
             $table->boolean('is_workout_program');
             $table->boolean('is_nutrition_program');
             $table->boolean('is_approved')->default(0);
+            $table->string('days',20);
             $table->longText('comment')->nullable();
             $table->timestamps();
         });

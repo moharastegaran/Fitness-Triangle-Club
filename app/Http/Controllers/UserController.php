@@ -6,6 +6,7 @@ use App\Attachment;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\UserMedicalRequest;
 use App\Http\Requests\UserPersonalRequest;
+use App\Notifications\DeadlineWarning;
 use App\Notifications\UserRegistered;
 use App\Permission;
 use App\User;
@@ -222,6 +223,7 @@ class UserController extends Controller
             auth()->user()->unreadNotifications->where('type', UserRegistered::class)->MarkAsRead();
         }
 
+//        dd($user->workout_programs()->get());
         $user_wp_count = $user->requests()->where('is_workout_program', 1)
             ->where('is_nutrition_program', 0)->where('is_approved', 1)->count();
         $user_np_count = $user->requests()->where('is_workout_program', 0)
@@ -384,5 +386,18 @@ class UserController extends Controller
         }
 
         return redirect()->route('panel.users.show', $id);
+    }
+
+
+    public function userAttachments($id){
+        $user = User::find($id);
+        $files = $user->attachment()->where('title','!=','avatar')->get();
+//        dd(env('USER_DIR_PATH'));
+        return view('panel.users.uploadAttachment',compact('files','user'));
+    }
+
+    public function deadlineWarning_markAsRead(){
+        auth()->user()->unreadNotifications->where('type', DeadlineWarning::class)->MarkAsRead();
+        return redirect()->back();
     }
 }

@@ -11,7 +11,8 @@ class UserRequest extends Model
         'is_approved',
         'is_workout_program',
         'is_nutrition_program',
-        'comment'
+        'comment',
+        'days'
     ];
 
     public function user(){

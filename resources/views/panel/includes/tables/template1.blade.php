@@ -95,14 +95,21 @@
         @endif
 
         $("input[name^='expense_id']").on("change", function (e) {
-            var total = parseInt(toEnDigits($("#expense_total").text()));
-            var change = parseInt($(this).val() == '1' ? '{{ \App\Expense::where('type','برنامه تمرینی')->first()->price }}' : '{{ \App\Expense::where('type','برنامه غذایی')->first()->price }}');
+            var total = 0;
+            var change = $(this).closest(".n-chk").next().find(".price").text();
+//            change = change.replace(",","");
+//            change = parseInt(toEnDigits(change));
             if ($(this).prop("checked")) {
-                total += change;
-            } else {
-                total -= change;
+                total = change;
+            }else{
+                total = 0;
             }
-            $("#expense_total").text(toFaDigits(total));
+            if($(this).is($("#program-total"))) {
+                $(".days.collapse").collapse("show");
+            }else{
+                $(".days.collapse").collapse("hide");
+            }
+            $("#expense_total").text((total));
         });
 
         function toFaDigits(n) {
